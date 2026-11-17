@@ -47,4 +47,45 @@
     });
   });
   document.querySelectorAll('[data-guide-link]').forEach(link => link.addEventListener('click', () => selectGuide(link.dataset.guideLink)));
+
+  const downloadModal = document.getElementById('downloadModal');
+  const modalTitle = document.getElementById('downloadModalTitle');
+  const modalDescription = document.getElementById('downloadModalDescription');
+  const modalClose = downloadModal?.querySelector('[data-modal-close]');
+  let lastModalTrigger = null;
+
+  function closeDownloadModal() {
+    if (!downloadModal) return;
+    downloadModal.hidden = true;
+    document.body.classList.remove('modal-open');
+    lastModalTrigger?.focus();
+    lastModalTrigger = null;
+  }
+
+  function openDownloadModal(trigger) {
+    if (!downloadModal) return;
+    lastModalTrigger = trigger;
+    const isRelease = trigger.dataset.downloadModal === 'releases';
+    modalTitle.textContent = isRelease ? '选择版本来源' : '选择下载入口';
+    modalDescription.textContent = isRelease
+      ? '选择一个站点查看 Card 的版本、附件与校验资料。'
+      : '选择更适合你的站点，打开 Card 的下载与版本页面。';
+    downloadModal.hidden = false;
+    document.body.classList.add('modal-open');
+    modalClose?.focus();
+  }
+
+  document.querySelectorAll('[data-download-modal]').forEach(trigger => {
+    trigger.addEventListener('click', event => {
+      event.preventDefault();
+      openDownloadModal(trigger);
+    });
+  });
+  modalClose?.addEventListener('click', closeDownloadModal);
+  downloadModal?.addEventListener('click', event => {
+    if (event.target === downloadModal) closeDownloadModal();
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && downloadModal && !downloadModal.hidden) closeDownloadModal();
+  });
 })();
