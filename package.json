@@ -1,0 +1,11 @@
+{
+  "name": "carb-maintenance",
+  "version": "5.6.12",
+  "private": true,
+  "type": "module",
+  "description": "Carb desktop maintenance code, release snapshots and distribution metadata",
+  "license": "Apache-2.0",
+  "engines": { "node": ">=22" },
+  "scripts": { "check": "node scripts/verify-repository.mjs" },
+  "repository": { "type": "git", "url": "https://github.com/HIUPAC/Carb.git" }
+}

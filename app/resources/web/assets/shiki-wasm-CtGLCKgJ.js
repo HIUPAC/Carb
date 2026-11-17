@@ -1,0 +1,1 @@
+function e(){throw Error(`The Oniguruma WASM binary is not bundled; the renderer CSP forbids WebAssembly.`)}export{e as default};

@@ -1,0 +1,163 @@
+@property --test-card-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+/* Keep native borders and focus indicators underneath the decorative rim. */
+:is(.inbox-card, .sessrow, .pr-list-item, .pr-thread-card, .pr-activity-card, .pr-review-event-body,
+    .pr-inline-thread, .ta-api-connection, .account-card, .signin-card,
+    .onboarding__theme, [data-motion-card]) {
+  isolation: isolate;
+  --test-card-rim: .42;
+  --test-card-halo-low: .18;
+  --test-card-halo-high: .38;
+}
+
+:where(.pr-thread-card, .pr-review-event-body, .pr-inline-thread,
+       .ta-api-connection, .signin-card, [data-motion-card]) {
+  position: relative;
+}
+
+.onboarding__theme {
+  border-radius: var(--r-card, 12px);
+}
+
+/* Paint containment on PR rows clips the halo at the row edge. The list still
+   owns clipping and scroll bounds, and the observer pauses rows off screen. */
+.pr-workspace .pr-list-item[data-test-card-visible] {
+  content-visibility: visible;
+}
+
+:is(.inbox-card, .sessrow, .pr-list-item, .pr-thread-card, .pr-activity-card, .pr-review-event-body,
+    .pr-inline-thread, .ta-api-connection, .account-card, .signin-card,
+    .onboarding__theme, [data-motion-card])::before,
+:is(.inbox-card, .sessrow, .pr-list-item, .pr-thread-card, .pr-activity-card, .pr-review-event-body,
+    .pr-inline-thread, .ta-api-connection, .account-card, .signin-card,
+    .onboarding__theme, [data-motion-card])::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+:is(.inbox-card, .sessrow, .pr-list-item, .pr-thread-card, .pr-activity-card, .pr-review-event-body,
+    .pr-inline-thread, .ta-api-connection, .account-card, .signin-card,
+    .onboarding__theme, [data-motion-card])::before {
+  z-index: 2;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: conic-gradient(from var(--test-card-angle),
+    transparent 0deg,
+    color-mix(in srgb, var(--accent, #83aaff) 86%, #86d2ff) 58deg,
+    #86c7fc 105deg, #b89af7 149deg, transparent 235deg,
+    color-mix(in srgb, #9e9aff 55%, transparent) 310deg, transparent 360deg);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: var(--test-card-rim);
+  animation: test-card-orbit 7.5s linear infinite paused;
+  transition: opacity 170ms ease-out;
+}
+
+:is(.inbox-card, .sessrow, .pr-list-item, .pr-thread-card, .pr-activity-card, .pr-review-event-body,
+    .pr-inline-thread, .ta-api-connection, .account-card, .signin-card,
+    .onboarding__theme, [data-motion-card])::after {
+  z-index: -1;
+  left: 10%;
+  right: 10%;
+  bottom: -5px;
+  height: clamp(6px, 20%, 19px);
+  border-radius: 50%;
+  background: linear-gradient(100deg, transparent, #6dbfff 28%, #b38bff 72%, transparent);
+  opacity: var(--test-card-halo-low);
+  filter: blur(7px);
+  animation: test-card-halo 3.4s ease-in-out infinite paused;
+}
+
+.pr-activity-card::before { left: 44px; border-radius: var(--r-lg, 10px); }
+.pr-activity-card::after { left: calc(10% + 44px); }
+.pr-inline-thread::after { bottom: 0; }
+
+:is(.inbox-card, .sessrow, .pr-list-item, .pr-thread-card, .pr-activity-card, .pr-review-event-body,
+    .pr-inline-thread, .ta-api-connection, .account-card, .signin-card,
+    .onboarding__theme, [data-motion-card])[data-test-card-visible]::before,
+:is(.inbox-card, .sessrow, .pr-list-item, .pr-thread-card, .pr-activity-card, .pr-review-event-body,
+    .pr-inline-thread, .ta-api-connection, .account-card, .signin-card,
+    .onboarding__theme, [data-motion-card])[data-test-card-visible]::after {
+  animation-play-state: running;
+}
+
+:is(.inbox-card, .sessrow, .pr-list-item, .pr-thread-card, .pr-activity-card, .pr-review-event-body,
+    .pr-inline-thread, .ta-api-connection, .account-card, .signin-card,
+    .onboarding__theme, [data-motion-card]):is(:hover, :focus-within, .is-selected, .is-active) {
+  --test-card-rim: .91;
+  --test-card-halo-low: .28;
+  --test-card-halo-high: .56;
+}
+
+.sessrow {
+  --test-card-rim: .23;
+  --test-card-halo-low: .10;
+  --test-card-halo-high: .24;
+}
+
+@keyframes test-card-orbit {
+  from { --test-card-angle: 0deg; }
+  to { --test-card-angle: 360deg; }
+}
+
+@keyframes test-card-halo {
+  0%, 100% { opacity: var(--test-card-halo-low); transform: translateY(-1px) scaleX(.88); filter: blur(7px); }
+  50% { opacity: var(--test-card-halo-high); transform: translateY(2px) scaleX(1.04); filter: blur(11px); }
+}
+
+.test-card-morph {
+  position: fixed;
+  z-index: 2147483000;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  pointer-events: none;
+  overflow: hidden;
+  contain: layout paint style;
+}
+
+.test-card-morph::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: var(--test-morph-outline, none);
+  opacity: var(--test-morph-outline-opacity, 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+.test-card-morph__title {
+  position: absolute;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(.inbox-card, .sessrow, .pr-list-item, .pr-thread-card, .pr-activity-card, .pr-review-event-body,
+      .pr-inline-thread, .ta-api-connection, .account-card, .signin-card,
+      .onboarding__theme, [data-motion-card])::before,
+  :is(.inbox-card, .sessrow, .pr-list-item, .pr-thread-card, .pr-activity-card, .pr-review-event-body,
+      .pr-inline-thread, .ta-api-connection, .account-card, .signin-card,
+      .onboarding__theme, [data-motion-card])::after {
+    animation: none !important;
+    transition: none;
+  }
+}
+
+@media (forced-colors: active) {
+  :is(.inbox-card, .sessrow, .pr-list-item, .pr-thread-card, .pr-activity-card, .pr-review-event-body,
+      .pr-inline-thread, .ta-api-connection, .account-card, .signin-card,
+      .onboarding__theme, [data-motion-card])::before,
+  :is(.inbox-card, .sessrow, .pr-list-item, .pr-thread-card, .pr-activity-card, .pr-review-event-body,
+      .pr-inline-thread, .ta-api-connection, .account-card, .signin-card,
+      .onboarding__theme, [data-motion-card])::after { display: none; }
+  .test-card-morph { display: none; }
+}

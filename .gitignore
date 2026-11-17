@@ -1,0 +1,26 @@
+# Runtime payloads and release binaries are distributed through GitHub Releases.
+/.build/
+/dist/
+/安装包/
+/node_modules/
+/carb-work/node_modules/
+/carb-work/Carb-*/
+/carb-work/verification*/
+/carb-work/.stage-carb-*/
+*.exe
+*.zip
+*.log
+**/__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
+.env
+.env.*
+!.env.example
+*.pfx
+*.p12
+*.pem
+*.key
+
+# app/asar/node_modules/@harness and carb-work/overlay/asar/node_modules
+# contain maintained application code and MUST remain tracked.

@@ -1,0 +1,30 @@
+import assert from 'node:assert/strict';
+import { mkdtemp, mkdir, writeFile, cp, symlink, readFile, rm } from 'node:fs/promises';
+import os from 'node:os'; import path from 'node:path'; import { pathToFileURL } from 'node:url';
+import { patchSkillServer } from './patch-skill-install.mjs';
+const root=await mkdtemp(path.join(os.tmpdir(),'carb-manage-'));
+try {
+ const dist=path.join(root,'node_modules/@harness/server/dist'); await mkdir(dist,{recursive:true});
+ for(const name of ['carb-skill-management.js','carb-global-skills.js']) await cp(path.resolve('overlay/asar/node_modules/@harness/server/dist',name),path.join(dist,name));
+ for(const name of ['zod','js-yaml']) await cp(path.resolve('verification/backend-app/node_modules',name),path.join(root,'node_modules',name),{recursive:true});
+ process.env.CARB_GLOBAL_SKILLS_DIR=path.join(root,'global'); await mkdir(process.env.CARB_GLOBAL_SKILLS_DIR);
+ const api=await import(pathToFileURL(path.join(dist,'carb-skill-management.js')));
+ const g=await import(pathToFileURL(path.join(dist,'carb-global-skills.js')));
+ const folder=path.join(process.env.CARB_GLOBAL_SKILLS_DIR,'alpha'); await mkdir(folder); await writeFile(path.join(folder,'SKILL.md'),'---\nname: alpha\ndescription: Test\n---\n');
+ const orchestrator={ listSkills: async()=>g.listGlobalSkills(),setSkillEnabled:async()=>{throw Error('unexpected delegate')} };
+ const p={provider:'codex',skillId:path.join(folder,'SKILL.md')};
+ assert.deepEqual(await api.setManagedSkillEnabled(orchestrator,{...p,enabled:false}),{enabled:false});
+ assert.equal((await g.listGlobalSkills()).skills[0].enabled,false);
+ assert.deepEqual(await api.setManagedSkillEnabled(orchestrator,{...p,enabled:true}),{enabled:true});
+ assert.equal((await g.listGlobalSkills()).skills[0].enabled,true);
+ await api.deleteManagedSkill(orchestrator,p); assert.equal((await g.listGlobalSkills()).skills.length,0);
+ const target=path.join(root,'shared'); await mkdir(target); await writeFile(path.join(target,'SKILL.md'),'test');
+ const link=path.join(root,'link'); await symlink(target,link,process.platform==='win32'?'junction':'dir');
+ const external={listSkills:async()=>({skills:[{id:'link',source:{type:'folder',path:link}}]}),setSkillEnabled:async()=>false};
+ await api.deleteManagedSkill(external,{provider:'codex',skillId:'link'});
+ assert.equal(await readFile(path.join(target,'SKILL.md'),'utf8'),'test');
+ await assert.rejects(()=>api.deleteManagedSkill(external,{provider:'codex',skillId:'missing'}));
+ const source=await readFile('verification/backend-app/node_modules/@harness/server/dist/server.js','utf8');
+ const patched=patchSkillServer(source); assert.equal(patchSkillServer(patched),patched); assert(patched.includes("case 'skills.deleteManaged':"));
+ console.log('Skill management: global toggle and persistence, delete, junction target preservation, invalid ID, server patch verified');
+} finally { await rm(root,{recursive:true,force:true}); }

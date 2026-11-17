@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Carb">
+  <rect width="256" height="256" rx="54" fill="#171717"/>
+  <g fill="none" stroke="#e5e5e5" stroke-width="9.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M128 39.5 203 83v89.5L128 216 53 172.5V83z"/>
+    <path d="M53 83 128 127.5 203 83M128 127.5V216M53 126.5 128 171 203 126.5M90.5 61.5 169.5 105v41.5M90.5 194 128 171"/>
+  </g>
+</svg>

@@ -1,0 +1,103 @@
+/* Bridge extension tokens to the application's live theme. Never keep a
+   separate palette: data-theme, accent and backdrop all resolve in one place. */
+:root {
+  --bg-raised: var(--surface-2);
+  --bg-menu: var(--menu-bg);
+  --background-secondary: var(--surface-2);
+  --border: var(--chrome-border);
+  --text-muted: var(--text-2);
+  --accent: var(--attention);
+  --accent-contrast: var(--on-light);
+  --danger: var(--error);
+  --test-ux-panel: var(--surface);
+  --test-ux-line: var(--line-strong);
+  --test-ux-accent: var(--attention);
+  --carb-overlay-shade: rgb(0 0 0 / .60);
+}
+
+:root[data-theme="light"] {
+  --carb-overlay-shade: rgb(24 24 36 / .28);
+}
+
+/* Native dialogs and extension overlays share the same surface and borders. */
+.test-document-workflow,
+.test-ux-modal,
+.ta-api-shell {
+  box-shadow: var(--shadow-modal);
+}
+
+.test-document-workflow::backdrop,
+.test-ux-modal-backdrop,
+.ta-api-backdrop {
+  background: var(--carb-overlay-shade);
+}
+
+.test-document-workflow-trigger {
+  background: var(--chrome-raised);
+  border-color: var(--chrome-border);
+}
+
+.test-document-workflow__field :is(input, textarea, select),
+.test-ux-modal :is(input, textarea, select) {
+  background: var(--surface-2);
+  border-color: var(--chrome-border);
+  color: var(--text);
+  caret-color: var(--text);
+  color-scheme: inherit;
+}
+
+.test-document-workflow__field :is(input, textarea)::placeholder,
+.test-ux-modal :is(input, textarea)::placeholder,
+.carb-skill-form input::placeholder,
+.carb-skill-installer input::placeholder {
+  color: var(--text-3);
+  opacity: 1;
+}
+
+.test-document-workflow__field :is(input, textarea, select):focus-visible {
+  border-color: var(--attention);
+  outline: 2px solid color-mix(in srgb, var(--attention) 55%, transparent);
+  outline-offset: 2px;
+}
+
+:is(.test-document-workflow, .test-ux-modal, .ta-api-shell, .carb-skill-install, .carb-skill-installer) option {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.test-ux-modal__button--primary,
+.test-ux-modal__button--primary:is(:hover, :focus-visible) {
+  color: var(--accent-contrast);
+}
+
+.test-ux-modal__required,
+.test-ux-modal__error,
+.carb-link-menu__error {
+  color: var(--error);
+}
+
+.carb-link-menu {
+  box-shadow: var(--shadow-flyout);
+}
+
+/* Animated frames retain their interaction while following the chosen palette. */
+:is(.inbox-card, .sessrow, .pr-list-item, .pr-thread-card, .pr-activity-card, .pr-review-event-body,
+    .pr-inline-thread, .ta-api-connection, .account-card, .signin-card,
+    .onboarding__theme, [data-motion-card])::before {
+  background: conic-gradient(from var(--test-card-angle),
+    transparent 0deg,
+    color-mix(in srgb, var(--attention) 76%, var(--surface-3)) 58deg,
+    color-mix(in srgb, var(--attention) 52%, var(--surface-3)) 105deg,
+    color-mix(in srgb, var(--attention) 64%, var(--line-strong)) 149deg,
+    transparent 235deg,
+    color-mix(in srgb, var(--attention) 42%, transparent) 310deg,
+    transparent 360deg);
+}
+
+:is(.inbox-card, .sessrow, .pr-list-item, .pr-thread-card, .pr-activity-card, .pr-review-event-body,
+    .pr-inline-thread, .ta-api-connection, .account-card, .signin-card,
+    .onboarding__theme, [data-motion-card])::after {
+  background: linear-gradient(100deg, transparent,
+    color-mix(in srgb, var(--attention) 64%, var(--surface-3)) 28%,
+    color-mix(in srgb, var(--attention) 42%, var(--surface-3)) 72%, transparent);
+}

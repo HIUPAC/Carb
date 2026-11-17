@@ -1,0 +1,114 @@
+/* Keep the original avatar, checkbox/radio controls, wire and socket animations. */
+.onboarding :is(.onboarding__pick-row:has(> label > input), .onboarding__theme) {
+  transform-origin: center;
+  touch-action: manipulation;
+}
+
+.onboarding .onboarding__picks { gap: 6px; }
+.onboarding .onboarding__pick-row:has(> label > input) {
+  position: relative;
+  isolation: isolate;
+  min-width: 0;
+  border-radius: 10px;
+}
+.onboarding .onboarding__pick-row > label {
+  position: relative;
+  z-index: 1;
+  min-height: 40px;
+  padding: 6px 10px;
+  border: 1px solid color-mix(in srgb, var(--line, #687080) 24%, transparent);
+  border-radius: inherit;
+  background-color: color-mix(in srgb, var(--surface, #1d222b) 28%, transparent);
+  transition: border-color 180ms ease, background-color 180ms ease;
+}
+.onboarding .onboarding__pick-row[data-added] > label {
+  border-color: color-mix(in srgb, var(--accent, #83aaff) 32%, transparent);
+  background-color: color-mix(in srgb, var(--accent, #83aaff) 5%, transparent);
+}
+.onboarding .onboarding__pick-row > label:hover {
+  border-color: color-mix(in srgb, var(--accent, #83aaff) 38%, transparent);
+}
+.onboarding .onboarding__pick-row .onboarding__pick-state {
+  max-width: min(22vw, 160px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.onboarding .onboarding__picks--notes .onboarding__pick-state { max-width: none; }
+
+/* A visible scroll bar keeps every added provider reachable, including short windows. */
+.onboarding .onboarding__pick {
+  max-height: clamp(200px, calc(100dvh - 340px), 520px);
+  margin-inline: -4px;
+  padding: 4px 8px 20px 4px;
+  scroll-padding-block: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong, #596273) transparent;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+.onboarding .onboarding__pick::-webkit-scrollbar { display: initial; width: 6px; }
+.onboarding .onboarding__pick::-webkit-scrollbar-thumb {
+  background: var(--line-strong, #596273);
+  border-radius: 999px;
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) and (forced-colors: none) {
+  .onboarding .onboarding__pick-row:has(> label > input)::before,
+  .onboarding .onboarding__pick-row:has(> label > input)::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    opacity: var(--test-onboarding-pointer-opacity, 0);
+  }
+  .onboarding .onboarding__pick-row:has(> label > input)::before {
+    z-index: 0;
+    background: radial-gradient(260px circle at var(--test-onboarding-pointer-x, 50%) var(--test-onboarding-pointer-y, 50%),
+      color-mix(in srgb, var(--accent, #83aaff) 20%, transparent), transparent 72%);
+  }
+  .onboarding .onboarding__pick-row:has(> label > input)::after {
+    z-index: 2;
+    padding: 1px;
+    background: radial-gradient(170px circle at var(--test-onboarding-pointer-x, 50%) var(--test-onboarding-pointer-y, 50%),
+      color-mix(in srgb, var(--accent, #83aaff) 88%, #c8e6ff), transparent 75%);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+  }
+  /* The frame owns this native border; its existing selected/focus border stays visible. */
+  .onboarding .onboarding__theme .onboarding__theme-frame::after {
+    background-image: radial-gradient(190px circle at var(--test-onboarding-pointer-x, 50%) var(--test-onboarding-pointer-y, 50%),
+      color-mix(in srgb, var(--accent, #83aaff) calc(var(--test-onboarding-pointer-opacity, 0) * 23%), transparent), transparent 74%);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .onboarding .onboarding__step[data-phase=entering] > :not(.onboarding__mark, .onboarding__title--display),
+  .onboarding .onboarding__step[data-phase=entering] .onboarding__theme {
+    animation-name: test-onboarding-arrive;
+    animation-duration: 560ms;
+    animation-timing-function: linear(0, .08 8%, .32 20%, .62 34%, .84 48%, .97 62%, 1.025 76%, 1.012 88%, 1);
+  }
+  /* React advances on this section's animationend; stay below its 400 ms fallback. */
+  .onboarding .onboarding__step[data-phase=leaving] {
+    animation-name: test-onboarding-leave;
+    animation-duration: 180ms;
+    animation-timing-function: cubic-bezier(.4, 0, .7, 1);
+  }
+}
+@keyframes test-onboarding-arrive {
+  from { opacity: 0; filter: blur(5px); transform: translateX(var(--onboarding-shift)); }
+  to { opacity: 1; filter: blur(0); transform: translateX(0); }
+}
+@keyframes test-onboarding-leave {
+  from { opacity: 1; filter: blur(0); transform: translateX(0) scale(1); }
+  to { opacity: 0; filter: blur(3px); transform: translateX(calc(var(--onboarding-shift) * -.6)) scale(.992); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .onboarding .onboarding__pick-row > label { transition: none; }
+}
+@media (forced-colors: active) {
+  .onboarding .onboarding__pick-row > label { border-color: CanvasText; background: Canvas; }
+  .onboarding .onboarding__pick-row[data-added] > label { border-color: Highlight; }
+}

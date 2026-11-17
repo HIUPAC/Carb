@@ -1,0 +1,59 @@
+{
+  "name": "@harness/proc",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./desktop-path": {
+      "types": "./dist/desktop-path.d.ts",
+      "default": "./dist/desktop-path.js"
+    },
+    "./account-home": {
+      "types": "./dist/account-home.d.ts",
+      "default": "./dist/account-home.js"
+    },
+    "./cli": {
+      "types": "./dist/cli.d.ts",
+      "default": "./dist/cli.js"
+    },
+    "./kill": {
+      "types": "./dist/kill.d.ts",
+      "default": "./dist/kill.js"
+    },
+    "./updates": {
+      "types": "./dist/updates.d.ts",
+      "default": "./dist/updates.js"
+    },
+    "./usage-archive": {
+      "types": "./dist/usage-archive.d.ts",
+      "default": "./dist/usage-archive.js"
+    },
+    "./usage-log": {
+      "types": "./dist/usage-log.d.ts",
+      "default": "./dist/usage-log.js"
+    },
+    "./symlink.test-support": {
+      "types": "./dist/symlink.test-support.d.ts",
+      "default": "./dist/symlink.test-support.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -b",
+    "typecheck": "tsc -b",
+    "test": "vitest run --passWithNoTests"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.10"
+  },
+  "dependencies": {
+    "zod": "4.4.3"
+  }
+}

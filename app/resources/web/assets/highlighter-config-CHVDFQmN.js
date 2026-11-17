@@ -1,0 +1,2 @@
+var e=`github-light-default`,t=`github-dark-default`,n=64*1024,r=256*1024,i=[`typescript`,`tsx`,`javascript`,`jsx`,`json`,`bash`,`shell`,`python`,`css`,`html`,`markdown`,`yaml`,`diff`,`sql`,`rust`,`go`];function a(e){return{tokens:e.split(`
+`).map(e=>[{content:e}])}}export{n as a,e as i,t as n,a as o,r,i as t};

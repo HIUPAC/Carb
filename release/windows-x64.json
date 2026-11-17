@@ -1,0 +1,20 @@
+{
+  "version": "5.6.12",
+  "tag": "v5.6.12",
+  "platform": "windows-x64",
+  "installer": {
+    "filename": "Carb-Setup-5.6.12-win-x64.exe",
+    "url": "https://github.com/HIUPAC/Carb/releases/download/v5.6.12/Carb-Setup-5.6.12-win-x64.exe",
+    "sha256": "4da826fb0b947001036ba07ad1ed32fecd92caf04cb8ed958fbca57d5cbdb0b8",
+    "bytes": 163308043,
+    "signatureStatus": "NotSigned"
+  },
+  "portable": {
+    "filename": "Carb-5.6.12-win-x64-portable.zip",
+    "url": "https://github.com/HIUPAC/Carb/releases/download/v5.6.12/Carb-5.6.12-win-x64-portable.zip",
+    "sha256": "d1795b8e4ba71882c597dc1d02c44c08deb9b04c36a5ceadbf16080a2ec97878",
+    "bytes": 211864078,
+    "rootDirectory": "Carb-5.6.12",
+    "files": 14041
+  }
+}

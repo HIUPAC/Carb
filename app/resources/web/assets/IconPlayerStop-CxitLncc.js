@@ -1,0 +1,1 @@
+import{ga as e}from"./index-dY3kjCLH.js";var t=e(`outline`,`player-stop`,`PlayerStop`,[[`path`,{d:`M5 7a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2l0 -10`,key:`svg-0`}]]);export{t};

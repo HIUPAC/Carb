@@ -1,0 +1,54 @@
+/* Taste Code UX enhancements: deep dark project rail and guided composer controls. */
+:root {
+  --test-ux-line: color-mix(in srgb, var(--line-strong, #3c414d) 72%, transparent);
+  --test-ux-panel: color-mix(in srgb, var(--bg-rail, #111318) 92%, #050608);
+  --test-ux-accent: var(--accent, #8cc8ff);
+}
+
+/* Give project groups the breathing room and quiet 1px framing shown in the reference. */
+.rail__body .section { margin-block: 8px 12px; }
+.rail__body .section + .section { border-top: 1px solid color-mix(in srgb, var(--line, #2b303a) 70%, transparent); padding-top: 10px; }
+.rail__body .proj { margin-block: 7px; padding: 3px 5px 5px; border: 1px solid color-mix(in srgb, var(--line, #2b303a) 50%, transparent); border-radius: 12px; background: color-mix(in srgb, var(--bg-rail, #111318) 82%, transparent); }
+.rail__body .proj + .proj { margin-top: 9px; }
+.rail__body .proj__head { min-height: 32px; height: 32px; border: 1px solid color-mix(in srgb, var(--line-strong, #3c414d) 56%, transparent); border-radius: 9px; background: color-mix(in srgb, var(--surface, #171a21) 48%, transparent); }
+.rail__body .proj__head:hover, .rail__body .proj__head:focus-within { border-color: color-mix(in srgb, var(--test-ux-accent) 45%, var(--line-strong, #3c414d)); background: color-mix(in srgb, var(--surface-2, #202530) 66%, transparent); }
+.rail__body .proj__drawer { padding: 4px 3px 1px; }
+.rail__body .proj__sessions { display: grid; gap: 3px; padding: 2px 0 1px; }
+.rail__body .sessrow { min-height: 33px; height: auto; border: 1px solid transparent; border-radius: 9px; }
+.rail__body .sessrow:hover, .rail__body .sessrow:focus-within { border-color: color-mix(in srgb, var(--line-strong, #3c414d) 72%, transparent); }
+.rail__body .sessrow.is-active { border-color: color-mix(in srgb, var(--test-ux-accent) 38%, var(--line-strong, #3c414d)); }
+
+/* The optimize action sits alongside the native send orb without changing send semantics. */
+.composer__prompt:has(.test-optimize-button) textarea { padding-right: 112px; }
+.test-optimize-button { position: absolute; z-index: 4; right: 51px; bottom: 9px; min-height: 30px; padding: 0 10px; border: 1px solid color-mix(in srgb, var(--test-ux-accent) 48%, var(--line-strong, #3c414d)); border-radius: 999px; color: var(--text-2, #c9d0dc); background: color-mix(in srgb, var(--surface-2, #202530) 78%, transparent); font: inherit; font-size: 12px; cursor: pointer; transition: border-color .15s ease, color .15s ease, background .15s ease, transform .15s ease; }
+.test-optimize-button:hover:not(:disabled), .test-optimize-button:focus-visible { color: var(--text, #f3f5f8); border-color: var(--test-ux-accent); background: color-mix(in srgb, var(--test-ux-accent) 18%, var(--surface-2, #202530)); }
+.test-optimize-button:active:not(:disabled) { transform: translateY(1px); }
+.test-optimize-button:disabled { opacity: .45; cursor: default; }
+
+.test-ux-modal-backdrop { position: fixed; z-index: 2147483001; inset: 0; display: grid; place-items: center; padding: 24px; background: rgb(3 5 8 / .68); backdrop-filter: blur(8px); animation: test-ux-fade-in .16s ease-out both; }
+.test-ux-modal { width: min(620px, 100%); max-height: min(760px, 92vh); overflow: auto; color: var(--text, #f3f5f8); background: var(--test-ux-panel); border: 1px solid var(--test-ux-line); border-radius: 18px; box-shadow: 0 24px 80px rgb(0 0 0 / .48), 0 0 0 1px rgb(255 255 255 / .03) inset; }
+.test-ux-modal__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; padding: 21px 22px 14px; border-bottom: 1px solid color-mix(in srgb, var(--line, #2b303a) 78%, transparent); }
+.test-ux-modal__title { margin: 0; font-size: 16px; font-weight: 650; letter-spacing: .01em; }
+.test-ux-modal__hint { margin: 6px 0 0; color: var(--text-3, #9098a8); font-size: 12px; line-height: 1.5; }
+.test-ux-modal__close { width: 30px; height: 30px; border: 0; border-radius: 9px; color: var(--text-3, #9098a8); background: transparent; font-size: 20px; line-height: 1; cursor: pointer; }
+.test-ux-modal__close:hover, .test-ux-modal__close:focus-visible { color: var(--text, #f3f5f8); background: var(--surface-2, #202530); }
+.test-ux-modal__body { display: grid; gap: 14px; padding: 18px 22px 20px; }
+.test-ux-modal__label { display: grid; gap: 7px; color: var(--text-2, #c9d0dc); font-size: 12px; }
+.test-ux-modal textarea, .test-ux-modal input, .test-ux-modal select { width: 100%; box-sizing: border-box; color: var(--text, #f3f5f8); background: color-mix(in srgb, var(--surface-2, #202530) 84%, #050608); border: 1px solid var(--test-ux-line); border-radius: 10px; outline: none; font: inherit; font-size: 13px; line-height: 1.55; }
+.test-ux-modal textarea { min-height: 152px; resize: vertical; padding: 11px 12px; }
+.test-ux-modal input, .test-ux-modal select { min-height: 38px; padding: 8px 10px; }
+.test-ux-modal :is(textarea, input, select):focus { border-color: var(--test-ux-accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--test-ux-accent) 17%, transparent); }
+.test-ux-modal__footer { display: flex; justify-content: flex-end; gap: 9px; padding: 0 22px 20px; }
+.test-ux-modal__button { min-height: 36px; padding: 0 15px; border: 1px solid var(--test-ux-line); border-radius: 10px; color: var(--text-2, #c9d0dc); background: var(--surface-2, #202530); font: inherit; font-size: 12px; cursor: pointer; }
+.test-ux-modal__button:hover, .test-ux-modal__button:focus-visible { border-color: color-mix(in srgb, var(--test-ux-accent) 65%, var(--test-ux-line)); color: var(--text, #f3f5f8); }
+.test-ux-modal__button--primary { border-color: color-mix(in srgb, var(--test-ux-accent) 70%, transparent); color: #071018; background: var(--test-ux-accent); }
+.test-ux-modal__button--primary:hover, .test-ux-modal__button--primary:focus-visible { color: #071018; background: color-mix(in srgb, var(--test-ux-accent) 85%, white); }
+.test-ux-modal__required { color: #ffb4a8; }
+.test-ux-modal__error { margin: -4px 0 0; color: #ffb4a8; font-size: 12px; }
+@keyframes test-ux-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@media (max-width: 640px) { .test-ux-modal-backdrop { padding: 12px; place-items: end center; } .test-ux-modal { max-height: 88vh; border-radius: 16px 16px 12px 12px; } .test-ux-modal__head, .test-ux-modal__body { padding-inline: 17px; } .test-ux-modal__footer { padding-inline: 17px; } }
+@media (prefers-reduced-motion: reduce) { .test-ux-modal-backdrop { animation: none; } .test-optimize-button { transition: none; } }
+
+
+
+

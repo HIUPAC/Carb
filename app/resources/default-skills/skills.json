@@ -1,0 +1,99 @@
+{
+  "plugin": {
+    "name": "carb",
+    "description": "Agent Skills that ship with Carb.",
+    "author": {
+      "name": "Carb"
+    }
+  },
+  "skills": [
+    {
+      "folder": "cinetic",
+      "summary": "cinematic videos and motion design made in code",
+      "repository": "Leonxlnx/cinetic",
+      "ref": "main",
+      "commit": "ecfa6605de1adb9345ce937724810dc32267d068",
+      "path": "skills/cinetic",
+      "license": "MIT",
+      "licenseFile": "LICENSE",
+      "archiveSha256": "c613676f9adbf163ff3cb1c88ab597eac7fd67c884e3d0fcc5348507f1ff0cca",
+      "files": 106,
+      "bytes": 2623504,
+      "upstreamTreeSha256": "f935393e436ca7bba81bd1b2da5de72a47236ee9b9e3e44129f271e3327cc82e"
+    },
+    {
+      "folder": "design-taste-frontend",
+      "summary": "art direction for websites and app screens (tasteskill)",
+      "repository": "Leonxlnx/taste-skill",
+      "ref": "v2.5",
+      "commit": "939b5640b56614f0e4cd1189311d106c451497e6",
+      "path": "skills/taste-skill",
+      "license": "MIT",
+      "licenseFile": "LICENSE",
+      "archiveSha256": "e16faf9fc55ce08d0472b440b6e5a37f6386c4982b269d6ae87a4f69abc8cb67",
+      "files": 210,
+      "bytes": 9679482,
+      "upstreamTreeSha256": "9e16a4b47eae6ccf8784da95555977b02d40ae5df129a585bf69d2eafe307fa6"
+    },
+    {
+      "folder": "cook",
+      "summary": "long reference-matching loops for ambitious visual builds",
+      "repository": "Leonxlnx/cook",
+      "ref": "main",
+      "commit": "b23cac6fd9439dfddcab61b14808e7bf72549b46",
+      "path": "",
+      "license": "MIT",
+      "licenseFile": "LICENSE",
+      "exclude": [
+        ".gitignore",
+        "README.md"
+      ],
+      "archiveSha256": "da47160d18e41b31863a33ef74f72a8e3505ec38b9c926cce8dcb441d46ff708",
+      "files": 10,
+      "bytes": 44021,
+      "upstreamTreeSha256": "51681e41a3e59d2e4646e84d54d71499773f939025f63afead18277a33c7f0f4"
+    },
+    {
+      "folder": "image-recognition",
+      "summary": "vision-first inspection, OCR fallback, and visual reference briefs",
+      "files": 1,
+      "bytes": 1564
+    },
+    {
+      "folder": "voice-input",
+      "summary": "microphone transcription, transcript cleanup, and uncertainty handling",
+      "files": 1,
+      "bytes": 1012
+    },
+    {
+      "folder": "ppt-master",
+      "summary": "editable PPTX generation, editing, templates, and visual review",
+      "files": 12962,
+      "bytes": 38533935
+    },
+    {
+      "folder": "program-ui-design",
+      "summary": "reference-driven application UI design with accessible states",
+      "files": 1,
+      "bytes": 1402
+    },
+    {
+      "folder": "request-optimizer",
+      "summary": "user-controlled professional rewriting for composer drafts",
+      "files": 1,
+      "bytes": 1183
+    },
+    {
+      "folder": "trae-programming",
+      "summary": "Trae-style repository-first coding workflow",
+      "files": 1,
+      "bytes": 1336
+    },
+    {
+      "folder": "workbuddy-agent",
+      "summary": "configurable Tencent WorkBuddy coding adapter with verification boundary",
+      "files": 1,
+      "bytes": 1298
+    }
+  ]
+}

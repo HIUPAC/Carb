@@ -1,0 +1,11 @@
+{
+  "productName": "Carb",
+  "executable": "Carb.exe",
+  "publisher": "冰轮",
+  "version": "5.6.12",
+  "appId": "Icewheel.Carb",
+  "installerId": "65CB7ABA-432C-4AC1-BA3E-93F8CA097145",
+  "iconSource": "D:\\DESKTOP\\Test.lnk -> D:\\Test\\Test.exe,0",
+  "iconIco": "D:\\TasteCode\\carb-work\\branding\\source-shortcut.ico",
+  "iconPng": "D:\\TasteCode\\carb-work\\branding\\source-shortcut.png"
+}
