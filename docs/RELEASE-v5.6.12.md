@@ -1,59 +1,57 @@
 # Carb 5.6.12 · Windows x64
 
-Release 发布时间（北京时间 UTC+8）：**2026-11-17 11:55:16**。
+Release 发布时间（北京时间 UTC+8）：**2026-11-17 16:00:55**。
 
-Carb 是面向 AI 新手的桌面工作台，支持连接 API／CLI 模型、打开本地项目、处理文件、检查变更、使用终端并按任务扩展技能。
+本页记录 5.6.12 版本的发布内容。请进入 [Carb GitHub Releases](https://github.com/HIUPAC/Carb/releases) 查看附件；在 Release 页面中可自行挑选版本和文件。
 
-## 下载
+## 本次发布内容
 
-| 文件 | 用途 | 大小 | 文件上传时间（北京时间 UTC+8） | 文件更新时间（北京时间 UTC+8） |
-| --- | --- | --- | --- | --- |
-| [Carb-Setup-5.6.12-win-x64.exe](https://github.com/HIUPAC/Carb/releases/download/v5.6.12/Carb-Setup-5.6.12-win-x64.exe) | 当前用户安装版，默认安装到 `%LocalAppData%\Programs\Carb` | 163,308,043 字节 | 2026-11-17 11:50:47 | 2026-11-17 11:54:06 |
-| [Carb-Setup-5.6.12-win-x64.exe.sha256](https://github.com/HIUPAC/Carb/releases/download/v5.6.12/Carb-Setup-5.6.12-win-x64.exe.sha256) | 安装包 SHA-256 | 97 字节 | 2026-11-17 11:50:47 | 2026-11-17 11:50:47 |
-| [Carb-Setup-5.6.12-win-x64.manifest.json](https://github.com/HIUPAC/Carb/releases/download/v5.6.12/Carb-Setup-5.6.12-win-x64.manifest.json) | 版本、签名状态及载荷文件摘要清单 | 3,185,238 字节 | 2026-11-17 11:50:47 | 2026-11-17 11:50:52 |
-| [Carb-5.6.12-win-x64-portable.zip](https://github.com/HIUPAC/Carb/releases/download/v5.6.12/Carb-5.6.12-win-x64-portable.zip) | 同版本完整运行载荷，解压后运行 `Carb-5.6.12/Carb.exe` | 211,864,078 字节 | 2026-11-17 11:50:47 | 2026-11-17 11:54:30 |
-| [Carb-5.6.12-win-x64-portable.zip.sha256](https://github.com/HIUPAC/Carb/releases/download/v5.6.12/Carb-5.6.12-win-x64-portable.zip.sha256) | 便携包 SHA-256 | 100 字节 | 2026-11-17 11:50:47 | 2026-11-17 11:50:47 |
+5.6.12 是本仓库首次整理发布的 Windows x64 桌面版本。这条记录描述本仓库的发行基线，不表示相对更早产品版本的全部新增功能。
 
-所有可运行软件及校验附件均在 [v5.6.12 Release](https://github.com/HIUPAC/Carb/releases/tag/v5.6.12) 展示。上表时间来自 GitHub Release 附件 `created_at` 与 `updated_at`，均换算为北京时间；它们分别表示上传记录创建时间和文件记录最后更新时间。
+- 提供 Windows x64 当前用户安装版和完整便携运行包，并附 SHA-256 校验文件及安装器载荷 manifest。
+- 整理 Carb 的应用 JavaScript／资源快照、当前维护工具、10 个内置技能、品牌资源及许可材料。
+- 桌面工作区支持 API／CLI 模型连接、本地项目与对话、文件查看、变更审查、终端和技能扩展；模型服务、额度及部分任务工具需另行配置。
+- 安装包与便携运行载荷未经数字签名。便携包解压后运行，但默认用户资料仍位于系统用户资料目录。
 
-安装包 SHA-256：
+## 附件及推送时间
+
+以下时间取自 GitHub Release 资产记录，统一显示为北京时间（UTC+8）。上传时间是附件记录创建时间，更新时间是 GitHub 资产记录最后更新时间；大小以字节列示，SHA-256 为 GitHub 资产摘要。
+
+| 文件 | 用途 | 大小（字节） | 上传时间（UTC+8） | 更新时间（UTC+8） | SHA-256 |
+| --- | --- | ---: | --- | --- | --- |
+| `Carb-Setup-5.6.12-win-x64.exe` | Windows x64 安装版 | 163,308,043 | 2026-11-17 15:44:42 | 2026-11-17 15:46:25 | `4da826fb0b947001036ba07ad1ed32fecd92caf04cb8ed958fbca57d5cbdb0b8` |
+| `Carb-Setup-5.6.12-win-x64.exe.sha256` | 安装包 SHA-256 校验文件 | 97 | 2026-11-17 15:46:24 | 2026-11-17 15:46:26 | `7155ebe55b660a9efef0f9dfeef0ee7a747cebe594d043e0412425479845847f` |
+| `Carb-Setup-5.6.12-win-x64.manifest.json` | 安装器版本、签名状态和载荷文件清单 | 3,185,301 | 2026-11-17 15:46:26 | 2026-11-17 15:46:36 | `e5a2b947148c93b3346bb708da17407e4739e3c65ee60a3a08166b97be75a7dc` |
+| `Carb-5.6.12-win-x64-portable.zip` | 完整便携运行包 | 211,864,078 | 2026-11-17 15:46:36 | 2026-11-17 15:50:48 | `d1795b8e4ba71882c597dc1d02c44c08deb9b04c36a5ceadbf16080a2ec97878` |
+| `Carb-5.6.12-win-x64-portable.zip.sha256` | 便携包 SHA-256 校验文件 | 100 | 2026-11-17 15:50:48 | 2026-11-17 15:50:49 | `9f03c76e471cef0623d2d7aab8aa8a1e3a216bfd8186fa0048194eb00ac12b4c` |
+
+该版本本次推送的修改内容见上方版本说明；Release 页面列出本次推送的全部附件，用户可自行挑选安装版或便携版。
+
+### 文件校验
+
+原始 5.6.12 安装包 SHA-256：
 
 ```text
 4da826fb0b947001036ba07ad1ed32fecd92caf04cb8ed958fbca57d5cbdb0b8
 ```
 
-便携包 SHA-256：
+原始 5.6.12 便携包 SHA-256：
 
 ```text
 d1795b8e4ba71882c597dc1d02c44c08deb9b04c36a5ceadbf16080a2ec97878
 ```
 
-安装包和运行载荷未经数字签名。更新前请退出 Carb 并备份重要资料；**卸载安装版会永久删除默认本地设置、会话、凭据和缓存**。便携包仍使用默认的用户资料路径，不是完全自包含的用户资料模式。
+本次发布的安装包、便携包及对应 SHA-256 校验附件已经交叉核对；上表 SHA-256 与 GitHub Release 资产摘要一致。
 
-## 本版内容
+## 安装提示
 
-此版本首次在本 GitHub 仓库整理发布。发行内容包括 API／CLI 模型连接、本地项目与对话、文件查看与变更审查、终端、10 个内置技能、本地技能导入、维护代码与发布资源快照。该说明记录本仓库首次发布的内容，不能视为相对更早版本的全部新增功能。
+普通安装可在 Release 页面选择 `Carb-Setup-5.6.12-win-x64.exe`。便携使用可选择同版本 ZIP，核对摘要后解压运行。卸载安装版会删除默认本地设置、会话、凭据和缓存；卸载前请备份。便携包仍使用默认用户资料路径，并非完全自包含的资料模式。
 
-## 发行范围
+## 版本历史
 
-本次仅发布 Windows x64。API／CLI 模型服务、额度和相关任务工具需要另行配置。技能是工作流与工具指导，不是附带的大模型。
+| 版本 | 推送／发布内容 | Release 页面 |
+| --- | --- | --- |
+| 5.6.13 | 在设置新增「联系我们」「检查更新」网页入口；更新发布快照及发行资料。详情和该次附件时间见 [5.6.13 发行说明](RELEASE-v5.6.13.md)。 | [查看 Release 与附件](https://github.com/HIUPAC/Carb/releases) |
+| 5.6.12 | 首次在此仓库整理发布 Windows x64 安装版、完整便携包、应用快照、维护工具、内置技能与许可材料。 | [查看 Release 与附件](https://github.com/HIUPAC/Carb/releases) |
 
-仓库同时提供当前维护覆盖代码、发布 JavaScript／资源快照、10 个内置技能、安装器及完整随包许可材料。当前没有完整原始 TS／TSX 工程；从 GitHub 自动生成的 Source code 压缩包不会包含 Electron 运行时。
-
-主程序继承 Apache-2.0 并保留 TasteCode NOTICE；第三方组件、技能和商业 SDK 遵循各自条款，见仓库 README 及 `docs/LICENSING.md`。
-
-## 已完成的验证
-
-- 当前安装包 SHA-256 与现有 manifest 和校验文件一致。
-- 14,099 个导出快照文件逐个核对字节数与 SHA-256。
-- 文档本地链接、许可材料和发行清单完整性检查通过。
-- 便携包校验与载荷准备脚本经本地解压验证。
-
-这些检查不代替模型任务、完整安装流程及 Office 成果的内容与排版验收。
-
-## 版本记录
-
-| 版本 | Release 发布时间（北京时间 UTC+8） | 该版本修改内容 | 安装包与完整便携包 |
-| --- | --- | --- | --- |
-| 5.6.13 | 以 GitHub Release 页面时间为准 | 设置新增「联系我们」「检查更新」网页按钮，支持中／日／英与失败地址提示；更新发行快照与校验资料，统一 Release 下载入口并记录附件上传时间 | [全部附件](https://github.com/HIUPAC/Carb/releases/tag/v5.6.13) |
-| 5.6.12 | 2026-11-17 11:55:16 | 首次在本仓库整理发布 Windows x64 安装包、完整便携包、维护快照与许可材料 | [全部附件](https://github.com/HIUPAC/Carb/releases/tag/v5.6.12) |
+完整项目介绍见 [仓库说明](../README.md)，完整版本摘要见 [修改日志](../CHANGELOG.md)。

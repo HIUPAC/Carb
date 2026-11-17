@@ -16,14 +16,14 @@ Set-Location .\Carb
 pwsh -File .\scripts\prepare-payload.ps1
 ```
 
-脚本读取 `release/windows-x64.json` 中的版本、便携 ZIP 文件名、官方 GitHub Release URL 和 SHA-256。当前对应：
+脚本读取 `release/windows-x64.json` 中的版本、便携 ZIP 文件名、官方 GitHub 资产地址和 SHA-256。当前对应：
 
 ```text
-https://github.com/HIUPAC/Carb/releases/tag/v5.6.13
+https://github.com/HIUPAC/Carb/releases
 Carb-5.6.13-win-x64-portable.zip
 ```
 
-也可以先从该 Release 下载 ZIP，再指定本地文件；使用此方式不会下载载荷：
+打开 GitHub Releases 后，选择 5.6.13 并下载对应 ZIP。也可以将已下载的 ZIP 路径传给脚本；使用此方式不会再次下载载荷：
 
 ```powershell
 pwsh -File .\scripts\prepare-payload.ps1 `
