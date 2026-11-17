@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Carb">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Card">
   <rect width="256" height="256" rx="54" fill="#171717"/>
   <g fill="none" stroke="#e5e5e5" stroke-width="9.5" stroke-linecap="round" stroke-linejoin="round">
     <path d="M128 39.5 203 83v89.5L128 216 53 172.5V83z"/>
