@@ -10,6 +10,7 @@
 *.ico binary
 *.webp binary
 *.woff2 binary
+docs/index.html -text whitespace=cr-at-eol
 
 # Snapshot bytes are matched against the shipped release, including CRLF files.
 app/** -text

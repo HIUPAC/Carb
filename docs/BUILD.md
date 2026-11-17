@@ -1,6 +1,6 @@
 # 准备运行环境与维护构建
 
-本仓库发布 Carb 5.6.12 的应用快照、维护覆盖代码、品牌资源和打包工具。仓库包含从当前应用整理的 JavaScript／资源，不是完整的原始 TypeScript 工程；不能据此保证通过 `npm install`、`npm run dev` 或 `npm run build` 复现原工程。
+本仓库发布 Carb 5.6.13 的应用快照、维护覆盖代码、品牌资源和打包工具。仓库包含从当前应用整理的 JavaScript／资源，不是完整的原始 TypeScript 工程；不能据此保证通过 `npm install`、`npm run dev` 或 `npm run build` 复现原工程。
 
 应用快照分为 `app/asar`（归档中的主程序与 `@harness` 业务代码）和 `app/resources`（Web、内置技能等资源）。其范围与文件指纹见 `app/README.md` 及 `app/snapshot-manifest.json`。
 
@@ -19,21 +19,21 @@ pwsh -File .\scripts\prepare-payload.ps1
 脚本读取 `release/windows-x64.json` 中的版本、便携 ZIP 文件名、官方 GitHub Release URL 和 SHA-256。当前对应：
 
 ```text
-https://github.com/HIUPAC/Carb/releases/tag/v5.6.12
-Carb-5.6.12-win-x64-portable.zip
+https://github.com/HIUPAC/Carb/releases/tag/v5.6.13
+Carb-5.6.13-win-x64-portable.zip
 ```
 
 也可以先从该 Release 下载 ZIP，再指定本地文件；使用此方式不会下载载荷：
 
 ```powershell
 pwsh -File .\scripts\prepare-payload.ps1 `
-  -ArchivePath C:\Downloads\Carb-5.6.12-win-x64-portable.zip
+  -ArchivePath C:\Downloads\Carb-5.6.13-win-x64-portable.zip
 ```
 
-脚本先比对 SHA-256，通过后检查 ZIP 内容，再在仓库 `.build/` 下解压。ZIP 的顶层目录应为 `Carb-5.6.12`；准备完成后的入口为：
+脚本先比对 SHA-256，通过后检查 ZIP 内容，再在仓库 `.build/` 下解压。ZIP 的顶层目录应为 `Carb-5.6.13`；准备完成后的入口为：
 
 ```powershell
-& .\.build\Carb-5.6.12\Carb.exe
+& .\.build\Carb-5.6.13\Carb.exe
 ```
 
 脚本不会启动应用、执行安装向导、覆盖已有目标目录或修改输入 ZIP。目标目录已经存在时会停止；先退出运行中的 Carb，再将该目录改名保存，或使用新的仓库目录重新准备。下载或校验失败时应检查 Release 附件、网络和清单，不应绕过摘要检查。
@@ -42,7 +42,7 @@ pwsh -File .\scripts\prepare-payload.ps1 `
 
 ## 修改代码与应用快照的关系
 
-`.build/Carb-5.6.12/` 是独立的已发布运行载荷。编辑仓库中的快照或 `carb-work/overlay` 不会自动更新这个运行目录。
+`.build/Carb-5.6.13/` 是独立的已发布运行载荷。编辑仓库中的快照或 `carb-work/overlay` 不会自动更新这个运行目录。
 
 Electron 主程序与后端的大量代码位于 `resources/app.asar`，部分原生模块位于 `resources/app.asar.unpacked`，前端文件位于 `resources/web`。ASAR 成员及 Windows 可执行文件之间存在完整性校验。修改归档内容时，需要正确重建 ASAR 成员摘要及归档摘要，并同步更新 EXE 中相关完整性资源；直接把修改后的 JavaScript 复制进目录不能视为完成打包。
 
@@ -52,7 +52,7 @@ Electron 主程序与后端的大量代码位于 `resources/app.asar`，部分�
 
 ## `carb-work` 的旧基包维护流水线
 
-`carb-work/tools/stage-carb.mjs` 保留的是当前维护所用的“指定基包 + 覆盖代码 + 品牌处理 + 验证 + 安装器”流程。它以 `Test-0.5.11-ux-enhancements` 为起点，并明确校验该基包产品名为 `Test`、版本为 `0.5.11`。当前 5.6.12 便携载荷不能直接替代这个旧基包。
+`carb-work/tools/stage-carb.mjs` 保留的是当前维护所用的“指定基包 + 覆盖代码 + 品牌处理 + 验证 + 安装器”流程。它以 `Test-0.5.11-ux-enhancements` 为起点，并明确校验该基包产品名为 `Test`、版本为 `0.5.11`。当前 5.6.13 便携载荷不能直接替代这个旧基包。
 
 只有具备完整基包及下列外部环境的维护者，才能在核对并迁移路径后使用这条流水线：
 
@@ -93,4 +93,4 @@ node .\carb-work\tools\verify-release-artifacts.mjs
 
 `carb-work/tools/build-mac.py` 为另一条打包工具，需要已暂存桌面载荷、固定版本 Electron 43.4.0 的 macOS x64／arm64 ZIP、指定版本原生模块包及 `rcodesign`。它不是本页 Windows 准备脚本的一部分。
 
-已有 macOS 预览产物的版本与签名状态应按对应发行说明判断，不能从工具文件的存在推断当前 5.6.12 已有正式 macOS 发行或已通过 Apple 公证。
+已有 macOS 预览产物的版本与签名状态应按对应发行说明判断，不能从工具文件的存在推断当前 5.6.13 已有正式 macOS 发行或已通过 Apple 公证。

@@ -18,6 +18,7 @@ import { patchApiEffort, patchModelConnections, patchModelEffortRenderer } from 
 import { patchCliDetection, patchCliUpdatePath, patchProviderCliDetection, patchProviderStatusContract, patchCodexUpdateCommand } from './patch-cli-detection.mjs';
 import { cliInstallNativePaths, patchCliInstall, patchInstallTerminal } from './patch-cli-install.mjs';
 import { patchCliStatusWeb } from './patch-cli-status-web.mjs';
+import { patchContactSettings } from './patch-contact-settings.mjs';
 
 const run = promisify(execFile);
 const root = path.resolve(import.meta.dirname, '..');
@@ -241,6 +242,7 @@ async function stage() {
     if (/^assets\/transport-validation-[^/]+\.js$/.test(name)) source = patchSkillTransportValidation(source);
     if (/^assets\/InstallTerminal-[^/]+\.js$/.test(name)) source = patchInstallTerminal(source);
     source = patchCliStatusWeb(name, source);
+    source = patchContactSettings(name, source);
     await writeFile(filename, source);
   }
   // Brand bundled plugin metadata while retaining all third-party skill files.

@@ -1,5 +1,5 @@
 ﻿#ifndef AppVersion
-  #define AppVersion "5.6.12"
+  #define AppVersion "5.6.13"
 #endif
 #ifndef PayloadDir
   #error PayloadDir must identify the complete Carb application directory.

@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { patchRendererLifecycle } from './patch-login-renderer-recovery.mjs';
 
 export const product = Object.freeze({
-  name: 'Carb', slug: 'carb', version: '5.6.12', publisher: '冰轮',
+  name: 'Carb', slug: 'carb', version: '5.6.13', publisher: '冰轮',
   appId: 'Icewheel.Carb', installerId: '65CB7ABA-432C-4AC1-BA3E-93F8CA097145',
   endpoint: 'ws://127.0.0.1:16481',
 });

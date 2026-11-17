@@ -1,8 +1,8 @@
 ﻿[CmdletBinding()]
 param(
     [ValidatePattern('^\d+\.\d+\.\d+(?:\.\d+)?$')]
-    [string] $Version = '5.6.12',
-    [string] $PayloadDirectory = 'D:\TasteCode\carb-work\Carb-5.6.12',
+    [string] $Version = '5.6.13',
+    [string] $PayloadDirectory = 'D:\TasteCode\carb-work\Carb-5.6.13',
     [string] $OutputDirectory = 'D:\TasteCode\安装包',
     [string] $IconFile = 'D:\TasteCode\carb-work\branding\source-shortcut.ico',
     [string] $IsccPath = 'D:\UIAgent\artifacts\build-tools\InnoSetup\ISCC.exe'

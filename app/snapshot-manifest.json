@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "product": "Carb",
-  "version": "5.6.12",
+  "version": "5.6.13",
   "snapshotType": "released-application-code-and-resources",
-  "sourceRelease": "Carb-5.6.12",
+  "sourceRelease": "Carb-5.6.13",
   "sourceAsar": {
     "path": "resources/app.asar",
-    "sha256": "201f25e65a8e3e5c389e5012247dbb110f231d75c56de7af3430da67dbb7d623",
-    "headerSha256": "1914e26ccf2c6aa639f520d4f6a996f13068eff342f845ca6223f3fbaa4fc8a3"
+    "sha256": "809da30ab75314f86c8fabcebb36ac1f8d6c674a4242758fa63fcf43846d95eb",
+    "headerSha256": "0c59af3398acb8c41c244fb4588c07ac36ed335bc1c1b51bf0e706437c80ecb1"
   },
   "scope": {
     "packedAsar": [
@@ -358,7 +358,7 @@
     "thirdPartyDependencies": "Third-party node_modules, including commercial SDK implementations, are not exported."
   },
   "fileCount": 14099,
-  "totalBytes": 72087104,
+  "totalBytes": 72088727,
   "digestScope": "Original release snapshot files only; README.md and snapshot-manifest.json are excluded.",
   "files": [
     {
@@ -3010,7 +3010,7 @@
     {
       "path": "asar/package.json",
       "bytes": 496,
-      "sha256": "41c8a133dbe41e6d682a782a82fb57cded062e796df5c3e7826fcb48fa9c2b8d",
+      "sha256": "767a8b55ab11bd1a168ea6d841275b7f64ea60f53c728d0e43b45e0dc69daf3c",
       "source": "resources/app.asar::package.json"
     },
     {
@@ -84681,8 +84681,8 @@
     },
     {
       "path": "resources/web/assets/Settings-CdgxHJV3.js",
-      "bytes": 201907,
-      "sha256": "73750c94437e09f5334d10fcb4b6c102e8656aaa6c17b15d7a50216573fad8f4",
+      "bytes": 203530,
+      "sha256": "d7274f8c207227d03aebb05808284e1e512961c2dd02ab52ab8c4a88839ba82e",
       "source": "resources/web/assets/Settings-CdgxHJV3.js"
     },
     {

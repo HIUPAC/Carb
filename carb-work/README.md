@@ -1,4 +1,4 @@
-# Carb 5.6.12 Windows build
+# Carb 5.6.13 Windows build
 
 For installation, first use, modules, data handling, and licensing, see the [Chinese product README](../README.md). This file describes the original local maintenance workspace. The GitHub repository includes its tools and overlays; the external baseline and verification runtimes still require separate preparation, as described in [BUILD.md](../docs/BUILD.md).
 
@@ -14,7 +14,11 @@ node .\carb-work\tools\verify-release-artifacts.mjs
 & .\carb-work\tools\Build-Carb.ps1
 ```
 
-The stage writes `carb-work\Carb-5.6.12`; the unsigned installer and its manifest are written to `安装包\Carb-Setup-5.6.12-win-x64.exe`. `stage-carb.mjs --refresh` moves the previous payload into `carb-work\verification\payload-backups` before rebuilding. The installer build refuses to overwrite an existing installer.
+The stage writes `carb-work\Carb-5.6.13`; the unsigned installer and its manifest are written to `安装包\Carb-Setup-5.6.13-win-x64.exe`. `stage-carb.mjs --refresh` moves the previous payload into `carb-work\verification\payload-backups` before rebuilding. The installer build refuses to overwrite an existing installer.
+
+Settings → 联系我们 opens `https://houpac.top/` in the system browser through the desktop shell's external-link bridge.
+
+Settings → 检查更新 opens `https://github.com/HIUPAC/Carb/releases` in the system browser so users can view and download the latest release.
 
 Codex readiness is based on its standalone CLI. The desktop application is detected separately; its GUI, private CLI, and daemon do not satisfy CLI installation. Detection, version checks, sessions, login, and updates share the selected CLI path. Existing CLI installations skip repeat installation. Command terminals retain readable dimensions while hidden, and installation failures return a concise error and nonzero exit code.
 
