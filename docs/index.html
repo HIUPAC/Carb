@@ -23,6 +23,11 @@
     .cta{padding:47px 0;background:var(--dark);color:#f4f5ef}.cta-row{display:flex;align-items:center;justify-content:space-between;gap:28px}.cta h2{margin:0 0 8px;font-size:clamp(25px,3.5vw,38px);letter-spacing:-.06em;font-weight:600}.cta p{margin:0;color:#aab1a4;font-size:11px;line-height:1.8}.cta .button{border-color:var(--green);background:var(--green);color:#26301f}.cta .button:hover{background:var(--green-dark)}
     footer{padding:25px 0 34px;background:var(--dark);color:#aeb5a8}.footer-row{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:19px;border-top:1px solid #3b4139}.footer-row .brand{color:#f4f5ef;font-size:16px}.footer-links{display:flex;flex-wrap:wrap;gap:20px;font-size:10px}.footer-note{margin:17px 0 0;color:#858e81;font-size:9px;line-height:1.8}
     @media(max-width:760px){.wrap{width:min(100% - 34px,560px)}.nav{height:64px}.nav-links{display:none;position:absolute;left:0;right:0;top:64px;padding:17px 24px 20px;background:var(--paper);border-bottom:1px solid var(--line);flex-direction:column;gap:16px}.nav-links.open{display:flex}.nav-right{gap:10px}.nav-cta{padding:10px 12px;font-size:11px}.menu-toggle{display:block}.hero{padding:65px 0 54px}.hero-grid{grid-template-columns:1fr;gap:35px}.hero-copy>p{font-size:14px}.screen{max-width:540px;margin:auto}.facts-row,.section-heading,.cta-row{align-items:flex-start;flex-direction:column}.fact-list{gap:12px 18px}.section{padding:70px 0}.section-heading{gap:14px;margin-bottom:26px}.feature-grid{grid-template-columns:1fr}.feature-card{min-height:0}.flow-section{padding:64px 0}.flow-grid{grid-template-columns:1fr;gap:25px}.release-row{grid-template-columns:90px 1fr;gap:12px}.release-link{grid-column:2;justify-self:start}.footer-row{align-items:flex-start;flex-direction:column}.footer-links{gap:12px 18px}}
+    .community{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:25px;padding:25px 0;border-top:1px solid #3b4139;border-bottom:1px solid #3b4139}
+    .community h2{margin:0 0 8px;color:#f4f5ef;font-size:21px;font-weight:600;letter-spacing:-.04em}.community p{margin:0;color:#aeb5a8;font-size:12px;line-height:1.8}.community .group-number{color:#d5f36a;font-family:var(--mono)}
+    .community-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px}.community-join,.community-qr summary{display:inline-flex;min-height:44px;align-items:center;justify-content:center;gap:9px;padding:0 17px;border:1px solid #626d59;border-radius:999px;font:500 12px var(--sans);cursor:pointer}.community-join{background:var(--green);border-color:var(--green);color:#26301f}.community-join:hover{background:var(--green-dark)}.community-qr summary{color:#e1e6da;list-style:none}.community-qr summary::-webkit-details-marker{display:none}.community-qr summary:hover{background:#343c30}.community-qr summary:focus-visible,.community a:focus-visible{outline:2px solid var(--green);outline-offset:4px}
+    .community-qr{position:relative}.community-qr[open] summary{border-color:var(--green)}.community-popover{position:absolute;right:0;bottom:100%;z-index:12;width:320px;max-width:calc(100vw - 34px);padding-bottom:12px}.community-card{margin:0;padding:16px;border:1px solid #dfe2d8;border-radius:16px;background:#fff;color:var(--ink);box-shadow:0 16px 50px #0004}.community-card img{display:block;width:100%;height:auto;border-radius:9px}.community-card figcaption{margin-top:12px;color:#626b60;font-size:11px;line-height:1.8;text-align:center}.community-card figcaption a{display:inline-block;margin-top:5px;color:#465d28;text-decoration:underline;text-underline-offset:3px}
+    @media(max-width:760px){.community{align-items:flex-start;flex-direction:column;gap:18px}.community-actions{width:100%;align-items:flex-start}.community-qr[open]{flex-basis:100%}.community-popover{position:static;width:min(320px,100%);margin-top:12px;padding-bottom:0}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
   </style>
 </head>
@@ -50,9 +55,29 @@
     </div></div></section>
     <section class="cta"><div class="wrap cta-row"><div><h2>从一个真实任务开始。</h2><p>前往 Release 页面，自行挑选 Carb 版本与下载文件。</p></div><a class="button" href="https://github.com/HIUPAC/Carb/releases" target="_blank" rel="noreferrer">查看所有版本 <span aria-hidden="true">↗</span></a></div></section>
   </main>
-  <footer><div class="wrap"><div class="footer-row"><a class="brand" href="#top"><img src="./carb-icon.svg" alt="" />Carb</a><div class="footer-links"><a href="https://github.com/HIUPAC/Carb" target="_blank" rel="noreferrer">GitHub 仓库 ↗</a><a href="https://github.com/HIUPAC/Carb/releases" target="_blank" rel="noreferrer">Release 版本与下载 ↗</a><a href="https://houpac.top/" target="_blank" rel="noreferrer">联系我们 ↗</a></div></div><p class="footer-note">Carb 不附带通用大模型。模型服务、额度及相关任务工具需要按所选连接方式另行准备。当前展示的发行平台为 Windows x64。</p></div></footer>
+  <footer><div class="wrap"><div class="footer-row"><a class="brand" href="#top"><img src="./carb-icon.svg" alt="" />Carb</a><div class="footer-links"><a href="https://github.com/HIUPAC/Carb" target="_blank" rel="noreferrer">GitHub 仓库 ↗</a><a href="https://github.com/HIUPAC/Carb/releases" target="_blank" rel="noreferrer">Release 版本与下载 ↗</a><a href="https://houpac.top/" target="_blank" rel="noreferrer">联系我们 ↗</a></div></div>
+    <section class="community" aria-labelledby="community-title">
+      <div><h2 id="community-title">加入 QQ 交流群</h2><p>Carb交流群 · 群号 <span class="group-number">857163873</span><br />交流使用经验，分享你的项目与想法。</p></div>
+      <div class="community-actions">
+        <a class="community-join" href="https://qm.qq.com/q/dpExMZyTSM" target="_blank" rel="noopener noreferrer">点击加入群聊 <span aria-hidden="true">↗</span></a>
+        <details class="community-qr" id="qq-group-qr">
+          <summary>查看群二维码 <span aria-hidden="true">⌁</span></summary>
+          <div class="community-popover"><figure class="community-card">
+            <img src="./contacts/qq-group.jpg" width="1044" height="1305" loading="lazy" alt="Carb交流群入群二维码，群号 857163873，请使用 QQ 扫码加入" />
+            <figcaption>使用 QQ 扫一扫，加入 Carb交流群。<br /><a href="./contacts/qq-group.jpg" target="_blank" rel="noopener noreferrer">打开大图，保存二维码 ↗</a></figcaption>
+          </figure></div>
+        </details>
+      </div>
+    </section>
+    <p class="footer-note">Carb 不附带通用大模型。模型服务、额度及相关任务工具需要按所选连接方式另行准备。当前展示的发行平台为 Windows x64。</p></div></footer>
   <script>
     const toggle=document.getElementById('menuToggle');const menu=document.getElementById('navLinks');toggle.addEventListener('click',()=>{const open=menu.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));});menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{menu.classList.remove('open');toggle.setAttribute('aria-expanded','false');}));
+    const groupQr=document.getElementById('qq-group-qr');
+    const hoverPointer=window.matchMedia('(min-width: 761px) and (hover: hover) and (pointer: fine)');
+    groupQr.addEventListener('pointerenter',()=>{if(hoverPointer.matches)groupQr.open=true;});
+    groupQr.addEventListener('pointerleave',()=>{if(hoverPointer.matches&&!groupQr.matches(':focus-within'))groupQr.open=false;});
+    groupQr.addEventListener('focusout',event=>{if(!groupQr.contains(event.relatedTarget)&&(!hoverPointer.matches||!groupQr.matches(':hover')))groupQr.open=false;});
+    groupQr.addEventListener('keydown',event=>{if(event.key==='Escape'){groupQr.open=false;groupQr.querySelector('summary').focus();event.preventDefault();}});
   </script>
 </body>
 </html>
