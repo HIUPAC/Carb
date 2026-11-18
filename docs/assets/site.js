@@ -68,8 +68,8 @@
     const isRelease = trigger.dataset.downloadModal === 'releases';
     modalTitle.textContent = isRelease ? '选择版本来源' : '选择下载入口';
     modalDescription.textContent = isRelease
-      ? '选择一个站点查看 Card 的版本、附件与校验资料。'
-      : '选择更适合你的站点，打开 Card 的下载与版本页面。';
+      ? '选择一个站点查看 Carb 的版本、附件与校验资料。'
+      : '选择更适合你的站点，打开 Carb 的下载与版本页面。';
     downloadModal.hidden = false;
     document.body.classList.add('modal-open');
     modalClose?.focus();
