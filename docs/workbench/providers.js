@@ -1,3 +1,5 @@
+import { getProvider, inferProvider } from './provider-presets.js?v=20261118-provider';
+
 const protocols = {
   chat: { baseUrl: 'https://api.openai.com/v1', route: '/chat/completions' },
   responses: { baseUrl: 'https://api.openai.com/v1', route: '/responses' },
@@ -5,17 +7,19 @@ const protocols = {
 };
 
 export function validateSettings(settings = {}) {
-  const protocol = settings.protocol || 'chat';
+  const preset = getProvider(settings.providerId);
+  if (settings.providerId && settings.providerId !== 'custom' && !preset) throw new Error('请选择可用的 AI 厂商，或使用自定义服务。');
+  const protocol = settings.protocol || preset?.protocol || 'chat';
   const config = Object.hasOwn(protocols, protocol) ? protocols[protocol] : null;
   if (!config) throw new Error('请选择受支持的 API 协议。');
 
-  const model = (settings.model || '').trim();
+  const model = (settings.model || preset?.model || '').trim();
   const key = (settings.key || '').trim();
   if (!model) throw new Error('请输入服务商提供的模型名称。');
 
   let endpoint;
   try {
-    endpoint = new URL((settings.baseUrl || '').trim() || config.baseUrl);
+    endpoint = new URL((settings.baseUrl || '').trim() || preset?.baseUrl || config.baseUrl);
   } catch {
     throw new Error('请输入完整的 API 地址，例如 https://api.openai.com/v1。');
   }
@@ -37,14 +41,20 @@ export function validateSettings(settings = {}) {
     throw new Error('API 地址中的接口路径与所选协议不一致。');
   }
 
-  if (!key && ['api.openai.com', 'api.anthropic.com'].includes(endpoint.hostname)) {
+  const baseUrl = endpoint.href;
+  const recognized = inferProvider({ providerId: settings.providerId, protocol, baseUrl });
+  if (preset?.available === false) throw new Error(preset.note || '当前厂商暂不能从网页直连。');
+  if (preset && recognized?.id !== preset.id) {
+    throw new Error('接口地址或协议已改变，请选择自定义服务并重新填写对应密钥。');
+  }
+  if (!key && (preset || recognized || ['api.openai.com', 'api.anthropic.com'].includes(endpoint.hostname))) {
     throw new Error('请输入模型服务的 API 密钥。');
   }
 
-  const baseUrl = endpoint.href;
   const defaultPath = new URL(config.baseUrl).hostname === endpoint.hostname ? '/v1' : '';
   endpoint.pathname = path.endsWith(config.route) ? path : `${path || defaultPath}${config.route}`;
-  return { protocol, baseUrl, key, model, endpoint: endpoint.href };
+  const providerId = settings.providerId || recognized?.id || 'custom';
+  return { providerId, protocol, baseUrl, key, model, endpoint: endpoint.href };
 }
 
 function chatRequest(config, messages, tools) {
@@ -55,20 +65,37 @@ function chatRequest(config, messages, tools) {
         return { role: 'tool', tool_call_id: message.toolCallId, content: message.content };
       }
       if (message.role === 'assistant' && message.toolCalls?.length) {
+        const previousItems = matchingProviderItems(message, config);
+        const previousAssistant = previousItems?.[0]?.tool_calls ? previousItems[0] : null;
+        const previousCalls = previousAssistant?.tool_calls || previousItems;
         return {
           role: 'assistant',
           content: message.content || null,
-          tool_calls: message.toolCalls.map(call => ({
-            id: call.id,
-            type: 'function',
-            function: { name: call.name, arguments: call.arguments },
-          })),
+          ...(typeof previousAssistant?.reasoning_content === 'string' ? { reasoning_content: previousAssistant.reasoning_content } : {}),
+          tool_calls: message.toolCalls.map(call => {
+            const original = previousCalls?.find(item => item.id === call.id && item.function?.name === call.name &&
+              item.function?.arguments === call.arguments);
+            return original || {
+              id: call.id,
+              type: 'function',
+              function: { name: call.name, arguments: call.arguments },
+            };
+          }),
         };
       }
       return { role: message.role, content: message.content };
     }),
     ...(tools.length ? { tools: tools.map(tool => ({ type: 'function', function: tool })) } : {}),
+    ...chatOptions(config),
   };
+}
+
+function chatOptions(config) {
+  const preset = inferProvider(config);
+  if (preset?.id === 'deepseek' || preset?.id === 'zhipu') return { thinking: { type: 'disabled' } };
+  if (preset?.id === 'qwen' || preset?.id === 'siliconflow') return { enable_thinking: false };
+  if (preset?.id === 'kimi') return { reasoning_effort: 'low' };
+  return {};
 }
 
 function matchingProviderItems(message, config) {
@@ -164,6 +191,10 @@ function chatResult(data) {
   return {
     content: message?.content || message?.refusal || '',
     toolCalls: (message?.tool_calls || []).map(call => toolCall(call.id, call.function?.name, call.function?.arguments)),
+    items: message?.tool_calls?.length ? [{
+      tool_calls: message.tool_calls,
+      ...(typeof message.reasoning_content === 'string' ? { reasoning_content: message.reasoning_content } : {}),
+    }] : undefined,
   };
 }
 

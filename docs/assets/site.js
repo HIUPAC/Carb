@@ -53,17 +53,34 @@
   const modalDescription = document.getElementById('downloadModalDescription');
   const modalClose = downloadModal?.querySelector('[data-modal-close]');
   let lastModalTrigger = null;
+  let closingAnimation = null;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   function closeDownloadModal() {
-    if (!downloadModal) return;
-    downloadModal.hidden = true;
-    document.body.classList.remove('modal-open');
-    lastModalTrigger?.focus();
-    lastModalTrigger = null;
+    if (!downloadModal || downloadModal.hidden || closingAnimation) return;
+    const finish = () => {
+      downloadModal.hidden = true;
+      document.body.classList.remove('modal-open');
+      lastModalTrigger?.focus({ preventScroll: true });
+      lastModalTrigger = null;
+    };
+    if (reducedMotion.matches || !downloadModal.animate) return finish();
+    const animation = downloadModal.animate([{ opacity: 1 }, { opacity: 0 }], {
+      duration: 140, easing: 'ease-in', fill: 'forwards'
+    });
+    closingAnimation = animation;
+    animation.finished.then(() => {
+      if (closingAnimation !== animation) return;
+      finish();
+      closingAnimation = null;
+      animation.cancel();
+    }, () => {});
   }
 
   function openDownloadModal(trigger) {
     if (!downloadModal) return;
+    closingAnimation?.cancel();
+    closingAnimation = null;
     lastModalTrigger = trigger;
     const isRelease = trigger.dataset.downloadModal === 'releases';
     modalTitle.textContent = isRelease ? '选择版本来源' : '选择下载入口';
@@ -87,5 +104,87 @@
   });
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape' && downloadModal && !downloadModal.hidden) closeDownloadModal();
+    if (event.key === 'Tab' && downloadModal && !downloadModal.hidden) {
+      const controls = [...downloadModal.querySelectorAll('button, a[href]')];
+      const first = controls[0];
+      const last = controls.at(-1);
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
   });
+
+  // Keep content visible without JavaScript or when motion is reduced.
+  if ('IntersectionObserver' in window && !reducedMotion.matches) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-revealed');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+    const targets = document.querySelectorAll('.section-heading, .about-grid, .about-notes > div, .service, .step, .work-entry, .mode-card, .cloud-note, .guide-layout, .learning-resources, .demo-intro, .faq-layout, .release-row, .closing, .footer-intro, .contact-heading-row');
+    targets.forEach(target => {
+      if (target.matches('.service, .step, .mode-card, .about-notes > div')) {
+        const index = [...target.parentElement.children].indexOf(target);
+        target.style.setProperty('--reveal-delay', `${Math.min(index, 3) * 55}ms`);
+      }
+      target.classList.add('motion-reveal');
+      observer.observe(target);
+    });
+    document.addEventListener('focusin', event => {
+      const target = event.target.closest('.motion-reveal');
+      if (!target) return;
+      target.classList.add('is-revealed');
+      observer.unobserve(target);
+    });
+    reducedMotion.addEventListener('change', event => {
+      if (!event.matches) return;
+      observer.disconnect();
+      targets.forEach(target => target.classList.add('is-revealed'));
+    });
+  }
+
+  // Short taps and keyboard activation receive the same visible press response.
+  const pressSelector = '.button, .guide-tabs button, .menu-toggle, .download-modal-close, .download-option, .contact-trigger, .contact-popover-link, .faq-list summary';
+  let pressedControl = null;
+  let pressStarted = 0;
+  let releaseTimer = 0;
+  function releasePress(immediate = false) {
+    const control = pressedControl;
+    if (!control) return;
+    window.clearTimeout(releaseTimer);
+    const clear = () => {
+      control.classList.remove('is-pressed');
+      if (pressedControl === control) pressedControl = null;
+    };
+    if (immediate) clear();
+    else releaseTimer = window.setTimeout(clear, Math.max(0, 100 - (performance.now() - pressStarted)));
+  }
+  function startPress(event) {
+    const control = event.target.closest(pressSelector);
+    if (!control || control.matches(':disabled, [aria-disabled="true"]')) return;
+    releasePress(true);
+    pressedControl = control;
+    pressStarted = performance.now();
+    control.classList.add('is-pressed');
+  }
+  document.addEventListener('pointerdown', event => {
+    if (event.isPrimary && event.button === 0) startPress(event);
+  });
+  document.addEventListener('pointerup', () => releasePress());
+  document.addEventListener('pointercancel', () => releasePress(true));
+  document.addEventListener('keydown', event => {
+    if (event.repeat || !event.target.matches(pressSelector)) return;
+    if (event.key === 'Enter' || (event.key === ' ' && event.target.matches('button, summary'))) startPress(event);
+  });
+  document.addEventListener('keyup', event => {
+    if (event.key === 'Enter' || event.key === ' ') releasePress();
+  });
+  window.addEventListener('blur', () => releasePress(true));
+  window.addEventListener('pagehide', () => releasePress(true));
 })();

@@ -1,10 +1,12 @@
 import { validPath, fileEntries, directoryEntries, snapshotEntries, mergeEntries, textOf, textBlob, searchFiles, compactDiff, writeFile, safePreview } from './project.js';
-import { requestModel, validateSettings } from './providers.js';
+import { requestModel, validateSettings } from './providers.js?v=20261118-provider';
+import { PROVIDERS, getProvider, inferProvider } from './provider-presets.js?v=20261118-provider';
 import { setupCloudTerminal } from './cloud-terminal.js';
 import { setupMcp } from './mcp-ui.js';
 
 const $ = id => document.getElementById(id);
-const defaults = { protocol: 'chat', baseUrl: 'https://api.openai.com/v1', model: '', theme: 'auto' };
+const firstProvider = getProvider('openai');
+const defaults = { providerId: firstProvider.id, protocol: firstProvider.protocol, baseUrl: firstProvider.baseUrl, model: firstProvider.model, theme: 'light' };
 const protocols = { chat: 'https://api.openai.com/v1', responses: 'https://api.openai.com/v1', anthropic: 'https://api.anthropic.com/v1' };
 const newId = () => crypto.randomUUID();
 const makeThread = () => ({ id: newId(), title: '新会话', messages: [] });
@@ -34,6 +36,7 @@ let reviewRender = 0;
 let toastTimer;
 let previewUrl;
 let createName;
+let modelTest;
 let cloud;
 let mcp;
 
@@ -124,7 +127,8 @@ async function refreshFromPeer() {
       document.querySelector('dialog[open]')) return;
   const previous = state.settings;
   state = record.state;
-  if (previous.baseUrl !== state.settings.baseUrl || previous.protocol !== state.settings.protocol) key = '';
+  state.settings = normalizeSettings(state.settings);
+  if (previous.baseUrl !== state.settings.baseUrl || previous.protocol !== state.settings.protocol || previous.providerId !== state.settings.providerId) key = '';
   revision = record.revision;
   render();
 }
@@ -152,13 +156,13 @@ function renderSettings() {
   const { theme, model } = state.settings;
   if (theme === 'auto') delete document.documentElement.dataset.theme;
   else document.documentElement.dataset.theme = theme;
-  $('connection').querySelector('span').textContent = model || '连接模型';
-  $('model-label').textContent = model;
   let configured = false;
   try {
     validateSettings({ ...state.settings, key });
     configured = true;
   } catch {}
+  $('connection').querySelector('span').textContent = configured ? model : '连接模型';
+  $('model-label').textContent = configured ? model : '';
   $('connection').toggleAttribute('data-configured', configured);
 }
 
@@ -585,17 +589,47 @@ async function sendTask(prompt) {
 }
 
 function formSettings() {
-  return { protocol: $('protocol').value, baseUrl: $('base-url').value, model: $('model').value, key: $('api-key').value, theme: $('theme').value };
+  return { providerId: $('provider').value, protocol: $('protocol').value, baseUrl: $('base-url').value, model: $('model').value, key: $('api-key').value, theme: $('theme').value };
+}
+
+function normalizeSettings(settings = {}) {
+  if (!settings.providerId && !settings.model && settings.protocol === 'chat' && settings.baseUrl === protocols.chat) {
+    return { ...defaults, theme: settings.theme || defaults.theme };
+  }
+  const preset = inferProvider(settings);
+  return { ...defaults, ...settings, providerId: preset?.id || 'custom', model: settings.model || preset?.model || '' };
+}
+
+function cancelModelTest() {
+  modelTest?.abort();
+  modelTest = null;
+  $('test-model').disabled = false;
+  notice('settings-error');
+  notice('settings-status');
+}
+
+function describeProvider() {
+  const preset = getProvider($('provider').value);
+  $('api-key').required = !!preset;
+  $('provider-key-link').hidden = !preset?.keyUrl;
+  if (preset?.keyUrl) $('provider-key-link').href = preset.keyUrl;
+  $('provider-description').textContent = preset
+    ? `已预设 ${$('model').value || preset.model}${preset.note ? `。${preset.note}` : ''}`
+    : '使用兼容的模型服务，在高级设置中填写模型和地址。';
+  $('api-key').placeholder = preset ? `粘贴 ${preset.name} 的 API 密钥` : '服务需要认证时填写';
 }
 
 function openSettings() {
-  notice('settings-error');
-  notice('settings-status');
+  cancelModelTest();
+  state.settings = normalizeSettings(state.settings);
+  $('provider').value = state.settings.providerId;
   $('protocol').value = state.settings.protocol;
   $('base-url').value = state.settings.baseUrl;
   $('model').value = state.settings.model;
   $('api-key').value = key;
   $('theme').value = state.settings.theme;
+  $('model-advanced').open = state.settings.providerId === 'custom';
+  describeProvider();
   if (!$('settings-dialog').open) $('settings-dialog').showModal();
 }
 
@@ -781,18 +815,44 @@ function connectUI() {
   };
   $('stop').onclick = () => activeRun?.controller.abort();
   $('settings').onclick = $('connection').onclick = openSettings;
-  $('base-url').oninput = () => { $('api-key').value = ''; };
-  $('protocol').onchange = () => {
-    $('base-url').value = protocols[$('protocol').value];
+  $('provider').replaceChildren(...PROVIDERS.filter(item => item.available !== false).map(item => new Option(item.name, item.id)), new Option('自定义服务', 'custom'));
+  $('provider').onchange = () => {
+    const preset = getProvider($('provider').value);
     $('api-key').value = '';
+    if (preset) {
+      $('protocol').value = preset.protocol;
+      $('base-url').value = preset.baseUrl;
+      $('model').value = preset.model;
+    }
+    $('model-advanced').open = !preset;
+    describeProvider();
   };
+  $('base-url').oninput = () => {
+    $('api-key').value = '';
+    $('provider').value = 'custom';
+    describeProvider();
+  };
+  $('protocol').onchange = () => {
+    const previousUrl = $('base-url').value.trim().replace(/\/+$/, '');
+    if (Object.values(protocols).includes(previousUrl)) $('base-url').value = protocols[$('protocol').value];
+    $('api-key').value = '';
+    $('provider').value = 'custom';
+    describeProvider();
+  };
+  $('model').oninput = describeProvider;
+  $('settings-form').addEventListener('input', cancelModelTest);
+  $('settings-form').addEventListener('change', cancelModelTest);
+  $('settings-dialog').addEventListener('close', cancelModelTest);
+  $('settings-form').addEventListener('invalid', event => {
+    if (['base-url', 'model', 'protocol'].includes(event.target.id)) $('model-advanced').open = true;
+  }, true);
   $('settings-form').onsubmit = event => {
     event.preventDefault();
     try {
       const form = formSettings();
       const settings = validateSettings(form);
       key = settings.key;
-      state.settings = { protocol: settings.protocol, baseUrl: settings.baseUrl, model: settings.model, theme: form.theme };
+      state.settings = { providerId: form.providerId, protocol: settings.protocol, baseUrl: settings.baseUrl, model: settings.model, theme: form.theme };
       save();
       renderSettings();
       $('settings-dialog').close();
@@ -802,17 +862,27 @@ function connectUI() {
     }
   };
   $('test-model').onclick = async () => {
+    cancelModelTest();
+    const controller = new AbortController();
+    modelTest = controller;
+    const timeout = setTimeout(() => controller.abort(new Error('连接超时，请检查网络或稍后重试。')), 30000);
     $('test-model').disabled = true;
     notice('settings-error');
     notice('settings-status', '正在测试连接…');
     try {
-      await requestModel(formSettings(), [{ role: 'user', content: 'Reply with OK.' }], [], AbortSignal.timeout(30000));
-      notice('settings-status', '模型连接成功。');
+      await requestModel(formSettings(), [{ role: 'user', content: 'Reply with OK.' }], [], controller.signal);
+      if (modelTest === controller) notice('settings-status', '模型连接成功。');
     } catch (error) {
-      notice('settings-status');
-      notice('settings-error', error.message);
+      if (modelTest === controller) {
+        notice('settings-status');
+        notice('settings-error', controller.signal.aborted ? '连接超时，请检查网络或稍后重试。' : error.message);
+      }
     } finally {
-      $('test-model').disabled = false;
+      clearTimeout(timeout);
+      if (modelTest === controller) {
+        modelTest = null;
+        $('test-model').disabled = false;
+      }
     }
   };
   $('skills').onclick = () => {
@@ -898,6 +968,7 @@ try {
   const record = await readDatabase();
   if (record) {
     state = record.state;
+    state.settings = normalizeSettings(state.settings);
     revision = record.revision;
   }
   if (window.BroadcastChannel) {
