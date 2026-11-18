@@ -183,10 +183,13 @@ export function setupCloudTerminal({ getFiles, download, toast }) {
   async function activate() {
     if (activated) { refit(); return; }
     activated = true;
-    try {
-      const status = await fetch(new URL('/_carb/status', location.href), { cache: 'no-store', signal: AbortSignal.timeout(3500) });
-      if (status.ok && status.headers.get('content-type')?.includes('application/json')) privateWorkspace = (await status.json()).cloud === true;
-    } catch {}
+    const pagesHost = ['houpac.top', 'www.houpac.top', 'hiupac.github.io'].includes(location.hostname);
+    if (!pagesHost) {
+      try {
+        const status = await fetch(new URL('/_carb/status', location.href), { cache: 'no-store', signal: AbortSignal.timeout(3500) });
+        if (status.ok && status.headers.get('content-type')?.includes('application/json')) privateWorkspace = (await status.json()).cloud === true;
+      } catch {}
+    }
     updateActions();
     if (!privateWorkspace) {
       credential = '';

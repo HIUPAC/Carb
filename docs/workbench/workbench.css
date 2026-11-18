@@ -90,7 +90,7 @@ input, select, textarea { padding: 9px 11px; min-width: 0; }
 .threads button:hover, .threads button[aria-current="true"] { background: var(--hover); }
 .threads button[aria-current="true"] { border-color: var(--line); font-weight: 650; }
 .sidebar-bottom { display: flex; gap: 4px; margin-top: auto; border-top: 1px solid var(--line); padding-top: 9px; }
-.sidebar-bottom button { flex: 1; background: transparent; border-color: transparent; }
+.sidebar-bottom button { flex: 1; min-width: 0; padding-inline: 4px; white-space: nowrap; font-size: 12px; background: transparent; border-color: transparent; }
 .sidebar-bottom button:hover { background: var(--hover); }
 .main { display: flex; flex-direction: column; min-width: 0; min-height: 0; }
 .toolbar { display: flex; align-items: center; gap: 9px; min-height: 49px; padding: 5px 12px; border-bottom: 1px solid var(--line); }
@@ -181,6 +181,8 @@ dialog::backdrop { background: #1b221975; }
 .cloud-body { display: flex; flex-direction: column; flex: 1; min-height: 0; gap: 10px; padding: 14px 18px; overflow: auto; }
 .cloud-intro { display: grid; gap: 12px; justify-items: start; max-width: 640px; }
 .cloud-intro p, .cloud-pair label { color: var(--muted); }
+.cloud-intro p a { margin-inline-start: 5px; white-space: nowrap; }
+.cloud-intro > .cloud-pair { width: 100%; }
 .action-link { display: inline-block; border-radius: 8px; padding: 7px 11px; text-decoration: none; }
 .cloud-pair, .cloud-files form { display: flex; align-items: center; gap: 7px; flex-wrap: wrap; }
 .cloud-pair input { width: min(260px, 100%); }
