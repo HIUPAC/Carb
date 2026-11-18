@@ -164,6 +164,7 @@ function renderSettings() {
   $('connection').querySelector('span').textContent = configured ? model : '连接模型';
   $('model-label').textContent = configured ? model : '';
   $('connection').toggleAttribute('data-configured', configured);
+  $('connection').disabled = false;
 }
 
 function renderSidebar() {
@@ -986,5 +987,6 @@ try {
 cloud = setupCloudTerminal({ getFiles: () => project().files, download, toast });
 mcp = setupMcp();
 connectUI();
+$('settings').disabled = false;
 render();
 if (cloud.paired || new URLSearchParams(location.search).get('view') === 'terminal') setView('terminal');

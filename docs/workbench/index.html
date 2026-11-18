@@ -10,14 +10,14 @@
   <link rel="icon" href="../carb-icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./workbench.css?v=20261118-provider">
   <link rel="stylesheet" href="./vendor/xterm.css">
-  <script type="module" src="./workbench.js?v=20261118-provider"></script>
+  <script type="module" src="./workbench.js?v=20261118-ready"></script>
 </head>
 <body>
   <header class="topbar">
     <a class="brand" href="../" target="_top"><img alt="" src="../carb-icon.svg" width="28" height="28"><span>Carb <small>网页工作台</small></span></a>
     <div class="top-actions">
       <a class="back-link" href="../" target="_top">返回介绍</a>
-      <button id="connection" class="connection" type="button"><i></i><span>连接模型</span></button>
+      <button id="connection" class="connection" type="button" disabled><i></i><span>正在准备…</span></button>
       <a id="standalone" class="icon-button" href="./" target="_blank" rel="noopener" aria-label="在新窗口打开" title="在新窗口打开" hidden>↗</a>
     </div>
   </header>
@@ -34,7 +34,7 @@
       <div class="sidebar-bottom">
         <button id="skills" type="button">✧ <span>技能</span></button>
         <button id="mcp" type="button">MCP</button>
-        <button id="settings" type="button">⚙ <span>设置</span></button>
+        <button id="settings" type="button" disabled>⚙ <span>设置</span></button>
       </div>
     </aside>
     <main class="main">
