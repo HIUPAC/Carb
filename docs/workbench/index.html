@@ -8,6 +8,7 @@
   <title>Carb 网页工作台</title>
   <link rel="icon" href="../carb-icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./workbench.css">
+  <link rel="stylesheet" href="./vendor/xterm.css">
   <script type="module" src="./workbench.js"></script>
 </head>
 <body>
@@ -30,6 +31,7 @@
       </div>
       <div class="sidebar-bottom">
         <button id="skills" type="button">✧ <span>技能</span></button>
+        <button id="mcp" type="button">MCP</button>
         <button id="settings" type="button">⚙ <span>设置</span></button>
       </div>
     </aside>
@@ -42,7 +44,8 @@
           <button data-view="chat" type="button" aria-pressed="true">对话</button>
           <button data-view="files" type="button" aria-pressed="false">文件</button>
           <button data-view="review" type="button" aria-pressed="false">审查 <b id="review-count" hidden></b></button>
-          <button data-view="commands" type="button" aria-pressed="false">项目命令</button>
+          <button data-view="commands" type="button" aria-pressed="false" aria-label="项目命令">命令</button>
+          <button data-view="terminal" type="button" aria-pressed="false">终端</button>
         </nav>
       </div>
       <section id="chat" class="panel chat-panel" aria-label="对话">
@@ -88,6 +91,41 @@
         <div class="panel-top"><div><h2>项目命令</h2><p>在浏览器项目中运行文件查看和搜索命令。</p></div><button id="clear-terminal" type="button">清空</button></div>
         <div class="terminal"><pre id="terminal-output" role="log">输入 help 查看命令。</pre><form id="terminal-form"><label for="command" aria-label="命令">›</label><input id="command" type="text" autocomplete="off" spellcheck="false" placeholder="ls" required><button type="submit">运行</button></form></div>
       </section>
+      <section id="terminal" class="panel cloud-panel" aria-label="云端终端" hidden>
+        <div class="panel-top"><div><h2>云端终端</h2><p id="cloud-description" role="status">正在检查云端执行环境…</p></div>
+          <div id="cloud-actions" class="actions" hidden>
+            <button id="cloud-reconnect" type="button">重新连接</button>
+            <button id="cloud-close" type="button" disabled>结束会话</button>
+            <label class="sr-only" for="cli-select">选择 CLI</label>
+            <select id="cli-select"><option value="codex">Codex CLI</option><option value="claude">Claude Code</option></select>
+            <button id="launch-cli" type="button" disabled>启动 CLI</button>
+          </div>
+        </div>
+        <div class="cloud-body">
+          <div id="cloud-intro" class="cloud-intro" hidden>
+            <p>终端、Codex CLI 和 Claude Code 在你的独立 Linux 云环境中运行。</p>
+            <form id="e2b-form" class="cloud-pair">
+              <label for="e2b-key">E2B API 密钥</label>
+              <input id="e2b-key" type="password" autocomplete="off" required placeholder="仅用于启动当前云环境">
+              <button id="e2b-start" class="primary" type="submit">启动云端终端</button>
+            </form>
+            <p>此次会话使用你的 E2B 配额，最长 15 分钟。请在会话结束前下载需要保留的文件。<a href="https://e2b.dev/dashboard" target="_blank" rel="noopener noreferrer">打开 E2B 控制台 ↗</a></p>
+            <a class="primary action-link" href="https://codespaces.new/HIUPAC/Carb?quickstart=1&amp;devcontainer_path=.devcontainer%2Fcloud-workbench%2Fdevcontainer.json" target="_blank" rel="noopener noreferrer">启动 GitHub 云工作区 ↗</a>
+            <p>使用 GitHub Codespaces 时，在云工作区的终端里打开 Carb 给出的专用链接。</p>
+          </div>
+          <form id="cloud-pair" class="cloud-pair" hidden>
+            <label for="cloud-token">连接码</label>
+            <input id="cloud-token" type="password" autocomplete="off" required placeholder="在 Codespaces 终端查看连接码">
+            <button class="primary" type="submit">连接</button>
+          </form>
+          <div id="cloud-error" class="notice error" role="alert" hidden></div>
+          <div id="cloud-files" class="actions cloud-files" hidden>
+            <button id="cloud-upload" type="button">上传项目文件</button>
+            <form id="cloud-download"><label class="sr-only" for="cloud-download-path">云端文件路径</label><input id="cloud-download-path" required placeholder="相对路径，例如 result.md"><button type="submit">下载文件</button></form>
+          </div>
+          <div id="cloud-pty" class="cloud-pty" aria-label="Linux 交互终端" hidden></div>
+        </div>
+      </section>
     </main>
   </div>
   <div id="status" class="toast" role="status" hidden></div>
@@ -103,7 +141,6 @@
       <label>模型 ID<input id="model" type="text" autocomplete="off" spellcheck="false" placeholder="填写服务提供方的模型 ID" required></label>
       <label>API 密钥<input id="api-key" type="password" autocomplete="off" placeholder="只在此页面打开期间保留"></label>
       <label>外观<select id="theme"><option value="auto">跟随系统</option><option value="light">浅色</option><option value="dark">深色</option></select></label>
-      <p><a href="https://github.com/HIUPAC/Carb/tree/main/scripts/web-workbench" target="_blank" rel="noopener noreferrer">查看本机终端、CLI 和 MCP 的启动方式 ↗</a></p>
       <div id="settings-error" class="notice error" role="alert" hidden></div>
       <div id="settings-status" class="notice" role="status" hidden></div>
       <div class="dialog-actions"><button id="test-model" type="button">测试连接</button><button class="primary" type="submit">保存设置</button></div>
@@ -114,6 +151,34 @@
       <p>导入 SKILL.md 或 Markdown 指南。启用后，技能说明会随任务发送给模型。</p>
       <div id="skill-list" class="skill-list"></div><div class="dialog-actions"><button id="import-skill" class="primary" type="button">导入技能</button></div>
     </div>
+  </dialog>
+  <dialog id="mcp-dialog" aria-labelledby="mcp-title">
+    <div class="dialog-form">
+      <div class="dialog-head"><h2 id="mcp-title">MCP 连接</h2><button data-close type="button" class="icon-button" aria-label="关闭">×</button></div>
+      <p>连接允许网页跨域访问的 HTTPS MCP 服务，在这里测试工具或在对话中授权调用。STDIO 和 OAuth 可在支持它们的云端 CLI 中配置。</p>
+      <form id="mcp-form" class="mcp-form">
+        <label>服务地址<input id="mcp-url" type="url" autocomplete="off" placeholder="https://example.com/mcp" required></label>
+        <label>访问令牌<input id="mcp-token" type="password" autocomplete="off" placeholder="可选，仅在当前页面保留"></label>
+        <div class="dialog-actions"><button class="primary" id="mcp-connect" type="submit">连接服务</button></div>
+      </form>
+      <div id="mcp-error" class="notice error" role="alert" hidden></div>
+      <div id="mcp-status" class="notice" role="status" hidden></div>
+      <div id="mcp-services" class="mcp-services"></div>
+      <form id="mcp-test" class="mcp-form" hidden>
+        <label>工具<select id="mcp-tool" required></select></label>
+        <label>工具参数（JSON）<textarea id="mcp-arguments" rows="4" maxlength="64000" spellcheck="false">{}</textarea></label>
+        <div class="dialog-actions"><button class="primary" id="mcp-call" type="submit">调用工具</button></div>
+        <pre id="mcp-result" class="mcp-result" aria-live="polite" hidden></pre>
+      </form>
+    </div>
+  </dialog>
+  <dialog id="mcp-approval" aria-labelledby="mcp-approval-title">
+    <form class="dialog-form" method="dialog">
+      <div class="dialog-head"><h2 id="mcp-approval-title">授权调用 MCP 工具</h2></div>
+      <p id="mcp-approval-name"></p>
+      <pre id="mcp-approval-args" class="mcp-result"></pre>
+      <div class="dialog-actions"><button value="deny" autofocus>拒绝</button><button class="primary" value="allow">允许这次调用</button></div>
+    </form>
   </dialog>
   <dialog id="name-dialog" aria-labelledby="name-title">
     <form id="name-form" class="dialog-form"><div class="dialog-head"><h2 id="name-title"></h2><button data-close type="button" class="icon-button" aria-label="关闭">×</button></div>
