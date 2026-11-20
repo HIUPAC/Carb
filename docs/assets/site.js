@@ -12,7 +12,7 @@
     menuButton.setAttribute('aria-expanded', String(open));
     menuButton.setAttribute('aria-label', open ? '关闭导航菜单' : '打开导航菜单');
   });
-  menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+  document.querySelectorAll('.nav a').forEach(link => link.addEventListener('click', closeMenu));
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape' && menu.classList.contains('open')) {
       closeMenu();
@@ -127,9 +127,9 @@
         observer.unobserve(entry.target);
       });
     }, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
-    const targets = document.querySelectorAll('.section-heading, .about-grid, .about-notes > div, .service, .step, .work-entry, .mode-card, .cloud-note, .guide-layout, .learning-resources, .demo-intro, .faq-layout, .release-row, .closing, .footer-intro, .contact-heading-row');
+    const targets = document.querySelectorAll('.section-heading, .service, .step, .mode-card, .cloud-note, .guide-layout, .learning-resources, .demo-intro, .faq-layout, .release-row');
     targets.forEach(target => {
-      if (target.matches('.service, .step, .mode-card, .about-notes > div')) {
+      if (target.matches('.service, .step, .mode-card')) {
         const index = [...target.parentElement.children].indexOf(target);
         target.style.setProperty('--reveal-delay', `${Math.min(index, 3) * 55}ms`);
       }
@@ -150,7 +150,7 @@
   }
 
   // Short taps and keyboard activation receive the same visible press response.
-  const pressSelector = '.button, .guide-tabs button, .menu-toggle, .download-modal-close, .download-option, .contact-trigger, .contact-popover-link, .faq-list summary';
+  const pressSelector = '.button, .guide-tabs button, .menu-toggle, .download-modal-close, .download-option, .faq-list summary';
   let pressedControl = null;
   let pressStarted = 0;
   let releaseTimer = 0;
