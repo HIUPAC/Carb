@@ -101,7 +101,7 @@
 <div class="guide-layout"><div aria-label="上手教程" class="guide-tabs" role="tablist"><button aria-controls="guide-connect" aria-selected="true" data-guide="connect" id="tab-connect" role="tab"><span>01</span><div><strong>连接并开始</strong><small>完成你的第一个任务</small></div><b aria-hidden="true">↗</b></button><button aria-controls="guide-skill" aria-selected="false" data-guide="skill" id="tab-skill" role="tab" tabindex="-1"><span>02</span><div><strong>使用 Skill</strong><small>把常用流程带进来</small></div><b aria-hidden="true">↗</b></button><button aria-controls="guide-mcp" aria-selected="false" data-guide="mcp" id="tab-mcp" role="tab" tabindex="-1"><span>03</span><div><strong>连接 MCP</strong><small>添加任务需要的工具</small></div><b aria-hidden="true">↗</b></button></div><div class="guide-panels">
 <section aria-labelledby="tab-connect" class="guide-panel" id="guide-connect" role="tabpanel" tabindex="0"><div class="guide-panel-heading"><span class="guide-label">FIRST TASK</span><span>从一个小目标开始</span></div><h3>在网页中，完成第一个任务。</h3>
 <ol class="guide-steps">
-<li><span>1</span><div><h4>打开工作台，连接模型</h4><p>点击「开始工作」，在右上角选择 AI 厂商，粘贴该厂商的 API 密钥。模型和地址已预设，也可在高级设置中调整。</p></div></li>
+<li><span>1</span><div><h4>打开工作台，选择模型</h4><p>官网工作台提供内置 DeepSeek，可直接发送任务。你也可以在右上角选择其他 AI 厂商，并填写自己的 API 密钥。</p></div></li>
 <li><span>2</span><div><h4>导入文件，建立项目上下文</h4><p>导入文件或文件夹，也可以新建项目文件。第一次可以从一份 README 或几段资料开始。</p></div></li>
 <li><span>3</span><div><h4>说清目标和期望输出</h4><p>说明输入资料、要做的事和输出文件名。Carb 可读取与搜索项目文本，并提交文件改动供你检查。</p></div></li>
 <li><span>4</span><div><h4>审查改动，保存成果</h4><p>在「审查」中比较差异，确认后应用，再下载文件。在支持的浏览器中，也可授权写回项目目录。</p></div></li>
@@ -113,8 +113,8 @@
 </div></section><section class="section demo-section" id="demo"><div class="wrap"><div class="demo-intro"><div><h2>先试试交互演示。</h2><p>切换预设场景，运行示例，查看项目文件与变更审查。交互演示使用示例数据，不调用模型。</p></div><a class="button button-quiet" href="./demo/">打开交互演示</a></div></div></section>
 <section class="section faq-section" id="faq" aria-labelledby="faq-title"><div class="wrap faq-layout"><div><h2 id="faq-title">常见问题</h2><a class="text-link" href="https://github.com/HIUPAC/Carb/blob/main/README.md" target="_blank" rel="noopener noreferrer">查看完整项目说明 ↗</a></div><div class="faq-list">
 <details><summary>我不会写代码，也可以使用吗？<span aria-hidden="true">＋</span></summary><p>可以从阅读资料、整理文档等明确的小任务开始。用自然语言描述目标；涉及代码、命令或文件变更时，按提示检查并复核结果。</p></details>
-<details><summary>开始使用前，需要准备什么？<span aria-hidden="true">＋</span></summary><p>准备所选 AI 厂商的 API 密钥，在工作台选择厂商后填写即可。需要时可在高级设置中更换模型或自定义服务。模型额度和费用按厂商规则使用，自定义服务需要允许网页跨域访问。CLI 使用对应的账号或凭据。</p></details>
-<details><summary>项目文件和会话保存在哪里？<span aria-hidden="true">＋</span></summary><p>网页版把项目和会话保存在当前浏览器。模型密钥和 MCP 令牌保留在当前页面内存，刷新后需要重新填写。重要成果请及时下载。发送任务或调用外部工具时，相关内容会传给你选择的服务。云端文件保存在对应的执行环境里。</p></details>
+<details><summary>开始使用前，需要准备什么？<span aria-hidden="true">＋</span></summary><p>官网内置 DeepSeek 无需填写密钥，使用共享额度。额度用完后可稍后重试，也可以在设置中切换到使用自己密钥的模型服务。自定义服务需要允许网页跨域访问。CLI 使用对应的账号或凭据。</p></details>
+<details><summary>项目文件和会话保存在哪里？<span aria-hidden="true">＋</span></summary><p>网页版把项目和会话保存在当前浏览器。使用内置模型时，任务相关内容经 Carb 服务转发给 DeepSeek。自行配置模型时，相关内容会直接发给所选服务。自行填写的模型密钥和 MCP 令牌保留在当前页面内存，刷新后需要重新填写。云端文件保存在对应的执行环境里。</p></details>
 <details><summary>网页里的终端和 CLI 怎么使用？<span aria-hidden="true">＋</span></summary><p>打开工作台的「终端」，使用自己的 E2B 密钥或 GitHub Codespaces 账号连接独立的 Linux 云环境。E2B 单次会话最长 15 分钟，可上传项目文件、下载成果；CLI 首次使用时会下载客户端，并要求登录或配置模型凭据。</p></details>
 <details><summary>Skill 和 MCP 有什么区别？<span aria-hidden="true">＋</span></summary><p>Skill 为 Agent 提供可复用的知识和执行步骤；MCP 让 Agent 连接工具与数据。两者可以组合使用，具体调用能力由所选模型、Agent 和配置决定。</p></details>
 <details><summary>网页和桌面版适合哪些任务？<span aria-hidden="true">＋</span></summary><p>网页版适合从导入资料、文本处理、审查改动和下载文件开始，命令任务可以连接云环境。桌面版可以直接围绕本机文件夹工作，并使用本机终端、独立 CLI 和相应系统集成。各环境的路径、工具和权限按实际运行方式提供。</p></details>

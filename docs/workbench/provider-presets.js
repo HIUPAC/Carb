@@ -1,4 +1,17 @@
+import { hostedDeepSeekBaseUrl } from './hosted-deepseek.js?v=20261120-hosted';
+
+export const HOSTED_DEEPSEEK_ID = 'deepseek-hosted';
+const hostedDeepSeek = {
+  id: HOSTED_DEEPSEEK_ID,
+  name: 'DeepSeek（内置）',
+  protocol: 'chat',
+  baseUrl: hostedDeepSeekBaseUrl,
+  model: 'deepseek-flash',
+  hosted: true,
+};
+
 export const PROVIDERS = [
+  ...(hostedDeepSeekBaseUrl && globalThis.location?.origin === 'https://houpac.top' ? [hostedDeepSeek] : []),
   {
     id: 'openai',
     name: 'OpenAI',

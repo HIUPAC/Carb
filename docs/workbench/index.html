@@ -10,7 +10,7 @@
   <link rel="icon" href="../carb-icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./workbench.css?v=20261118-provider">
   <link rel="stylesheet" href="./vendor/xterm.css">
-  <script type="module" src="./workbench.js?v=20261118-ready"></script>
+  <script type="module" src="./workbench.js?v=20261120-hosted"></script>
 </head>
 <body>
   <header class="topbar">
@@ -55,7 +55,7 @@
           <div id="welcome" class="welcome">
             <img alt="" src="../carb-icon.svg" width="50" height="50">
             <h1>今天想完成什么？</h1>
-            <p>导入项目文件，连接模型，用自然语言开始工作。</p>
+            <p id="welcome-model">导入项目文件，连接模型，用自然语言开始工作。</p>
             <div class="suggestions">
               <button data-prompt="请浏览项目文件，概括项目结构和主要用途。" type="button">浏览项目 <span>↗</span></button>
               <button data-prompt="请根据项目中的资料生成一份 summary.md，先提交改动供我审查。" type="button">整理成文档 <span>↗</span></button>
@@ -75,7 +75,7 @@
               <button id="send" class="primary" type="submit">发送 <span aria-hidden="true">↑</span></button>
             </div>
           </form>
-          <p class="composer-hint">文件和会话保存在此浏览器。发送任务后，模型可读取项目文件。</p>
+          <p id="composer-hint" class="composer-hint">文件和会话保存在此浏览器。发送任务后，模型可读取项目文件。</p>
         </div>
       </section>
       <section id="files" class="panel files-panel" aria-label="文件" hidden>
@@ -137,10 +137,10 @@
   <dialog id="settings-dialog" aria-labelledby="settings-title">
     <form id="settings-form" class="dialog-form">
       <div class="dialog-head"><h2 id="settings-title">连接 AI</h2><button data-close type="button" class="icon-button" aria-label="关闭">×</button></div>
-      <p>选择 AI 厂商，填写密钥，就可以开始工作。</p>
+      <p>选择一个模型服务开始工作。使用自己的模型服务时，按需填写 API 密钥。</p>
       <label>AI 厂商<select id="provider" aria-describedby="provider-description"></select></label>
       <div class="provider-info"><p id="provider-description"></p><a id="provider-key-link" target="_blank" rel="noopener noreferrer">获取 API 密钥 <span aria-hidden="true">↗</span></a></div>
-      <label>API 密钥<input id="api-key" type="password" autocomplete="off" spellcheck="false" placeholder="粘贴所选厂商的 API 密钥" aria-describedby="key-note"></label>
+      <label id="api-key-field">API 密钥<input id="api-key" type="password" autocomplete="off" spellcheck="false" placeholder="粘贴所选厂商的 API 密钥" aria-describedby="key-note"></label>
       <p id="key-note" class="field-note">密钥仅保留在当前页面，刷新后需要重新填写。</p>
       <details id="model-advanced" class="model-advanced"><summary>高级设置 <span>模型、地址与协议</span></summary><div class="advanced-fields">
         <label>模型 ID<input id="model" type="text" autocomplete="off" spellcheck="false" placeholder="填写服务提供方的模型 ID" required></label>

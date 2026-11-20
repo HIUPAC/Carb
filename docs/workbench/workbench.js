@@ -1,12 +1,13 @@
 import { validPath, fileEntries, directoryEntries, snapshotEntries, mergeEntries, textOf, textBlob, searchFiles, compactDiff, writeFile, safePreview } from './project.js';
-import { requestModel, validateSettings } from './providers.js?v=20261118-provider';
-import { PROVIDERS, getProvider, inferProvider } from './provider-presets.js?v=20261118-provider';
+import { requestModel, validateSettings } from './providers.js?v=20261120-hosted';
+import { HOSTED_DEEPSEEK_ID, PROVIDERS, getProvider, inferProvider } from './provider-presets.js?v=20261120-hosted';
 import { setupCloudTerminal } from './cloud-terminal.js';
 import { setupMcp } from './mcp-ui.js';
 
 const $ = id => document.getElementById(id);
-const firstProvider = getProvider('openai');
-const defaults = { providerId: firstProvider.id, protocol: firstProvider.protocol, baseUrl: firstProvider.baseUrl, model: firstProvider.model, theme: 'light' };
+const openAiProvider = getProvider('openai');
+const providerSettings = ({ id, protocol, baseUrl, model }, theme = 'light') => ({ providerId: id, protocol, baseUrl, model, theme });
+const defaults = providerSettings(getProvider(HOSTED_DEEPSEEK_ID) || openAiProvider);
 const protocols = { chat: 'https://api.openai.com/v1', responses: 'https://api.openai.com/v1', anthropic: 'https://api.anthropic.com/v1' };
 const newId = () => crypto.randomUUID();
 const makeThread = () => ({ id: newId(), title: '新会话', messages: [] });
@@ -153,7 +154,8 @@ function sidebar(open) {
 }
 
 function renderSettings() {
-  const { theme, model } = state.settings;
+  const { theme, model, providerId } = state.settings;
+  const hosted = getProvider(providerId)?.hosted;
   if (theme === 'auto') delete document.documentElement.dataset.theme;
   else document.documentElement.dataset.theme = theme;
   let configured = false;
@@ -161,8 +163,15 @@ function renderSettings() {
     validateSettings({ ...state.settings, key });
     configured = true;
   } catch {}
-  $('connection').querySelector('span').textContent = configured ? model : '连接模型';
-  $('model-label').textContent = configured ? model : '';
+  const modelLabel = hosted ? getProvider(providerId).name : model;
+  $('connection').querySelector('span').textContent = configured ? modelLabel : '连接模型';
+  $('model-label').textContent = configured ? modelLabel : '';
+  $('welcome-model').textContent = hosted
+    ? '用内置 DeepSeek 直接发送任务，也可以先导入项目文件。'
+    : '导入项目文件，连接模型，用自然语言开始工作。';
+  $('composer-hint').textContent = hosted
+    ? '文件和会话保存在此浏览器。发送任务时，相关内容经 Carb 服务转发给 DeepSeek。'
+    : '文件和会话保存在此浏览器。发送任务时，相关内容会发送给所选模型。';
   $('connection').toggleAttribute('data-configured', configured);
   $('connection').disabled = false;
 }
@@ -594,8 +603,11 @@ function formSettings() {
 }
 
 function normalizeSettings(settings = {}) {
+  if (settings.providerId === HOSTED_DEEPSEEK_ID) {
+    return providerSettings(getProvider(HOSTED_DEEPSEEK_ID) || openAiProvider, settings.theme);
+  }
   if (!settings.providerId && !settings.model && settings.protocol === 'chat' && settings.baseUrl === protocols.chat) {
-    return { ...defaults, theme: settings.theme || defaults.theme };
+    return providerSettings(openAiProvider, settings.theme);
   }
   const preset = inferProvider(settings);
   return { ...defaults, ...settings, providerId: preset?.id || 'custom', model: settings.model || preset?.model || '' };
@@ -611,12 +623,24 @@ function cancelModelTest() {
 
 function describeProvider() {
   const preset = getProvider($('provider').value);
-  $('api-key').required = !!preset;
+  const hosted = !!preset?.hosted;
+  $('api-key-field').hidden = hosted;
+  $('key-note').hidden = hosted;
+  $('api-key').disabled = hosted;
+  $('api-key').required = !!preset && !hosted;
+  $('model-advanced').hidden = hosted;
+  $('model').readOnly = hosted;
+  $('base-url').readOnly = hosted;
+  $('protocol').disabled = hosted;
   $('provider-key-link').hidden = !preset?.keyUrl;
   if (preset?.keyUrl) $('provider-key-link').href = preset.keyUrl;
-  $('provider-description').textContent = preset
-    ? `已预设 ${$('model').value || preset.model}${preset.note ? `。${preset.note}` : ''}`
-    : '使用兼容的模型服务，在高级设置中填写模型和地址。';
+  if (hosted) {
+    $('provider-description').textContent = '发送任务即可使用。任务内容经 Carb 服务转发给 DeepSeek。';
+  } else {
+    $('provider-description').textContent = preset
+      ? `已预设 ${$('model').value || preset.model}${preset.note ? `。${preset.note}` : ''}`
+      : '使用兼容的模型服务，在高级设置中填写模型和地址。';
+  }
   $('api-key').placeholder = preset ? `粘贴 ${preset.name} 的 API 密钥` : '服务需要认证时填写';
 }
 
@@ -627,7 +651,7 @@ function openSettings() {
   $('protocol').value = state.settings.protocol;
   $('base-url').value = state.settings.baseUrl;
   $('model').value = state.settings.model;
-  $('api-key').value = key;
+  $('api-key').value = getProvider(state.settings.providerId)?.hosted ? '' : key;
   $('theme').value = state.settings.theme;
   $('model-advanced').open = state.settings.providerId === 'custom';
   describeProvider();

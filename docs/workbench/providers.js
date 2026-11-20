@@ -1,4 +1,4 @@
-import { getProvider, inferProvider } from './provider-presets.js?v=20261118-provider';
+import { getProvider, inferProvider } from './provider-presets.js?v=20261120-hosted';
 
 const protocols = {
   chat: { baseUrl: 'https://api.openai.com/v1', route: '/chat/completions' },
@@ -14,8 +14,9 @@ export function validateSettings(settings = {}) {
   if (!config) throw new Error('请选择受支持的 API 协议。');
 
   const model = (settings.model || preset?.model || '').trim();
-  const key = (settings.key || '').trim();
+  const key = preset?.hosted ? '' : (settings.key || '').trim();
   if (!model) throw new Error('请输入服务商提供的模型名称。');
+  if (preset?.hosted && model !== preset.model) throw new Error('内置 DeepSeek 使用固定模型。');
 
   let endpoint;
   try {
@@ -47,7 +48,7 @@ export function validateSettings(settings = {}) {
   if (preset && recognized?.id !== preset.id) {
     throw new Error('接口地址或协议已改变，请选择自定义服务并重新填写对应密钥。');
   }
-  if (!key && (preset || recognized || ['api.openai.com', 'api.anthropic.com'].includes(endpoint.hostname))) {
+  if (!key && !preset?.hosted && (preset || recognized || ['api.openai.com', 'api.anthropic.com'].includes(endpoint.hostname))) {
     throw new Error('请输入模型服务的 API 密钥。');
   }
 
@@ -92,7 +93,7 @@ function chatRequest(config, messages, tools) {
 
 function chatOptions(config) {
   const preset = inferProvider(config);
-  if (preset?.id === 'deepseek' || preset?.id === 'zhipu') return { thinking: { type: 'disabled' } };
+  if (preset?.hosted || preset?.id === 'deepseek' || preset?.id === 'zhipu') return { thinking: { type: 'disabled' } };
   if (preset?.id === 'qwen' || preset?.id === 'siliconflow') return { enable_thinking: false };
   if (preset?.id === 'kimi') return { reasoning_effort: 'low' };
   return {};
@@ -280,6 +281,10 @@ export async function requestModel(settings, messages, tools = [], signal) {
     const safeDescription = typeof description === 'string'
       ? (config.key ? description.replaceAll(config.key, '•••') : description).slice(0, 320)
       : '';
+    if (response.status === 429 && getProvider(config.providerId)?.hosted) {
+      const retryHint = '请稍后重试，或在设置中切换到自带密钥的模型服务。';
+      throw new Error(safeDescription || `内置 DeepSeek 已达到使用限额。${retryHint}`);
+    }
     throw new Error(`模型服务返回 HTTP ${response.status}${safeDescription ? `：${safeDescription}` : '。'}`);
   }
   if (!data || typeof data !== 'object') throw new Error('模型服务返回了无法识别的内容。请检查 API 地址和协议。');
