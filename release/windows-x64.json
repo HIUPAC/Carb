@@ -1,20 +1,24 @@
 {
-  "version": "5.6.13",
-  "tag": "v5.6.13",
+  "version": "5.6.14",
+  "tag": "v5.6.14",
   "platform": "windows-x64",
   "installer": {
-    "filename": "Carb-Setup-5.6.13-win-x64.exe",
-    "url": "https://github.com/HIUPAC/Carb/releases/download/v5.6.13/Carb-Setup-5.6.13-win-x64.exe",
-    "sha256": "8fc61bcf3f6764ebfb41f0554e7a5c6cf160b1e1cf589a98eda497780d5121be",
-    "bytes": 163305830,
+    "filename": "Carb-Setup-5.6.14-win-x64.exe",
+    "sha256": "ae028ebeb52fe33a99081fadc2b42affe26d7106f6b73f717137760270ca5b27",
+    "bytes": 163307821,
+    "url": "https://github.com/HIUPAC/Carb/releases/download/v5.6.14/Carb-Setup-5.6.14-win-x64.exe",
     "signatureStatus": "NotSigned"
   },
   "portable": {
-    "filename": "Carb-5.6.13-win-x64-portable.zip",
-    "url": "https://github.com/HIUPAC/Carb/releases/download/v5.6.13/Carb-5.6.13-win-x64-portable.zip",
-    "sha256": "b7d38dc360e44ed97159c33aaa544db9d530f966b78b4d6e204bc1fb562b528f",
-    "bytes": 211864824,
-    "rootDirectory": "Carb-5.6.13",
-    "files": 14041
+    "filename": "Carb-5.6.14-win-x64-portable.zip",
+    "sha256": "01b442c9265c29bd525a38e9142dceaa10dab43293606a25518c661aa9dda0a3",
+    "bytes": 211865294,
+    "url": "https://github.com/HIUPAC/Carb/releases/download/v5.6.14/Carb-5.6.14-win-x64-portable.zip",
+    "rootDirectory": "Carb-5.6.14",
+    "files": 14040
+  },
+  "distribution": {
+    "host": "github",
+    "releasePage": "https://github.com/HIUPAC/Carb/releases/tag/v5.6.14"
   }
 }

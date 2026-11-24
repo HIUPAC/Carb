@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "product": "Carb",
-  "version": "5.6.13",
+  "version": "5.6.14",
   "snapshotType": "released-application-code-and-resources",
-  "sourceRelease": "Carb-5.6.13",
+  "sourceRelease": "Carb-5.6.14",
   "sourceAsar": {
     "path": "resources/app.asar",
-    "sha256": "809da30ab75314f86c8fabcebb36ac1f8d6c674a4242758fa63fcf43846d95eb",
-    "headerSha256": "0c59af3398acb8c41c244fb4588c07ac36ed335bc1c1b51bf0e706437c80ecb1"
+    "sha256": "e75b550e74f00566c3e84274a39732458fc295d96f74800777e2283a997af442",
+    "headerSha256": "e9abd4b44e509b0d8b621365cae2399f251b8d3f36b5fb56de81b9d593861667"
   },
   "scope": {
     "packedAsar": [
@@ -357,8 +357,8 @@
     ],
     "thirdPartyDependencies": "Third-party node_modules, including commercial SDK implementations, are not exported."
   },
-  "fileCount": 14099,
-  "totalBytes": 72088727,
+  "fileCount": 14100,
+  "totalBytes": 72091297,
   "digestScope": "Original release snapshot files only; README.md and snapshot-manifest.json are excluded.",
   "files": [
     {
@@ -366,6 +366,12 @@
       "bytes": 15657,
       "sha256": "a1e8d41e490eb1aef90234d01a3c69ff8013b45a4bd39931df483777ff8de8a8",
       "source": "resources/app.asar::assets/carb-app-icon.png"
+    },
+    {
+      "path": "asar/dist/carb-renderer-recovery.mjs",
+      "source": "resources/app.asar::dist/carb-renderer-recovery.mjs",
+      "bytes": 2146,
+      "sha256": "d8ca9188effc639d6c30896d01599880250d931e329a9987843f387e405dcba9"
     },
     {
       "path": "asar/dist/carb-uninstall.js",
@@ -399,9 +405,9 @@
     },
     {
       "path": "asar/dist/main.js",
-      "bytes": 121914,
-      "sha256": "7e3b916ef6f969ec520fea41aed4fdfff138eb35e20febbacc3846acb94d64ea",
-      "source": "resources/app.asar::dist/main.js"
+      "source": "resources/app.asar::dist/main.js",
+      "bytes": 122338,
+      "sha256": "ca9c917cab20e884db27678554e4bfa18795d4491a7291d5313b6968659adf09"
     },
     {
       "path": "asar/dist/native-binding-proof.js",
@@ -1424,6 +1430,12 @@
       "source": "resources/app.asar::node_modules/@harness/design-agent/package.json"
     },
     {
+      "path": "asar/node_modules/@harness/design-agent/references/app-screens/LICENSE",
+      "bytes": 1065,
+      "sha256": "4575a543ab88dad12ccea7d97e563d0bce5b448b06072e65d3264497dad326df",
+      "source": "resources/app.asar::node_modules/@harness/design-agent/references/app-screens/LICENSE"
+    },
+    {
       "path": "asar/node_modules/@harness/design-agent/references/app-screens/app-screens.md",
       "bytes": 87308,
       "sha256": "e278f892dfb5c6e05c6300c210df24e64ad9528c3c3efd127c1db3d6a926e8a4",
@@ -1446,12 +1458,6 @@
       "bytes": 59016,
       "sha256": "a7e916594729576b7c7e37048a68508a3243fe8fbc9654775cd245232e9f8100",
       "source": "resources/app.asar::node_modules/@harness/design-agent/references/app-screens/charts.js"
-    },
-    {
-      "path": "asar/node_modules/@harness/design-agent/references/app-screens/LICENSE",
-      "bytes": 1065,
-      "sha256": "4575a543ab88dad12ccea7d97e563d0bce5b448b06072e65d3264497dad326df",
-      "source": "resources/app.asar::node_modules/@harness/design-agent/references/app-screens/LICENSE"
     },
     {
       "path": "asar/node_modules/@harness/design-agent/references/app-screens/provenance.json",
@@ -3009,9 +3015,9 @@
     },
     {
       "path": "asar/package.json",
+      "source": "resources/app.asar::package.json",
       "bytes": 496,
-      "sha256": "767a8b55ab11bd1a168ea6d841275b7f64ea60f53c728d0e43b45e0dc69daf3c",
-      "source": "resources/app.asar::package.json"
+      "sha256": "f2d3a46c5645440615e0469cc4f7ae63ff1515a61cbba7d34226f4e2ad944e80"
     },
     {
       "path": "resources/default-skills/.claude-plugin/plugin.json",
@@ -3024,6 +3030,30 @@
       "bytes": 3075,
       "sha256": "c695c9943bcac5e1e4edc7b1189c64773f37e6d90c66579ad2de382990803db8",
       "source": "resources/default-skills/skills.json"
+    },
+    {
+      "path": "resources/default-skills/skills/cinetic/LICENSE",
+      "bytes": 1065,
+      "sha256": "4575a543ab88dad12ccea7d97e563d0bce5b448b06072e65d3264497dad326df",
+      "source": "resources/default-skills/skills/cinetic/LICENSE"
+    },
+    {
+      "path": "resources/default-skills/skills/cinetic/LICENSE.txt",
+      "bytes": 1065,
+      "sha256": "4575a543ab88dad12ccea7d97e563d0bce5b448b06072e65d3264497dad326df",
+      "source": "resources/default-skills/skills/cinetic/LICENSE.txt"
+    },
+    {
+      "path": "resources/default-skills/skills/cinetic/SKILL.md",
+      "bytes": 67199,
+      "sha256": "4dadf39b147c8ec9a91899f2e0be6ea8c175c2095edea960ecab3af696e8370b",
+      "source": "resources/default-skills/skills/cinetic/SKILL.md"
+    },
+    {
+      "path": "resources/default-skills/skills/cinetic/assets/TREATMENT.md",
+      "bytes": 16662,
+      "sha256": "3b85663d826c0087143269cacb043d74bb29fc2db48767f728e2a52efaa28008",
+      "source": "resources/default-skills/skills/cinetic/assets/TREATMENT.md"
     },
     {
       "path": "resources/default-skills/skills/cinetic/assets/critics/art-copy-ui.md",
@@ -3146,6 +3176,30 @@
       "source": "resources/default-skills/skills/cinetic/assets/remotion-starter/remotion.config.ts"
     },
     {
+      "path": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/Film.tsx",
+      "bytes": 1535,
+      "sha256": "dcb63f4409c2a938138771c5c9dab27171b5d52d34973f68c0626b71e1694c15",
+      "source": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/Film.tsx"
+    },
+    {
+      "path": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/FilmSub.tsx",
+      "bytes": 1234,
+      "sha256": "9577052b61dbfda8bfd6865c3d2c26c26148da7fa490ed93f34f9ba8698f497b",
+      "source": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/FilmSub.tsx"
+    },
+    {
+      "path": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/Root.tsx",
+      "bytes": 3172,
+      "sha256": "7cccd3580c3bff9ddb6934f780c88a39c1226bee3ed5de0d1a2b300b109af006",
+      "source": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/Root.tsx"
+    },
+    {
+      "path": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/Stills.tsx",
+      "bytes": 3788,
+      "sha256": "7bb87478ffe4a3895ae3a14e74c97715bff1267731fda28260001b2cda64d276",
+      "source": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/Stills.tsx"
+    },
+    {
       "path": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/acts/Act1.tsx",
       "bytes": 5604,
       "sha256": "e5f4cd74eabaad668e8f07a03b1ebd324ab31b4f63fa4ee5f6f39b33efeb3e3b",
@@ -3164,34 +3218,22 @@
       "source": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/blur.ts"
     },
     {
-      "path": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/brand/fonts.ts",
-      "bytes": 635,
-      "sha256": "5c896d31f117ca16cbebb3412f2102e4ac5a305483006cac49f5e5214276d5f9",
-      "source": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/brand/fonts.ts"
-    },
-    {
       "path": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/brand/Mark.tsx",
       "bytes": 3149,
       "sha256": "639aa98482171c6a6e10231f5f5fdc00c06bcedfdb1364ee0c15daeeb68d0590",
       "source": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/brand/Mark.tsx"
     },
     {
+      "path": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/brand/fonts.ts",
+      "bytes": 635,
+      "sha256": "5c896d31f117ca16cbebb3412f2102e4ac5a305483006cac49f5e5214276d5f9",
+      "source": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/brand/fonts.ts"
+    },
+    {
       "path": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/brand/tokens.ts",
       "bytes": 3808,
       "sha256": "5b1a1b370ead0e4152905733e67fcf82f9b18ad4faf55e68106c824c3bdde5a9",
       "source": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/brand/tokens.ts"
-    },
-    {
-      "path": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/Film.tsx",
-      "bytes": 1535,
-      "sha256": "dcb63f4409c2a938138771c5c9dab27171b5d52d34973f68c0626b71e1694c15",
-      "source": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/Film.tsx"
-    },
-    {
-      "path": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/FilmSub.tsx",
-      "bytes": 1234,
-      "sha256": "9577052b61dbfda8bfd6865c3d2c26c26148da7fa490ed93f34f9ba8698f497b",
-      "source": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/FilmSub.tsx"
     },
     {
       "path": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/fx/Chain.tsx",
@@ -3260,16 +3302,22 @@
       "source": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/index.ts"
     },
     {
-      "path": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/lib/anim.ts",
-      "bytes": 11912,
-      "sha256": "f34a1e0c04319f8ffa4aca0ae72e498aabcd3cff6110f9a2e5f0803e30d5de94",
-      "source": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/lib/anim.ts"
-    },
-    {
       "path": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/lib/Audit.tsx",
       "bytes": 8557,
       "sha256": "e25bfd8697befe6fa8954c1fef3e1e120d8c777e4c04f93f18d46b751d79ef81",
       "source": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/lib/Audit.tsx"
+    },
+    {
+      "path": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/lib/FontGate.tsx",
+      "bytes": 1517,
+      "sha256": "672ff63e523adc04dabbc61750d517bd1813a4b615d5461e3815892268d1ed06",
+      "source": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/lib/FontGate.tsx"
+    },
+    {
+      "path": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/lib/anim.ts",
+      "bytes": 11912,
+      "sha256": "f34a1e0c04319f8ffa4aca0ae72e498aabcd3cff6110f9a2e5f0803e30d5de94",
+      "source": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/lib/anim.ts"
     },
     {
       "path": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/lib/camera.ts",
@@ -3282,12 +3330,6 @@
       "bytes": 2311,
       "sha256": "de0c2305c3ac3338b6ae80e5eae8f3c93a71ffffeb9fe4c05c3ef9916b8acb0c",
       "source": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/lib/color.ts"
-    },
-    {
-      "path": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/lib/FontGate.tsx",
-      "bytes": 1517,
-      "sha256": "672ff63e523adc04dabbc61750d517bd1813a4b615d5461e3815892268d1ed06",
-      "source": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/lib/FontGate.tsx"
     },
     {
       "path": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/lib/measure.ts",
@@ -3314,18 +3356,6 @@
       "source": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/lib/sync.ts"
     },
     {
-      "path": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/Root.tsx",
-      "bytes": 3172,
-      "sha256": "7cccd3580c3bff9ddb6934f780c88a39c1226bee3ed5de0d1a2b300b109af006",
-      "source": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/Root.tsx"
-    },
-    {
-      "path": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/Stills.tsx",
-      "bytes": 3788,
-      "sha256": "7bb87478ffe4a3895ae3a14e74c97715bff1267731fda28260001b2cda64d276",
-      "source": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/Stills.tsx"
-    },
-    {
       "path": "resources/default-skills/skills/cinetic/assets/remotion-starter/src/sync.ts",
       "bytes": 5639,
       "sha256": "8746c159da3f8d826e62a557eeab09c1c9e1050813dd0c483ca6991c6fb299cb",
@@ -3342,24 +3372,6 @@
       "bytes": 344,
       "sha256": "859343141cd4a962364919d9e1192f716b54430dc8f05ea6b5cdfac8d9fb4fff",
       "source": "resources/default-skills/skills/cinetic/assets/remotion-starter/tsconfig.json"
-    },
-    {
-      "path": "resources/default-skills/skills/cinetic/assets/TREATMENT.md",
-      "bytes": 16662,
-      "sha256": "3b85663d826c0087143269cacb043d74bb29fc2db48767f728e2a52efaa28008",
-      "source": "resources/default-skills/skills/cinetic/assets/TREATMENT.md"
-    },
-    {
-      "path": "resources/default-skills/skills/cinetic/LICENSE",
-      "bytes": 1065,
-      "sha256": "4575a543ab88dad12ccea7d97e563d0bce5b448b06072e65d3264497dad326df",
-      "source": "resources/default-skills/skills/cinetic/LICENSE"
-    },
-    {
-      "path": "resources/default-skills/skills/cinetic/LICENSE.txt",
-      "bytes": 1065,
-      "sha256": "4575a543ab88dad12ccea7d97e563d0bce5b448b06072e65d3264497dad326df",
-      "source": "resources/default-skills/skills/cinetic/LICENSE.txt"
     },
     {
       "path": "resources/default-skills/skills/cinetic/references/brand-and-color.md",
@@ -3656,16 +3668,16 @@
       "source": "resources/default-skills/skills/cinetic/scripts/sheet.py"
     },
     {
-      "path": "resources/default-skills/skills/cinetic/SKILL.md",
-      "bytes": 67199,
-      "sha256": "4dadf39b147c8ec9a91899f2e0be6ea8c175c2095edea960ecab3af696e8370b",
-      "source": "resources/default-skills/skills/cinetic/SKILL.md"
-    },
-    {
       "path": "resources/default-skills/skills/cook/LICENSE",
       "bytes": 1065,
       "sha256": "d9177365c7471d18ecd623ce7b8849e26ab8d7e7fea13e1fcbda62397ecb9db8",
       "source": "resources/default-skills/skills/cook/LICENSE"
+    },
+    {
+      "path": "resources/default-skills/skills/cook/SKILL.md",
+      "bytes": 9255,
+      "sha256": "110a9fe3a94c8d0b52c32ee3ed526d0ed4ea16d73ef9dd0c0d129dbbacf29585",
+      "source": "resources/default-skills/skills/cook/SKILL.md"
     },
     {
       "path": "resources/default-skills/skills/cook/references/intake.md",
@@ -3704,10 +3716,10 @@
       "source": "resources/default-skills/skills/cook/scripts/side-by-side.mjs"
     },
     {
-      "path": "resources/default-skills/skills/cook/SKILL.md",
-      "bytes": 9255,
-      "sha256": "110a9fe3a94c8d0b52c32ee3ed526d0ed4ea16d73ef9dd0c0d129dbbacf29585",
-      "source": "resources/default-skills/skills/cook/SKILL.md"
+      "path": "resources/default-skills/skills/cook/templates/ROUNDS.md",
+      "bytes": 1949,
+      "sha256": "c22c812aef4ec4abccc84c0abb8205ee08f4deda4aad62b529d19b454a8b53c8",
+      "source": "resources/default-skills/skills/cook/templates/ROUNDS.md"
     },
     {
       "path": "resources/default-skills/skills/cook/templates/brief.md",
@@ -3716,10 +3728,16 @@
       "source": "resources/default-skills/skills/cook/templates/brief.md"
     },
     {
-      "path": "resources/default-skills/skills/cook/templates/ROUNDS.md",
-      "bytes": 1949,
-      "sha256": "c22c812aef4ec4abccc84c0abb8205ee08f4deda4aad62b529d19b454a8b53c8",
-      "source": "resources/default-skills/skills/cook/templates/ROUNDS.md"
+      "path": "resources/default-skills/skills/design-taste-frontend/LICENSE",
+      "bytes": 1065,
+      "sha256": "4575a543ab88dad12ccea7d97e563d0bce5b448b06072e65d3264497dad326df",
+      "source": "resources/default-skills/skills/design-taste-frontend/LICENSE"
+    },
+    {
+      "path": "resources/default-skills/skills/design-taste-frontend/SKILL.md",
+      "bytes": 76922,
+      "sha256": "cdfff956650ba4e222dc9fe4b5c2561358b9d38c885b04c458e6ce169316cebd",
+      "source": "resources/default-skills/skills/design-taste-frontend/SKILL.md"
     },
     {
       "path": "resources/default-skills/skills/design-taste-frontend/assets/app.css",
@@ -4796,12 +4814,6 @@
       "source": "resources/default-skills/skills/design-taste-frontend/library/type.json"
     },
     {
-      "path": "resources/default-skills/skills/design-taste-frontend/LICENSE",
-      "bytes": 1065,
-      "sha256": "4575a543ab88dad12ccea7d97e563d0bce5b448b06072e65d3264497dad326df",
-      "source": "resources/default-skills/skills/design-taste-frontend/LICENSE"
-    },
-    {
       "path": "resources/default-skills/skills/design-taste-frontend/references/app-screens.md",
       "bytes": 87308,
       "sha256": "e278f892dfb5c6e05c6300c210df24e64ad9528c3c3efd127c1db3d6a926e8a4",
@@ -4976,12 +4988,6 @@
       "source": "resources/default-skills/skills/design-taste-frontend/scripts/scenes.mjs"
     },
     {
-      "path": "resources/default-skills/skills/design-taste-frontend/SKILL.md",
-      "bytes": 76922,
-      "sha256": "cdfff956650ba4e222dc9fe4b5c2561358b9d38c885b04c458e6ce169316cebd",
-      "source": "resources/default-skills/skills/design-taste-frontend/SKILL.md"
-    },
-    {
       "path": "resources/default-skills/skills/image-recognition/SKILL.md",
       "bytes": 1564,
       "sha256": "947a1507fa7b055fe7d532cf496921e743fa993e014b1b231a56ef81287ee330",
@@ -4998,6 +5004,30 @@
       "bytes": 1069,
       "sha256": "80cefc234c1ec12a8cece4344f16300c634fa03df7891686fcf979e3828f0921",
       "source": "resources/default-skills/skills/ppt-master/LICENSE"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/SKILL.md",
+      "bytes": 10323,
+      "sha256": "cda3f1f476a93a48385867dbdb89f661f27c35bfb670f51c7dbd53a3b300c856",
+      "source": "resources/default-skills/skills/ppt-master/SKILL.md"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/SPONSORS.md",
+      "bytes": 5275,
+      "sha256": "c0bff8f188e89d8776e777a52e82b331969cc74758ed68936c4751344017e4e2",
+      "source": "resources/default-skills/skills/ppt-master/SPONSORS.md"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/SPONSORS_CN.md",
+      "bytes": 4924,
+      "sha256": "b80bd52f59f067d165a49309580129f69c769b2878634bc7f4ae0feaa0cbbf70",
+      "source": "resources/default-skills/skills/ppt-master/SPONSORS_CN.md"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/references/ai-image-comparison/README.md",
+      "bytes": 4558,
+      "sha256": "bc21b0eeeae11c57a61e6992a28016253eb38b5b1a7d3bb42fd45917e74e3de6",
+      "source": "resources/default-skills/skills/ppt-master/references/ai-image-comparison/README.md"
     },
     {
       "path": "resources/default-skills/skills/ppt-master/references/ai-image-comparison/palette/_manifest.json",
@@ -5102,10 +5132,10 @@
       "source": "resources/default-skills/skills/ppt-master/references/ai-image-comparison/palette/warm-earth.webp"
     },
     {
-      "path": "resources/default-skills/skills/ppt-master/references/ai-image-comparison/README.md",
-      "bytes": 4558,
-      "sha256": "bc21b0eeeae11c57a61e6992a28016253eb38b5b1a7d3bb42fd45917e74e3de6",
-      "source": "resources/default-skills/skills/ppt-master/references/ai-image-comparison/README.md"
+      "path": "resources/default-skills/skills/ppt-master/references/ai-image-comparison/rendering/3d-isometric.webp",
+      "bytes": 23072,
+      "sha256": "05413282dc74b61f1e101fc42e324c285a39ddc5ebb386a39c8d7f3562404cd6",
+      "source": "resources/default-skills/skills/ppt-master/references/ai-image-comparison/rendering/3d-isometric.webp"
     },
     {
       "path": "resources/default-skills/skills/ppt-master/references/ai-image-comparison/rendering/_manifest.json",
@@ -5124,12 +5154,6 @@
       "bytes": 1806,
       "sha256": "eff91e57e1b624baa8abb4f127719d08806e09ce91952936b134792fe9942797",
       "source": "resources/default-skills/skills/ppt-master/references/ai-image-comparison/rendering/_subject.md"
-    },
-    {
-      "path": "resources/default-skills/skills/ppt-master/references/ai-image-comparison/rendering/3d-isometric.webp",
-      "bytes": 23072,
-      "sha256": "05413282dc74b61f1e101fc42e324c285a39ddc5ebb386a39c8d7f3562404cd6",
-      "source": "resources/default-skills/skills/ppt-master/references/ai-image-comparison/rendering/3d-isometric.webp"
     },
     {
       "path": "resources/default-skills/skills/ppt-master/references/ai-image-comparison/rendering/blueprint.webp",
@@ -5522,16 +5546,16 @@
       "source": "resources/default-skills/skills/ppt-master/references/image-palettes/warm-earth.md"
     },
     {
-      "path": "resources/default-skills/skills/ppt-master/references/image-renderings/_index.md",
-      "bytes": 8249,
-      "sha256": "fc7e921728767e80dbd0c52379321e1e26523b65a654304db819451c457b3829",
-      "source": "resources/default-skills/skills/ppt-master/references/image-renderings/_index.md"
-    },
-    {
       "path": "resources/default-skills/skills/ppt-master/references/image-renderings/3d-isometric.md",
       "bytes": 2738,
       "sha256": "ab1f0158fb0ff02443bd4489f772f4e70353b971c2cf075e46fc5c702c304cd4",
       "source": "resources/default-skills/skills/ppt-master/references/image-renderings/3d-isometric.md"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/references/image-renderings/_index.md",
+      "bytes": 8249,
+      "sha256": "fc7e921728767e80dbd0c52379321e1e26523b65a654304db819451c457b3829",
+      "source": "resources/default-skills/skills/ppt-master/references/image-renderings/_index.md"
     },
     {
       "path": "resources/default-skills/skills/ppt-master/references/image-renderings/blueprint.md",
@@ -5996,6 +6020,12 @@
       "source": "resources/default-skills/skills/ppt-master/requirements.txt"
     },
     {
+      "path": "resources/default-skills/skills/ppt-master/scripts/README.md",
+      "bytes": 35808,
+      "sha256": "138ecf1d666ac9b09b6b5dc34e2fe6cd3a2255372575478d1bbe4be2f250f102",
+      "source": "resources/default-skills/skills/ppt-master/scripts/README.md"
+    },
+    {
       "path": "resources/default-skills/skills/ppt-master/scripts/analyze_images.py",
       "bytes": 16924,
       "sha256": "b45bb866da993306a59b259c81cbbc6c686490dfad22364aaef5348f84d9460d",
@@ -6122,6 +6152,12 @@
       "source": "resources/default-skills/skills/ppt-master/scripts/confirm_ui/static/index.html"
     },
     {
+      "path": "resources/default-skills/skills/ppt-master/scripts/confirm_ui/static/style.css",
+      "bytes": 28693,
+      "sha256": "03596a728440a186cb8d417dbbaa552e2e8f1983ead8de951dae2bb5701478ad",
+      "source": "resources/default-skills/skills/ppt-master/scripts/confirm_ui/static/style.css"
+    },
+    {
       "path": "resources/default-skills/skills/ppt-master/scripts/confirm_ui/static/style_previews/blueprint.svg",
       "bytes": 2530,
       "sha256": "840842b4fb812d343643df551eed315f4f84d3936d7b3bb5f17f085e6d18b8f8",
@@ -6230,12 +6266,6 @@
       "source": "resources/default-skills/skills/ppt-master/scripts/confirm_ui/static/style_previews/zine.svg"
     },
     {
-      "path": "resources/default-skills/skills/ppt-master/scripts/confirm_ui/static/style.css",
-      "bytes": 28693,
-      "sha256": "03596a728440a186cb8d417dbbaa552e2e8f1983ead8de951dae2bb5701478ad",
-      "source": "resources/default-skills/skills/ppt-master/scripts/confirm_ui/static/style.css"
-    },
-    {
       "path": "resources/default-skills/skills/ppt-master/scripts/console_encoding.py",
       "bytes": 3053,
       "sha256": "45f47cb8d9b6f462bf0a1726c3b9664b733ec64f823002463dd1670b7541f42e",
@@ -6326,12 +6356,6 @@
       "source": "resources/default-skills/skills/ppt-master/scripts/docs/spec_review.md"
     },
     {
-      "path": "resources/default-skills/skills/ppt-master/scripts/docs/svg_editor.md",
-      "bytes": 7170,
-      "sha256": "87512283046c93d2183948ec8843db0b11253fa80ebf89724f79690e6aee552a",
-      "source": "resources/default-skills/skills/ppt-master/scripts/docs/svg_editor.md"
-    },
-    {
       "path": "resources/default-skills/skills/ppt-master/scripts/docs/svg-contract.md",
       "bytes": 57987,
       "sha256": "125cc00987810e807e50e1bbf5917a4eb610f0684147587cad79b8008f10788e",
@@ -6342,6 +6366,12 @@
       "bytes": 107620,
       "sha256": "dcffd1fbf468d117ba5c5d1a59f3624bfc79f011bd1197f6b126e25306da843e",
       "source": "resources/default-skills/skills/ppt-master/scripts/docs/svg-pipeline.md"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/scripts/docs/svg_editor.md",
+      "bytes": 7170,
+      "sha256": "87512283046c93d2183948ec8843db0b11253fa80ebf89724f79690e6aee552a",
+      "source": "resources/default-skills/skills/ppt-master/scripts/docs/svg_editor.md"
     },
     {
       "path": "resources/default-skills/skills/ppt-master/scripts/docs/template-tools.md",
@@ -7082,22 +7112,16 @@
       "source": "resources/default-skills/skills/ppt-master/scripts/project_utils.py"
     },
     {
-      "path": "resources/default-skills/skills/ppt-master/scripts/prompt_audit_manifest.json",
-      "bytes": 99944,
-      "sha256": "5dda7492ab73b84e08602bbe8691f8262906f59a83b24729215b31b1d63a83c6",
-      "source": "resources/default-skills/skills/ppt-master/scripts/prompt_audit_manifest.json"
-    },
-    {
       "path": "resources/default-skills/skills/ppt-master/scripts/prompt_audit.py",
       "bytes": 91792,
       "sha256": "28d1e54e4b8563f107a406652de1297a09bdf92dca11d7061a84f9266704c3c1",
       "source": "resources/default-skills/skills/ppt-master/scripts/prompt_audit.py"
     },
     {
-      "path": "resources/default-skills/skills/ppt-master/scripts/README.md",
-      "bytes": 35808,
-      "sha256": "138ecf1d666ac9b09b6b5dc34e2fe6cd3a2255372575478d1bbe4be2f250f102",
-      "source": "resources/default-skills/skills/ppt-master/scripts/README.md"
+      "path": "resources/default-skills/skills/ppt-master/scripts/prompt_audit_manifest.json",
+      "bytes": 99944,
+      "sha256": "5dda7492ab73b84e08602bbe8691f8262906f59a83b24729215b31b1d63a83c6",
+      "source": "resources/default-skills/skills/ppt-master/scripts/prompt_audit_manifest.json"
     },
     {
       "path": "resources/default-skills/skills/ppt-master/scripts/register_template.py",
@@ -7382,12 +7406,6 @@
       "source": "resources/default-skills/skills/ppt-master/scripts/svg_position_calculator.py"
     },
     {
-      "path": "resources/default-skills/skills/ppt-master/scripts/svg_quality_checker.py",
-      "bytes": 1682,
-      "sha256": "cf8f21be001a30c9f8212ad80c34f4e657741b9186a79213808f0bcef045a482",
-      "source": "resources/default-skills/skills/ppt-master/scripts/svg_quality_checker.py"
-    },
-    {
       "path": "resources/default-skills/skills/ppt-master/scripts/svg_quality/__init__.py",
       "bytes": 351,
       "sha256": "309303e80c80758ccae1152c45e57cd968bea67c529648e690d0d209f1ee01cb",
@@ -7422,6 +7440,12 @@
       "bytes": 948,
       "sha256": "8199887d221c063b6f2334e5c8ccb780c2c5edef6553afae60dfd77677feb55a",
       "source": "resources/default-skills/skills/ppt-master/scripts/svg_quality/xml_support.py"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/scripts/svg_quality_checker.py",
+      "bytes": 1682,
+      "sha256": "cf8f21be001a30c9f8212ad80c34f4e657741b9186a79213808f0bcef045a482",
+      "source": "resources/default-skills/skills/ppt-master/scripts/svg_quality_checker.py"
     },
     {
       "path": "resources/default-skills/skills/ppt-master/scripts/svg_to_pptx.py",
@@ -7580,6 +7604,12 @@
       "source": "resources/default-skills/skills/ppt-master/scripts/svg_to_pptx/native_objects/fallback_hash.py"
     },
     {
+      "path": "resources/default-skills/skills/ppt-master/scripts/svg_to_pptx/native_objects/formula.py",
+      "bytes": 9552,
+      "sha256": "337712d777868e9937d313104d7390aedc19550b26f02f7e8e3ff2c8da1a4a3e",
+      "source": "resources/default-skills/skills/ppt-master/scripts/svg_to_pptx/native_objects/formula.py"
+    },
+    {
       "path": "resources/default-skills/skills/ppt-master/scripts/svg_to_pptx/native_objects/formula_ast.py",
       "bytes": 17422,
       "sha256": "67c65000fdf8682f9542fb03a39a75ccf9352a7a9efb53152dfe3383cbf17878",
@@ -7614,12 +7644,6 @@
       "bytes": 7058,
       "sha256": "eac4cb86857333fce0a84a0d91b7cfb817fca3821d1dd63a28193d977c979ed7",
       "source": "resources/default-skills/skills/ppt-master/scripts/svg_to_pptx/native_objects/formula_run_properties.py"
-    },
-    {
-      "path": "resources/default-skills/skills/ppt-master/scripts/svg_to_pptx/native_objects/formula.py",
-      "bytes": 9552,
-      "sha256": "337712d777868e9937d313104d7390aedc19550b26f02f7e8e3ff2c8da1a4a3e",
-      "source": "resources/default-skills/skills/ppt-master/scripts/svg_to_pptx/native_objects/formula.py"
     },
     {
       "path": "resources/default-skills/skills/ppt-master/scripts/svg_to_pptx/native_objects/inline_formula.py",
@@ -7904,22 +7928,22 @@
       "source": "resources/default-skills/skills/ppt-master/scripts/workflow_transcript.py"
     },
     {
-      "path": "resources/default-skills/skills/ppt-master/SKILL.md",
-      "bytes": 10323,
-      "sha256": "cda3f1f476a93a48385867dbdb89f661f27c35bfb670f51c7dbd53a3b300c856",
-      "source": "resources/default-skills/skills/ppt-master/SKILL.md"
+      "path": "resources/default-skills/skills/ppt-master/templates/README.md",
+      "bytes": 6278,
+      "sha256": "e40b8a20751a8dd42e3fe511887aed7abbb253af148cf1262562312fbdf4c923",
+      "source": "resources/default-skills/skills/ppt-master/templates/README.md"
     },
     {
-      "path": "resources/default-skills/skills/ppt-master/SPONSORS_CN.md",
-      "bytes": 4924,
-      "sha256": "b80bd52f59f067d165a49309580129f69c769b2878634bc7f4ae0feaa0cbbf70",
-      "source": "resources/default-skills/skills/ppt-master/SPONSORS_CN.md"
+      "path": "resources/default-skills/skills/ppt-master/templates/VISUALIZATION_TEMPLATE_AUTHORING.md",
+      "bytes": 23605,
+      "sha256": "7cabf0746fc5258366e101222194d2ab4198d2e85ad56fe63659ca3450076811",
+      "source": "resources/default-skills/skills/ppt-master/templates/VISUALIZATION_TEMPLATE_AUTHORING.md"
     },
     {
-      "path": "resources/default-skills/skills/ppt-master/SPONSORS.md",
-      "bytes": 5275,
-      "sha256": "c0bff8f188e89d8776e777a52e82b331969cc74758ed68936c4751344017e4e2",
-      "source": "resources/default-skills/skills/ppt-master/SPONSORS.md"
+      "path": "resources/default-skills/skills/ppt-master/templates/brands/README.md",
+      "bytes": 2058,
+      "sha256": "02eab3d24b6f30077688bb7409aaf6e6442d8256ea4e33e9b1d45c1b48d97deb",
+      "source": "resources/default-skills/skills/ppt-master/templates/brands/README.md"
     },
     {
       "path": "resources/default-skills/skills/ppt-master/templates/brands/accenture/templates/design_spec.md",
@@ -8048,12 +8072,6 @@
       "source": "resources/default-skills/skills/ppt-master/templates/brands/pwc/templates/design_spec.md"
     },
     {
-      "path": "resources/default-skills/skills/ppt-master/templates/brands/README.md",
-      "bytes": 2058,
-      "sha256": "02eab3d24b6f30077688bb7409aaf6e6442d8256ea4e33e9b1d45c1b48d97deb",
-      "source": "resources/default-skills/skills/ppt-master/templates/brands/README.md"
-    },
-    {
       "path": "resources/default-skills/skills/ppt-master/templates/brands/tencent/templates/design_spec.md",
       "bytes": 3741,
       "sha256": "8a69bbaa972929e1f5dda2bef4ae96f6fc8661a22d299a56a17920810c225bad",
@@ -8078,16 +8096,16 @@
       "source": "resources/default-skills/skills/ppt-master/templates/brands/zcare-rescue/images/zcare_fullname_white.png"
     },
     {
-      "path": "resources/default-skills/skills/ppt-master/templates/brands/zcare-rescue/images/zcare_lockup_horizontal_white.png",
-      "bytes": 121532,
-      "sha256": "1491c62fb95a267bee8a19360650b8c62dbed6406c75e77533e9abaf4bd80c49",
-      "source": "resources/default-skills/skills/ppt-master/templates/brands/zcare-rescue/images/zcare_lockup_horizontal_white.png"
-    },
-    {
       "path": "resources/default-skills/skills/ppt-master/templates/brands/zcare-rescue/images/zcare_lockup_horizontal.png",
       "bytes": 121171,
       "sha256": "1f851737240fbbfa7c8958588d40c125f270f16f03cca7276991a74a4de9cec9",
       "source": "resources/default-skills/skills/ppt-master/templates/brands/zcare-rescue/images/zcare_lockup_horizontal.png"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/templates/brands/zcare-rescue/images/zcare_lockup_horizontal_white.png",
+      "bytes": 121532,
+      "sha256": "1491c62fb95a267bee8a19360650b8c62dbed6406c75e77533e9abaf4bd80c49",
+      "source": "resources/default-skills/skills/ppt-master/templates/brands/zcare-rescue/images/zcare_lockup_horizontal_white.png"
     },
     {
       "path": "resources/default-skills/skills/ppt-master/templates/brands/zcare-rescue/images/zcare_lockup_vertical.png",
@@ -8184,6 +8202,12 @@
       "bytes": 3592,
       "sha256": "ad87488628d6ec995c507a5f9e12f4c2d49283154765222b0c178d77ebd22a99",
       "source": "resources/default-skills/skills/ppt-master/templates/brands/中汽研/templates/design_spec.md"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/templates/charts/README.md",
+      "bytes": 3392,
+      "sha256": "cf614cc573decc13712ed3818ee2d1f2327c3edd64961ace2357b8afc2cc43fe",
+      "source": "resources/default-skills/skills/ppt-master/templates/charts/README.md"
     },
     {
       "path": "resources/default-skills/skills/ppt-master/templates/charts/area_chart.svg",
@@ -8342,12 +8366,6 @@
       "source": "resources/default-skills/skills/ppt-master/templates/charts/radar_chart.svg"
     },
     {
-      "path": "resources/default-skills/skills/ppt-master/templates/charts/README.md",
-      "bytes": 3392,
-      "sha256": "cf614cc573decc13712ed3818ee2d1f2327c3edd64961ace2357b8afc2cc43fe",
-      "source": "resources/default-skills/skills/ppt-master/templates/charts/README.md"
-    },
-    {
       "path": "resources/default-skills/skills/ppt-master/templates/charts/sankey_chart.svg",
       "bytes": 12842,
       "sha256": "fda92bbfc0d2503017e34cd17d8ce66165693091ca304129b7eb6cbe14f89365",
@@ -8402,16 +8420,16 @@
       "source": "resources/default-skills/skills/ppt-master/templates/charts/word_cloud.svg"
     },
     {
-      "path": "resources/default-skills/skills/ppt-master/templates/decks/decks_index.json",
-      "bytes": 545,
-      "sha256": "562e1a68650d01448743374b7fd9d2acd7237b88545f14e3dd335eecdd2e1c0a",
-      "source": "resources/default-skills/skills/ppt-master/templates/decks/decks_index.json"
-    },
-    {
       "path": "resources/default-skills/skills/ppt-master/templates/decks/README.md",
       "bytes": 4654,
       "sha256": "d8f7f54319a520454111b05f9b5820c9b91d5735ceade2ba3de4aa727fcf8170",
       "source": "resources/default-skills/skills/ppt-master/templates/decks/README.md"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/templates/decks/decks_index.json",
+      "bytes": 545,
+      "sha256": "562e1a68650d01448743374b7fd9d2acd7237b88545f14e3dd335eecdd2e1c0a",
+      "source": "resources/default-skills/skills/ppt-master/templates/decks/decks_index.json"
     },
     {
       "path": "resources/default-skills/skills/ppt-master/templates/decks/中国电信/images/footer_ribbon.png",
@@ -8538,6 +8556,18 @@
       "bytes": 15644,
       "sha256": "7e38dade488af4a8a8b46c3bc99255147aa5761a1fa5fff9f61f0ea47b9565f8",
       "source": "resources/default-skills/skills/ppt-master/templates/design_spec_reference.md"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/templates/icons/README.md",
+      "bytes": 6093,
+      "sha256": "0081d9efe8bffe97a14749d8e1d4929bca304a54cd33197b51c85727c8a448c1",
+      "source": "resources/default-skills/skills/ppt-master/templates/icons/README.md"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/templates/icons/THIRD_PARTY_NOTICES.md",
+      "bytes": 5682,
+      "sha256": "65595b92371f4d2005e3ee54c8ce6d815c67266e91cc5b050b724224b3ef8b9c",
+      "source": "resources/default-skills/skills/ppt-master/templates/icons/THIRD_PARTY_NOTICES.md"
     },
     {
       "path": "resources/default-skills/skills/ppt-master/templates/icons/chunk-filled/a.svg",
@@ -21494,12 +21524,6 @@
       "source": "resources/default-skills/skills/ppt-master/templates/icons/phosphor-duotone/youtube-logo.svg"
     },
     {
-      "path": "resources/default-skills/skills/ppt-master/templates/icons/README.md",
-      "bytes": 6093,
-      "sha256": "0081d9efe8bffe97a14749d8e1d4929bca304a54cd33197b51c85727c8a448c1",
-      "source": "resources/default-skills/skills/ppt-master/templates/icons/README.md"
-    },
-    {
       "path": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/1001tracklists.svg",
       "bytes": 677,
       "sha256": "f2fd420a8e990d1b17da75d3189e3739f451ef483308f44b96b374332594a010",
@@ -23612,16 +23636,16 @@
       "source": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/backendless.svg"
     },
     {
-      "path": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/backstage_casting.svg",
-      "bytes": 218,
-      "sha256": "ab440534115b0085eee78fe9de1d0978f24a517a1012aae0bdd6859b6e141ed4",
-      "source": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/backstage_casting.svg"
-    },
-    {
       "path": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/backstage.svg",
       "bytes": 3269,
       "sha256": "bd5429e66e19ad20c98b76f29780a59cb16c59a6a1255ef692537e7fe0facf23",
       "source": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/backstage.svg"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/backstage_casting.svg",
+      "bytes": 218,
+      "sha256": "ab440534115b0085eee78fe9de1d0978f24a517a1012aae0bdd6859b6e141ed4",
+      "source": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/backstage_casting.svg"
     },
     {
       "path": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/badoo.svg",
@@ -29516,16 +29540,16 @@
       "source": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/grapheneos.svg"
     },
     {
-      "path": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/graphite_editor.svg",
-      "bytes": 1086,
-      "sha256": "f2cf5410d03f7b878dc4127b6a6abc9585538ee6b63f6628e9fbf75a59b304a0",
-      "source": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/graphite_editor.svg"
-    },
-    {
       "path": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/graphite.svg",
       "bytes": 316,
       "sha256": "e43e27ef2af545ee23c94e0faa556d0438506d8bdb4d08272333171c2ae09599",
       "source": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/graphite.svg"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/graphite_editor.svg",
+      "bytes": 1086,
+      "sha256": "f2cf5410d03f7b878dc4127b6a6abc9585538ee6b63f6628e9fbf75a59b304a0",
+      "source": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/graphite_editor.svg"
     },
     {
       "path": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/graphql.svg",
@@ -29810,16 +29834,16 @@
       "source": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/handm.svg"
     },
     {
-      "path": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/handshake_protocol.svg",
-      "bytes": 924,
-      "sha256": "b62c1453ad15d6fcae575f550f15f5c2e073709a3352c9f798ff59a6935f025e",
-      "source": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/handshake_protocol.svg"
-    },
-    {
       "path": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/handshake.svg",
       "bytes": 231,
       "sha256": "c167d1558d4ea27f885be8a25f1871ee81af35fc6e63a927a97da67152b9e758",
       "source": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/handshake.svg"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/handshake_protocol.svg",
+      "bytes": 924,
+      "sha256": "b62c1453ad15d6fcae575f550f15f5c2e073709a3352c9f798ff59a6935f025e",
+      "source": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/handshake_protocol.svg"
     },
     {
       "path": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/happycow.svg",
@@ -30110,16 +30134,16 @@
       "source": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/hitachi.svg"
     },
     {
-      "path": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/hive_blockchain.svg",
-      "bytes": 713,
-      "sha256": "13ca34d7d0bde8f69545d980bdb945c2235366c2f476c56e37c4ea8cefbd005e",
-      "source": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/hive_blockchain.svg"
-    },
-    {
       "path": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/hive.svg",
       "bytes": 1443,
       "sha256": "bbae2b7563a9c32a831ca2cf82ee3af54bacae8a7fb442297a8daf52ad47aea7",
       "source": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/hive.svg"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/hive_blockchain.svg",
+      "bytes": 713,
+      "sha256": "13ca34d7d0bde8f69545d980bdb945c2235366c2f476c56e37c4ea8cefbd005e",
+      "source": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/hive_blockchain.svg"
     },
     {
       "path": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/hivemq.svg",
@@ -39518,16 +39542,16 @@
       "source": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/spreaker.svg"
     },
     {
-      "path": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/spring_creators.svg",
-      "bytes": 814,
-      "sha256": "fb25815ce341aa70019f30315ffa94fa3b55e94b5b18a94c149d34e0b6a260cd",
-      "source": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/spring_creators.svg"
-    },
-    {
       "path": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/spring.svg",
       "bytes": 819,
       "sha256": "44f55b1c7e9db0fab5bbb9b91247844986a39995b6eadf0aa3ca6edf47c1097e",
       "source": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/spring.svg"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/spring_creators.svg",
+      "bytes": 814,
+      "sha256": "fb25815ce341aa70019f30315ffa94fa3b55e94b5b18a94c149d34e0b6a260cd",
+      "source": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/spring_creators.svg"
     },
     {
       "path": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/springboot.svg",
@@ -41606,16 +41630,16 @@
       "source": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/unilever.svg"
     },
     {
-      "path": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/uniqlo_ja.svg",
-      "bytes": 407,
-      "sha256": "86c6c9f3192d1f34482199c5258163223d6546f3b71bcf45c53e875f577579a6",
-      "source": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/uniqlo_ja.svg"
-    },
-    {
       "path": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/uniqlo.svg",
       "bytes": 996,
       "sha256": "1c2e38f6f883f579f22d276a87692fef3b0d127d956434315204c89b2483ae0a",
       "source": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/uniqlo.svg"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/uniqlo_ja.svg",
+      "bytes": 407,
+      "sha256": "86c6c9f3192d1f34482199c5258163223d6546f3b71bcf45c53e875f577579a6",
+      "source": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/uniqlo_ja.svg"
     },
     {
       "path": "resources/default-skills/skills/ppt-master/templates/icons/simple-icons/unitedairlines.svg",
@@ -80708,10 +80732,10 @@
       "source": "resources/default-skills/skills/ppt-master/templates/icons/tabler-outline/zzz.svg"
     },
     {
-      "path": "resources/default-skills/skills/ppt-master/templates/icons/THIRD_PARTY_NOTICES.md",
-      "bytes": 5682,
-      "sha256": "65595b92371f4d2005e3ee54c8ce6d815c67266e91cc5b050b724224b3ef8b9c",
-      "source": "resources/default-skills/skills/ppt-master/templates/icons/THIRD_PARTY_NOTICES.md"
+      "path": "resources/default-skills/skills/ppt-master/templates/layouts/README.md",
+      "bytes": 5260,
+      "sha256": "a89f8f6bfb3a83121fe22edba1168010fe983aed47a8d4e2aa06da2a1189a6c8",
+      "source": "resources/default-skills/skills/ppt-master/templates/layouts/README.md"
     },
     {
       "path": "resources/default-skills/skills/ppt-master/templates/layouts/editorial_bleed/templates/01_hero_full.svg",
@@ -80840,108 +80864,6 @@
       "source": "resources/default-skills/skills/ppt-master/templates/layouts/moments_square/templates/design_spec.md"
     },
     {
-      "path": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/01_title_slide.svg",
-      "bytes": 1235,
-      "sha256": "8b05c7458137065fa9de86792ef309d14535b2146c0287e8805b001518cff1e6",
-      "source": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/01_title_slide.svg"
-    },
-    {
-      "path": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/02_title_content.svg",
-      "bytes": 1255,
-      "sha256": "10483d6ebb5111441becba2d97ac46eebc0246fde0e500ff650e4b2a4676d088",
-      "source": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/02_title_content.svg"
-    },
-    {
-      "path": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/03_section_header.svg",
-      "bytes": 1254,
-      "sha256": "fa85d3d2b62554f46776f877f243f223dc6ce5ebfe5d576c36c4611d7ae6ccee",
-      "source": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/03_section_header.svg"
-    },
-    {
-      "path": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/04_two_content.svg",
-      "bytes": 1789,
-      "sha256": "9b86ad082476a84c728d625457323702cc017053451d569e912ec9fd25dc582d",
-      "source": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/04_two_content.svg"
-    },
-    {
-      "path": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/05_comparison.svg",
-      "bytes": 2814,
-      "sha256": "1cc6d2a38967eba89c1f19282c2ea13a64616e32e47b0e099234354d3700dfb1",
-      "source": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/05_comparison.svg"
-    },
-    {
-      "path": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/06_title_only.svg",
-      "bytes": 912,
-      "sha256": "2a61f59c0d91caebb0679f663eb69bbc3efacaa98025db606444dc0998d8fbc2",
-      "source": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/06_title_only.svg"
-    },
-    {
-      "path": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/07_blank.svg",
-      "bytes": 430,
-      "sha256": "bb776d43c316b133a42c4e508d1bc3c3e60a1a8b217a2161376aa57228d9935a",
-      "source": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/07_blank.svg"
-    },
-    {
-      "path": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/08_content_caption.svg",
-      "bytes": 1831,
-      "sha256": "782fb95d7fb39d39e435ad99740389ad47494c6dad2b307b5d081f24139a354b",
-      "source": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/08_content_caption.svg"
-    },
-    {
-      "path": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/09_picture_caption.svg",
-      "bytes": 1909,
-      "sha256": "5399d1b180a764563415cded5e6bf392078c69550cd24daac1ae35360a020731",
-      "source": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/09_picture_caption.svg"
-    },
-    {
-      "path": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/10_hero_statement.svg",
-      "bytes": 1265,
-      "sha256": "9610e8d9e271bd5f7604a81ce9c619a5deae67349b909766086223c5dbc3aa0f",
-      "source": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/10_hero_statement.svg"
-    },
-    {
-      "path": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/11_three_card.svg",
-      "bytes": 2281,
-      "sha256": "cef40030ccfc70b47518e322e7bffc46dcbc5f33ff1cf8b78a2d74d77e379f5a",
-      "source": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/11_three_card.svg"
-    },
-    {
-      "path": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/12_kpi_grid.svg",
-      "bytes": 3405,
-      "sha256": "02cb83774c8c04f2f56425171f49200c4c2266b5d80fc90400cfa6b7f5417637",
-      "source": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/12_kpi_grid.svg"
-    },
-    {
-      "path": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/13_process_timeline.svg",
-      "bytes": 3588,
-      "sha256": "9c95596945123ec3f5ae86daf3b549e10c1ef111ea287447cc51d152eb8f1962",
-      "source": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/13_process_timeline.svg"
-    },
-    {
-      "path": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/14_stacked_split.svg",
-      "bytes": 1806,
-      "sha256": "01aa8ee0fc62766670dbb98bbb12525497c77b5897c80b6aae47bf965a6a7668",
-      "source": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/14_stacked_split.svg"
-    },
-    {
-      "path": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/15_chart_insight.svg",
-      "bytes": 4614,
-      "sha256": "5f9c30df350cc4bede48aef9df24821efb279c0231b3899bec769e1d93f95d0c",
-      "source": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/15_chart_insight.svg"
-    },
-    {
-      "path": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/16_table_summary.svg",
-      "bytes": 6213,
-      "sha256": "1401db3323eb59c9578f99fa5a32d777a674d38b6ccae2f9f975a4eb389e96fa",
-      "source": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/16_table_summary.svg"
-    },
-    {
-      "path": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/design_spec.md",
-      "bytes": 5874,
-      "sha256": "ead0d6d1d72b5601933740bf32c9d1021c652c25293aaaa234445fe8d654bf1e",
-      "source": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/design_spec.md"
-    },
-    {
       "path": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core/templates/01_title_slide.svg",
       "bytes": 1233,
       "sha256": "4cca35e8aab528bf1068e3f18b74d49630844472594212c86620d2692ecaa196",
@@ -81068,10 +80990,106 @@
       "source": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core/templates/design_spec.md"
     },
     {
-      "path": "resources/default-skills/skills/ppt-master/templates/layouts/README.md",
-      "bytes": 5260,
-      "sha256": "a89f8f6bfb3a83121fe22edba1168010fe983aed47a8d4e2aa06da2a1189a6c8",
-      "source": "resources/default-skills/skills/ppt-master/templates/layouts/README.md"
+      "path": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/01_title_slide.svg",
+      "bytes": 1235,
+      "sha256": "8b05c7458137065fa9de86792ef309d14535b2146c0287e8805b001518cff1e6",
+      "source": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/01_title_slide.svg"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/02_title_content.svg",
+      "bytes": 1255,
+      "sha256": "10483d6ebb5111441becba2d97ac46eebc0246fde0e500ff650e4b2a4676d088",
+      "source": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/02_title_content.svg"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/03_section_header.svg",
+      "bytes": 1254,
+      "sha256": "fa85d3d2b62554f46776f877f243f223dc6ce5ebfe5d576c36c4611d7ae6ccee",
+      "source": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/03_section_header.svg"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/04_two_content.svg",
+      "bytes": 1789,
+      "sha256": "9b86ad082476a84c728d625457323702cc017053451d569e912ec9fd25dc582d",
+      "source": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/04_two_content.svg"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/05_comparison.svg",
+      "bytes": 2814,
+      "sha256": "1cc6d2a38967eba89c1f19282c2ea13a64616e32e47b0e099234354d3700dfb1",
+      "source": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/05_comparison.svg"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/06_title_only.svg",
+      "bytes": 912,
+      "sha256": "2a61f59c0d91caebb0679f663eb69bbc3efacaa98025db606444dc0998d8fbc2",
+      "source": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/06_title_only.svg"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/07_blank.svg",
+      "bytes": 430,
+      "sha256": "bb776d43c316b133a42c4e508d1bc3c3e60a1a8b217a2161376aa57228d9935a",
+      "source": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/07_blank.svg"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/08_content_caption.svg",
+      "bytes": 1831,
+      "sha256": "782fb95d7fb39d39e435ad99740389ad47494c6dad2b307b5d081f24139a354b",
+      "source": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/08_content_caption.svg"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/09_picture_caption.svg",
+      "bytes": 1909,
+      "sha256": "5399d1b180a764563415cded5e6bf392078c69550cd24daac1ae35360a020731",
+      "source": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/09_picture_caption.svg"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/10_hero_statement.svg",
+      "bytes": 1265,
+      "sha256": "9610e8d9e271bd5f7604a81ce9c619a5deae67349b909766086223c5dbc3aa0f",
+      "source": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/10_hero_statement.svg"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/11_three_card.svg",
+      "bytes": 2281,
+      "sha256": "cef40030ccfc70b47518e322e7bffc46dcbc5f33ff1cf8b78a2d74d77e379f5a",
+      "source": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/11_three_card.svg"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/12_kpi_grid.svg",
+      "bytes": 3405,
+      "sha256": "02cb83774c8c04f2f56425171f49200c4c2266b5d80fc90400cfa6b7f5417637",
+      "source": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/12_kpi_grid.svg"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/13_process_timeline.svg",
+      "bytes": 3588,
+      "sha256": "9c95596945123ec3f5ae86daf3b549e10c1ef111ea287447cc51d152eb8f1962",
+      "source": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/13_process_timeline.svg"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/14_stacked_split.svg",
+      "bytes": 1806,
+      "sha256": "01aa8ee0fc62766670dbb98bbb12525497c77b5897c80b6aae47bf965a6a7668",
+      "source": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/14_stacked_split.svg"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/15_chart_insight.svg",
+      "bytes": 4614,
+      "sha256": "5f9c30df350cc4bede48aef9df24821efb279c0231b3899bec769e1d93f95d0c",
+      "source": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/15_chart_insight.svg"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/16_table_summary.svg",
+      "bytes": 6213,
+      "sha256": "1401db3323eb59c9578f99fa5a32d777a674d38b6ccae2f9f975a4eb389e96fa",
+      "source": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/16_table_summary.svg"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/design_spec.md",
+      "bytes": 5874,
+      "sha256": "ead0d6d1d72b5601933740bf32c9d1021c652c25293aaaa234445fe8d654bf1e",
+      "source": "resources/default-skills/skills/ppt-master/templates/layouts/presentation_core_43/templates/design_spec.md"
     },
     {
       "path": "resources/default-skills/skills/ppt-master/templates/layouts/report_core/templates/01_cover.svg",
@@ -81284,12 +81302,6 @@
       "source": "resources/default-skills/skills/ppt-master/templates/layouts/xiaohongshu_post/templates/design_spec.md"
     },
     {
-      "path": "resources/default-skills/skills/ppt-master/templates/README.md",
-      "bytes": 6278,
-      "sha256": "e40b8a20751a8dd42e3fe511887aed7abbb253af148cf1262562312fbdf4c923",
-      "source": "resources/default-skills/skills/ppt-master/templates/README.md"
-    },
-    {
       "path": "resources/default-skills/skills/ppt-master/templates/scaffolds/design_spec.md",
       "bytes": 3021,
       "sha256": "199ca11a9eae950a63b790090ebaf8b2942807d34f8b154cf09aa270fdb61587",
@@ -81312,6 +81324,24 @@
       "bytes": 11999,
       "sha256": "d8df614a2fe93ceb558f082d97615ed6a62706bc399188a09abb67f7ebeb74c6",
       "source": "resources/default-skills/skills/ppt-master/templates/schemas/spec_lock.schema.json"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/templates/sounds/CC0-1.0.txt",
+      "bytes": 7048,
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "source": "resources/default-skills/skills/ppt-master/templates/sounds/CC0-1.0.txt"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/templates/sounds/README.md",
+      "bytes": 2714,
+      "sha256": "b3ca07f0589b9b27d6b36639abd59440f052f3ef32f4b573d33c23c964743ce1",
+      "source": "resources/default-skills/skills/ppt-master/templates/sounds/README.md"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/templates/sounds/THIRD_PARTY_NOTICES.md",
+      "bytes": 3204,
+      "sha256": "a76406ce994483bc96ade9abc1ab8970bf6fef1478b3ce018178e331ac70862e",
+      "source": "resources/default-skills/skills/ppt-master/templates/sounds/THIRD_PARTY_NOTICES.md"
     },
     {
       "path": "resources/default-skills/skills/ppt-master/templates/sounds/bigsoundbank/0572.wav",
@@ -81522,12 +81552,6 @@
       "bytes": 189366,
       "sha256": "296e1e2349ade519c02956429b135b85401b91384dd1fdd7e8edb3e0d18d5816",
       "source": "resources/default-skills/skills/ppt-master/templates/sounds/bigsoundbank/3238.wav"
-    },
-    {
-      "path": "resources/default-skills/skills/ppt-master/templates/sounds/CC0-1.0.txt",
-      "bytes": 7048,
-      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
-      "source": "resources/default-skills/skills/ppt-master/templates/sounds/CC0-1.0.txt"
     },
     {
       "path": "resources/default-skills/skills/ppt-master/templates/sounds/kenney-interface/back_001.wav",
@@ -82436,12 +82460,6 @@
       "source": "resources/default-skills/skills/ppt-master/templates/sounds/kenney-ui/switch9.wav"
     },
     {
-      "path": "resources/default-skills/skills/ppt-master/templates/sounds/README.md",
-      "bytes": 2714,
-      "sha256": "b3ca07f0589b9b27d6b36639abd59440f052f3ef32f4b573d33c23c964743ce1",
-      "source": "resources/default-skills/skills/ppt-master/templates/sounds/README.md"
-    },
-    {
       "path": "resources/default-skills/skills/ppt-master/templates/sounds/sound-vocabulary.md",
       "bytes": 17426,
       "sha256": "bb80a7f31ca9c2358f12f5dddfc500d71c63fc559bfef4989db0b50f14b66633",
@@ -82454,16 +82472,16 @@
       "source": "resources/default-skills/skills/ppt-master/templates/sounds/sounds_index.json"
     },
     {
-      "path": "resources/default-skills/skills/ppt-master/templates/sounds/THIRD_PARTY_NOTICES.md",
-      "bytes": 3204,
-      "sha256": "a76406ce994483bc96ade9abc1ab8970bf6fef1478b3ce018178e331ac70862e",
-      "source": "resources/default-skills/skills/ppt-master/templates/sounds/THIRD_PARTY_NOTICES.md"
-    },
-    {
       "path": "resources/default-skills/skills/ppt-master/templates/spec_lock_reference.md",
       "bytes": 10024,
       "sha256": "bfff7c1104a125c8b42b9b183758f125e0dfe133cb007eddb73de035227951df",
       "source": "resources/default-skills/skills/ppt-master/templates/spec_lock_reference.md"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/templates/styles/README.md",
+      "bytes": 4697,
+      "sha256": "450d67d1459bff86549bd186134d1bef05326672978ed0fcfd1f6a1c632c6b87",
+      "source": "resources/default-skills/skills/ppt-master/templates/styles/README.md"
     },
     {
       "path": "resources/default-skills/skills/ppt-master/templates/styles/academic-research/templates/design_spec.md",
@@ -82526,12 +82544,6 @@
       "source": "resources/default-skills/skills/ppt-master/templates/styles/product-launch/templates/design_spec.md"
     },
     {
-      "path": "resources/default-skills/skills/ppt-master/templates/styles/README.md",
-      "bytes": 4697,
-      "sha256": "450d67d1459bff86549bd186134d1bef05326672978ed0fcfd1f6a1c632c6b87",
-      "source": "resources/default-skills/skills/ppt-master/templates/styles/README.md"
-    },
-    {
       "path": "resources/default-skills/skills/ppt-master/templates/styles/science-explainer/templates/design_spec.md",
       "bytes": 10274,
       "sha256": "a68ac6e9bdda7c48518e8999c227df99d4099007048e4254faef934ae7947a02",
@@ -82560,6 +82572,12 @@
       "bytes": 9347,
       "sha256": "166be96918552725d207267097f59881d3ef0cdd3dc564dda406363ae3c29a64",
       "source": "resources/default-skills/skills/ppt-master/templates/styles/workshop-teaching/templates/design_spec.md"
+    },
+    {
+      "path": "resources/default-skills/skills/ppt-master/templates/tables/README.md",
+      "bytes": 3496,
+      "sha256": "1cf774d8debde7f13c92721c608e100dead4db97bd3ce76faed2257b8ea2f06f",
+      "source": "resources/default-skills/skills/ppt-master/templates/tables/README.md"
     },
     {
       "path": "resources/default-skills/skills/ppt-master/templates/tables/comparison_matrix.svg",
@@ -82592,12 +82610,6 @@
       "source": "resources/default-skills/skills/ppt-master/templates/tables/rating_matrix.svg"
     },
     {
-      "path": "resources/default-skills/skills/ppt-master/templates/tables/README.md",
-      "bytes": 3496,
-      "sha256": "1cf774d8debde7f13c92721c608e100dead4db97bd3ce76faed2257b8ea2f06f",
-      "source": "resources/default-skills/skills/ppt-master/templates/tables/README.md"
-    },
-    {
       "path": "resources/default-skills/skills/ppt-master/templates/tables/record_table.svg",
       "bytes": 8578,
       "sha256": "0629f4cde095ccb5173a41320e1edbda1747a7f37d3ae83a89aa97b4699a55d5",
@@ -82614,12 +82626,6 @@
       "bytes": 2102,
       "sha256": "a367bd2808e177254819a8506382ccb1517eb0d9a6b250b9b536a6aa36d1423e",
       "source": "resources/default-skills/skills/ppt-master/templates/tables/tables_index.json"
-    },
-    {
-      "path": "resources/default-skills/skills/ppt-master/templates/VISUALIZATION_TEMPLATE_AUTHORING.md",
-      "bytes": 23605,
-      "sha256": "7cabf0746fc5258366e101222194d2ab4198d2e85ad56fe63659ca3450076811",
-      "source": "resources/default-skills/skills/ppt-master/templates/VISUALIZATION_TEMPLATE_AUTHORING.md"
     },
     {
       "path": "resources/default-skills/skills/ppt-master/workflows/create-template.md",
@@ -82802,30 +82808,6 @@
       "source": "resources/web/assets/AccountLimits-DgdcKE3b.css"
     },
     {
-      "path": "resources/web/assets/addon-web-links-xF2oeMXv.js",
-      "bytes": 2384,
-      "sha256": "8f5a52fb798c600364dc06e663e21f4474ef714ea80d045f2db8ab26e82c4fa0",
-      "source": "resources/web/assets/addon-web-links-xF2oeMXv.js"
-    },
-    {
-      "path": "resources/web/assets/addon-webgl-Dl1uOhWx.js",
-      "bytes": 120371,
-      "sha256": "8d32982a231a2c85b46d89d2b8600ce5e0ecd404c5c36af4d92b5311634dc3df",
-      "source": "resources/web/assets/addon-webgl-Dl1uOhWx.js"
-    },
-    {
-      "path": "resources/web/assets/app-update-D9MEEzNk.css",
-      "bytes": 935,
-      "sha256": "4125d8ac7fe52ed2351cb2cb966ed8cc03db52c9de2f532bf5aff5669dbb3100",
-      "source": "resources/web/assets/app-update-D9MEEzNk.css"
-    },
-    {
-      "path": "resources/web/assets/app-update-toast-D3GyIzKn.css",
-      "bytes": 1404,
-      "sha256": "89fd24946826f7c847b9f4f599ca4ef2e9863cfdd0411081c531713c0be7a107",
-      "source": "resources/web/assets/app-update-toast-D3GyIzKn.css"
-    },
-    {
       "path": "resources/web/assets/AppBackgroundLayer-PlKAbics.js",
       "bytes": 1417,
       "sha256": "de85b88962b822526111c2d0e08c5e92e0bea912d55855dc111d1f75b8a87ee4",
@@ -82860,6 +82842,864 @@
       "bytes": 850,
       "sha256": "db99c3d944cbd37514969c06baaa9750349ca900625d40ee6cdb1dafdf8c6d07",
       "source": "resources/web/assets/ArchiveToast-DVnrD6Mr.css"
+    },
+    {
+      "path": "resources/web/assets/CheckoutDiscardDialog-C0coE2LG.css",
+      "bytes": 368,
+      "sha256": "ae87961cf8c3e51aac82bb5a6f4b99f1e7a594c996df85a859db38ce49eb16ad",
+      "source": "resources/web/assets/CheckoutDiscardDialog-C0coE2LG.css"
+    },
+    {
+      "path": "resources/web/assets/CheckoutDiscardDialog-CCDg2lW9.js",
+      "bytes": 1740,
+      "sha256": "e282a88f59fc936395b97a92abf845057341db2fda2104889c1beed5a803b4d8",
+      "source": "resources/web/assets/CheckoutDiscardDialog-CCDg2lW9.js"
+    },
+    {
+      "path": "resources/web/assets/CommandPalette-DFnbNV3m.js",
+      "bytes": 3940,
+      "sha256": "b9b09ee4a132edf44285a0cd3c05a8fbe68d7657c602967e1107edde99c9687a",
+      "source": "resources/web/assets/CommandPalette-DFnbNV3m.js"
+    },
+    {
+      "path": "resources/web/assets/CompletedMarkdown-BRgznyWz.js",
+      "bytes": 289648,
+      "sha256": "9c1354d01dcc7f6eadfca9eb5bd6f4785e81a73696af4a87d3646828b0054b43",
+      "source": "resources/web/assets/CompletedMarkdown-BRgznyWz.js"
+    },
+    {
+      "path": "resources/web/assets/CompletedMarkdown-gQfVAiM7.css",
+      "bytes": 28836,
+      "sha256": "27c0c413a4b9249c12bcb7f62a704f9aaad9ec87a588179d4393ce11705c07e3",
+      "source": "resources/web/assets/CompletedMarkdown-gQfVAiM7.css"
+    },
+    {
+      "path": "resources/web/assets/ComposerChipOverlay-Bp-G2Kuk.js",
+      "bytes": 1286,
+      "sha256": "25c3f201d21e8c1a3663aaa4962dbdbfbbc2c004f0c5712bf6fa584e35ae1c42",
+      "source": "resources/web/assets/ComposerChipOverlay-Bp-G2Kuk.js"
+    },
+    {
+      "path": "resources/web/assets/ComposerResourcePicker-DOqQEBFT.css",
+      "bytes": 2026,
+      "sha256": "fa067e8a3e2cebde7aa97ab490b10f1e3d0ebcabc3afe103c7f366807179cfc2",
+      "source": "resources/web/assets/ComposerResourcePicker-DOqQEBFT.css"
+    },
+    {
+      "path": "resources/web/assets/ComposerResourcePicker-Dcl1ut-P.js",
+      "bytes": 8933,
+      "sha256": "853858651e253f5bad4486449dcf0c43c8c90496d0928cff6d79554533ede92f",
+      "source": "resources/web/assets/ComposerResourcePicker-Dcl1ut-P.js"
+    },
+    {
+      "path": "resources/web/assets/ComposerVoiceControl-BPCEHBQg.css",
+      "bytes": 2091,
+      "sha256": "e9484d70a336e6fae01f746ce964b728ed1462926e641327988b70502634dd20",
+      "source": "resources/web/assets/ComposerVoiceControl-BPCEHBQg.css"
+    },
+    {
+      "path": "resources/web/assets/ComposerVoiceControl-Cv2YvIUL.js",
+      "bytes": 12406,
+      "sha256": "162fa5e450bfc3ade86f6878ef6fd955ea91d8104d7b9732b5ab7b6333b46a3a",
+      "source": "resources/web/assets/ComposerVoiceControl-Cv2YvIUL.js"
+    },
+    {
+      "path": "resources/web/assets/ContextUsage-B4fYjiTs.css",
+      "bytes": 1473,
+      "sha256": "486e82a0f2b6a5f980b227b424f63ef334ac84a2ea879f33b5a836564f138554",
+      "source": "resources/web/assets/ContextUsage-B4fYjiTs.css"
+    },
+    {
+      "path": "resources/web/assets/ContextUsage-Cgu6aE8i.js",
+      "bytes": 1179,
+      "sha256": "43e28dbaed36baa3c6aaa519df3c238c8a7454b02f56dbe579163598709babfe",
+      "source": "resources/web/assets/ContextUsage-Cgu6aE8i.js"
+    },
+    {
+      "path": "resources/web/assets/CopyButton-rZ8y9lrR.js",
+      "bytes": 1095,
+      "sha256": "9621a95a2ca050fe08d3dd655dc6864be4e2a2003d19894307943feb754eec09",
+      "source": "resources/web/assets/CopyButton-rZ8y9lrR.js"
+    },
+    {
+      "path": "resources/web/assets/FeedbackDialog-BbsGOSbq.js",
+      "bytes": 7065,
+      "sha256": "96357622864a63f96038633bc0e763945bd6b273800d955b66538d4eddfbe788",
+      "source": "resources/web/assets/FeedbackDialog-BbsGOSbq.js"
+    },
+    {
+      "path": "resources/web/assets/FeedbackDialog-D-kJaZbn.css",
+      "bytes": 5508,
+      "sha256": "8eb6de44c3f843a359c4b3da561b0217bbac08106830e7737e6e7fe60394160c",
+      "source": "resources/web/assets/FeedbackDialog-D-kJaZbn.css"
+    },
+    {
+      "path": "resources/web/assets/FileTypeIcon-wZ1FByQI.js",
+      "bytes": 9552,
+      "sha256": "b459317747f883d6a480a6a481951023dd4ea091de9933b8ba13c7887aceb74b",
+      "source": "resources/web/assets/FileTypeIcon-wZ1FByQI.js"
+    },
+    {
+      "path": "resources/web/assets/IconArrowLeft-CWN9HGHh.js",
+      "bytes": 210,
+      "sha256": "5a189e877943126bd69af381af05744e77d1893a078338ae9584b7abda3b38ea",
+      "source": "resources/web/assets/IconArrowLeft-CWN9HGHh.js"
+    },
+    {
+      "path": "resources/web/assets/IconBolt-DvlO9o0s.js",
+      "bytes": 149,
+      "sha256": "3243a52551cfd1c9b46bd80a5716700f74e20ed5efddce5cd83a80eb69eda01d",
+      "source": "resources/web/assets/IconBolt-DvlO9o0s.js"
+    },
+    {
+      "path": "resources/web/assets/IconBug-CZ2RGinL.js",
+      "bytes": 501,
+      "sha256": "fc94142db9f6758dc58538eb05948a95d1bd29cd91b9c2b2f23f0142432bed8a",
+      "source": "resources/web/assets/IconBug-CZ2RGinL.js"
+    },
+    {
+      "path": "resources/web/assets/IconChevronUp-BnuysKHH.js",
+      "bytes": 139,
+      "sha256": "fb66b7e555de880fb149b1cd84f7e2180665b8a3fe184a053b842cb913ac5c9d",
+      "source": "resources/web/assets/IconChevronUp-BnuysKHH.js"
+    },
+    {
+      "path": "resources/web/assets/IconClock-CQTSVbEd.js",
+      "bytes": 191,
+      "sha256": "1f163b0b4ebe45a7e7524ecdd6ea668af7b7f1e9fd5486151f93ce5b4f980211",
+      "source": "resources/web/assets/IconClock-CQTSVbEd.js"
+    },
+    {
+      "path": "resources/web/assets/IconCode-C1CZKZb-.js",
+      "bytes": 208,
+      "sha256": "9c737e762f851f6437c4b28fc0e81084da7a37cd34862ebeb30f54e28597d3e6",
+      "source": "resources/web/assets/IconCode-C1CZKZb-.js"
+    },
+    {
+      "path": "resources/web/assets/IconDatabase-CBWhX_ab.js",
+      "bytes": 262,
+      "sha256": "0cd3a9b774bc7985cc6c66a66c925aaf7f6b556387e73f8d995ebacf9cb32a43",
+      "source": "resources/web/assets/IconDatabase-CBWhX_ab.js"
+    },
+    {
+      "path": "resources/web/assets/IconDeviceMobile-BjJ8foy6.js",
+      "bytes": 280,
+      "sha256": "990e59832de6e450030a4420443e6e837c9deff4c92c56dc73142629b277fbcd",
+      "source": "resources/web/assets/IconDeviceMobile-BjJ8foy6.js"
+    },
+    {
+      "path": "resources/web/assets/IconExternalLink-D3wAzFMs.js",
+      "bytes": 268,
+      "sha256": "e08ccedb4924e54cfaf3334bcb60b03610db8fddfdfca6ce8aae0a10e1cba337",
+      "source": "resources/web/assets/IconExternalLink-D3wAzFMs.js"
+    },
+    {
+      "path": "resources/web/assets/IconEye-BDyHIqZ_.js",
+      "bytes": 256,
+      "sha256": "6b8481ca9a9c5fdd2fdfb3836f647ee7d2543ba3885c6aa77abebb3c50e0741a",
+      "source": "resources/web/assets/IconEye-BDyHIqZ_.js"
+    },
+    {
+      "path": "resources/web/assets/IconFileDiff-Bf9RfnEN.js",
+      "bytes": 357,
+      "sha256": "f2cdcbb353933a83a1dfbf2af4d8994539704f92c478bd24477fe28d06cd7ffb",
+      "source": "resources/web/assets/IconFileDiff-Bf9RfnEN.js"
+    },
+    {
+      "path": "resources/web/assets/IconLock-AhmtkEKC.js",
+      "bytes": 306,
+      "sha256": "1c67e90c9c87bc0a807822ca482af64fb585c3d4c29396b92b262357be87411a",
+      "source": "resources/web/assets/IconLock-AhmtkEKC.js"
+    },
+    {
+      "path": "resources/web/assets/IconMaximize-Dr5OpuhK.js",
+      "bytes": 302,
+      "sha256": "f4a64e9acd501845fc5928078d2b1a36d29db79a74deaaf97d1f9506c470dc90",
+      "source": "resources/web/assets/IconMaximize-Dr5OpuhK.js"
+    },
+    {
+      "path": "resources/web/assets/IconPlayerStop-CxitLncc.js",
+      "bytes": 207,
+      "sha256": "8bb708531775c0120372142b5976943af94734753db9e3e71df65a23054f6556",
+      "source": "resources/web/assets/IconPlayerStop-CxitLncc.js"
+    },
+    {
+      "path": "resources/web/assets/IconRobot-BjdpZoJy.js",
+      "bytes": 483,
+      "sha256": "9afcd1a06d67def23468bfc6b8757c8fe410f4d484f845456a5711bffa25da21",
+      "source": "resources/web/assets/IconRobot-BjdpZoJy.js"
+    },
+    {
+      "path": "resources/web/assets/IconSubtask-jwp3f4yw.js",
+      "bytes": 426,
+      "sha256": "b56297ef3626c2fee1b292a6c0727c58d724bf00c91ddbb5b2b67428695586c8",
+      "source": "resources/web/assets/IconSubtask-jwp3f4yw.js"
+    },
+    {
+      "path": "resources/web/assets/IconWorld-zzMUT-DX.js",
+      "bytes": 335,
+      "sha256": "43a6b86990533152fc956d9bbc0f5b8ddc69c93fc8c656e683f3492276b3ac45",
+      "source": "resources/web/assets/IconWorld-zzMUT-DX.js"
+    },
+    {
+      "path": "resources/web/assets/InboxSidebar-D2a_B-0r.js",
+      "bytes": 26954,
+      "sha256": "a50039778bc489e386a38417b880436da1e7dc05caa9ee243ee01d124e8a0353",
+      "source": "resources/web/assets/InboxSidebar-D2a_B-0r.js"
+    },
+    {
+      "path": "resources/web/assets/InboxSidebar-qLFx_Nz1.css",
+      "bytes": 10253,
+      "sha256": "a5c95839b1828e87bdf62481416801d7fc740435a4b14321162b624d082f203b",
+      "source": "resources/web/assets/InboxSidebar-qLFx_Nz1.css"
+    },
+    {
+      "path": "resources/web/assets/InstallTerminal-BfINFuQf.js",
+      "bytes": 1862,
+      "sha256": "8b92b4ebe912acc8aebdd4e750e9e318f076902056807615f032e6b77491c25c",
+      "source": "resources/web/assets/InstallTerminal-BfINFuQf.js"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_AMS-Regular-BQhdFMY1.woff2",
+      "bytes": 28076,
+      "sha256": "0cdd387c9590a1a9f9794560022dbb59654a7d86f187aa0c81495ad42d3a7308",
+      "source": "resources/web/assets/KaTeX_AMS-Regular-BQhdFMY1.woff2"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_AMS-Regular-DMm9YOAa.woff",
+      "bytes": 33516,
+      "sha256": "30da91e84c893f875e252689faebdc590b2871145e8adc7f9a9d4dbd8ce0b251",
+      "source": "resources/web/assets/KaTeX_AMS-Regular-DMm9YOAa.woff"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_AMS-Regular-DRggAlZN.ttf",
+      "bytes": 63632,
+      "sha256": "68534840bcfdd2bffb6f0e8deb48684dd01e7f04ea2813267577afb906de1d13",
+      "source": "resources/web/assets/KaTeX_AMS-Regular-DRggAlZN.ttf"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Caligraphic-Bold-ATXxdsX0.ttf",
+      "bytes": 12368,
+      "sha256": "07d8e303ce4fc12b4bb54f1004170dd190a1f3db45d400fe68060df3e0897268",
+      "source": "resources/web/assets/KaTeX_Caligraphic-Bold-ATXxdsX0.ttf"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Caligraphic-Bold-BEiXGLvX.woff",
+      "bytes": 7716,
+      "sha256": "1ae6bd7475590e97e7f145a89e09ccde322f7a6bc0b91607b1c8b8ee28290fed",
+      "source": "resources/web/assets/KaTeX_Caligraphic-Bold-BEiXGLvX.woff"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Caligraphic-Bold-Dq_IR9rO.woff2",
+      "bytes": 6912,
+      "sha256": "de7701e42cf1f4cf0b766c03fb27977207eee2f4fd5d76fa82188406da43ea4c",
+      "source": "resources/web/assets/KaTeX_Caligraphic-Bold-Dq_IR9rO.woff2"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Caligraphic-Regular-CTRA-rTL.woff",
+      "bytes": 7656,
+      "sha256": "3398dd02302557a793f2863f88e02d96ce10df2abffa07c8e9fa90775116e65c",
+      "source": "resources/web/assets/KaTeX_Caligraphic-Regular-CTRA-rTL.woff"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Caligraphic-Regular-Di6jR-x-.woff2",
+      "bytes": 6908,
+      "sha256": "5d53e70ad607c2352162dec9e0923fb54ecdafaccbf604cd8dcf7d00facb989b",
+      "source": "resources/web/assets/KaTeX_Caligraphic-Regular-Di6jR-x-.woff2"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Caligraphic-Regular-wX97UBjC.ttf",
+      "bytes": 12344,
+      "sha256": "ed0b74372feefcbb9c0666b2e210da37b7e49fa7fbbf3eeb11db5f693dacfbb7",
+      "source": "resources/web/assets/KaTeX_Caligraphic-Regular-wX97UBjC.ttf"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Fraktur-Bold-BdnERNNW.ttf",
+      "bytes": 19584,
+      "sha256": "9163df9c7122432e6495b4229fa9071cf9ae86a758ae5efc4924ec2e1a6dbce1",
+      "source": "resources/web/assets/KaTeX_Fraktur-Bold-BdnERNNW.ttf"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Fraktur-Bold-BsDP51OF.woff",
+      "bytes": 13296,
+      "sha256": "9be7ceb88004ab8ad124082246fbfcca4091e36385d4ec6ed1df67375dad50fb",
+      "source": "resources/web/assets/KaTeX_Fraktur-Bold-BsDP51OF.woff"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Fraktur-Bold-CL6g_b3V.woff2",
+      "bytes": 11348,
+      "sha256": "74444efd593c005e3f4573b44524704c0af0a937fe911cca9e94068d0d140d3f",
+      "source": "resources/web/assets/KaTeX_Fraktur-Bold-CL6g_b3V.woff2"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Fraktur-Regular-CB_wures.ttf",
+      "bytes": 19572,
+      "sha256": "1e6f9579e90e2cac37f8f60a597c436e075c114385652b7cbeb0dec0421291b3",
+      "source": "resources/web/assets/KaTeX_Fraktur-Regular-CB_wures.ttf"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Fraktur-Regular-CTYiF6lA.woff2",
+      "bytes": 11316,
+      "sha256": "51814d270d06ff0255dba0799994fa4d8c84d11f09951d47595f4abb1f3602dc",
+      "source": "resources/web/assets/KaTeX_Fraktur-Regular-CTYiF6lA.woff2"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Fraktur-Regular-Dxdc4cR9.woff",
+      "bytes": 13208,
+      "sha256": "5e28753be717dac97f559f49bc10be9cf3c124ddcabda6659d11cb68febc6463",
+      "source": "resources/web/assets/KaTeX_Fraktur-Regular-Dxdc4cR9.woff"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Main-Bold-Cx986IdX.woff2",
+      "bytes": 25324,
+      "sha256": "0f60d1b897938ec918c8ce073092411baf9438f6739465693ff18b0f9d20b021",
+      "source": "resources/web/assets/KaTeX_Main-Bold-Cx986IdX.woff2"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Main-Bold-Jm3AIy58.woff",
+      "bytes": 29912,
+      "sha256": "c76c5d696297d51b9cb1639c7da4334f0e7dec81b42b11213b5e25ef671bb822",
+      "source": "resources/web/assets/KaTeX_Main-Bold-Jm3AIy58.woff"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Main-Bold-waoOVXN0.ttf",
+      "bytes": 51336,
+      "sha256": "138ac28d1663b3037e9c5f52371fa5c63d8324f4a38d22cd573e6ea3a3fd0cf8",
+      "source": "resources/web/assets/KaTeX_Main-Bold-waoOVXN0.ttf"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Main-BoldItalic-DxDJ3AOS.woff2",
+      "bytes": 16780,
+      "sha256": "99cd42a3c072d918f2f44984a807cf7aa16e13545fd0875fc07c6c65f99e715b",
+      "source": "resources/web/assets/KaTeX_Main-BoldItalic-DxDJ3AOS.woff2"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Main-BoldItalic-DzxPMmG6.ttf",
+      "bytes": 32968,
+      "sha256": "70ee1f64a20f2048c21940ef46d0144fd215baa953ca69afd1e31e98544f708f",
+      "source": "resources/web/assets/KaTeX_Main-BoldItalic-DzxPMmG6.ttf"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Main-BoldItalic-SpSLRI95.woff",
+      "bytes": 19412,
+      "sha256": "a6f7ec0d846ac7ad975adb8959c37ed49b94acbc4ae436db9ce9e20287e4a64c",
+      "source": "resources/web/assets/KaTeX_Main-BoldItalic-SpSLRI95.woff"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Main-Italic-3WenGoN9.ttf",
+      "bytes": 33580,
+      "sha256": "0d85ae7cc30f23790a7f1a58c4a112fdca8aae769b6ba11429af1d98b1b6cb3a",
+      "source": "resources/web/assets/KaTeX_Main-Italic-3WenGoN9.ttf"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Main-Italic-BMLOBm91.woff",
+      "bytes": 19676,
+      "sha256": "f1d6ef86f3b11a528bd5185199bd2443ecb2b0dead96d88674b5a2c12be24bdf",
+      "source": "resources/web/assets/KaTeX_Main-Italic-BMLOBm91.woff"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Main-Italic-NWA7e6Wa.woff2",
+      "bytes": 16988,
+      "sha256": "97479ca6cce906abc961ecac96faa5f9ca2e61b8e7670d475826bcdee9a7c267",
+      "source": "resources/web/assets/KaTeX_Main-Italic-NWA7e6Wa.woff2"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Main-Regular-B22Nviop.woff2",
+      "bytes": 26272,
+      "sha256": "c2342cd8b869e01752a9321dc17213fc40d4d04c79688c1d43f2cf316abd7866",
+      "source": "resources/web/assets/KaTeX_Main-Regular-B22Nviop.woff2"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Main-Regular-Dr94JaBh.woff",
+      "bytes": 30772,
+      "sha256": "c6368d87e8a1a3a5d337623d83d8dc4b868f242a9ad476237d6f8d1e0f168cdc",
+      "source": "resources/web/assets/KaTeX_Main-Regular-Dr94JaBh.woff"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Main-Regular-ypZvNtVU.ttf",
+      "bytes": 53580,
+      "sha256": "d0332f52868370fd83ae7fa46470f90c8f2eab2fcf12bc4f88080b340c95a830",
+      "source": "resources/web/assets/KaTeX_Main-Regular-ypZvNtVU.ttf"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Math-BoldItalic-B3XSjfu4.ttf",
+      "bytes": 31196,
+      "sha256": "f9377ab0271cda59af24bcffbd46a4d0c8a3572ffafdbb38de2ad5ea7b0d5ee5",
+      "source": "resources/web/assets/KaTeX_Math-BoldItalic-B3XSjfu4.ttf"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Math-BoldItalic-CZnvNsCZ.woff2",
+      "bytes": 16400,
+      "sha256": "dc47344dbb6cb5b655c8460d561f4df5f501b90c804ad3c6cec65fe322351ab1",
+      "source": "resources/web/assets/KaTeX_Math-BoldItalic-CZnvNsCZ.woff2"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Math-BoldItalic-iY-2wyZ7.woff",
+      "bytes": 18668,
+      "sha256": "850c0af5c2238497febaf5e461d880bf458c341f42f4f330f1b1ab5698b1998e",
+      "source": "resources/web/assets/KaTeX_Math-BoldItalic-iY-2wyZ7.woff"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Math-Italic-DA0__PXp.woff",
+      "bytes": 18748,
+      "sha256": "8a8d244581371912b8f3f5a23e2437cb2a59cd9bcaebb0346e722c05737a2571",
+      "source": "resources/web/assets/KaTeX_Math-Italic-DA0__PXp.woff"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Math-Italic-flOr_0UB.ttf",
+      "bytes": 31308,
+      "sha256": "08ce98e51b04d58945a301e639e02b6998af29fdfd61a7b8afdd07bbfc479d4a",
+      "source": "resources/web/assets/KaTeX_Math-Italic-flOr_0UB.ttf"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Math-Italic-t53AETM-.woff2",
+      "bytes": 16440,
+      "sha256": "7af58c5ec8f132a2ddde9027c6d7814decce4d3b822a11192a42a20e2e973264",
+      "source": "resources/web/assets/KaTeX_Math-Italic-t53AETM-.woff2"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_SansSerif-Bold-CFMepnvq.ttf",
+      "bytes": 24504,
+      "sha256": "1ece03f79f95277d57dc7f6b435a74e1379b0d46104a8530286b60ff49369ea0",
+      "source": "resources/web/assets/KaTeX_SansSerif-Bold-CFMepnvq.ttf"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_SansSerif-Bold-D1sUS0GD.woff2",
+      "bytes": 12216,
+      "sha256": "e99ae51144bf1232efcc1bfe5add36262c6866b0faab24fa75740e1b98577a62",
+      "source": "resources/web/assets/KaTeX_SansSerif-Bold-D1sUS0GD.woff2"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_SansSerif-Bold-DbIhKOiC.woff",
+      "bytes": 14408,
+      "sha256": "ece03cfd83e22c212cdef66feb8442d25a083beb988db3f1883f3f9738d750ba",
+      "source": "resources/web/assets/KaTeX_SansSerif-Bold-DbIhKOiC.woff"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_SansSerif-Italic-C3H0VqGB.woff2",
+      "bytes": 12028,
+      "sha256": "00b26ac825e2095056396e0553b8ac26d3f8ad158c3826e28b4c45b385c4714a",
+      "source": "resources/web/assets/KaTeX_SansSerif-Italic-C3H0VqGB.woff2"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_SansSerif-Italic-DN2j7dab.woff",
+      "bytes": 14112,
+      "sha256": "91ee67500cc0129aa0ace3ac5c61ff1692102f0f31d02b69347fba35dcb75bf2",
+      "source": "resources/web/assets/KaTeX_SansSerif-Italic-DN2j7dab.woff"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_SansSerif-Italic-YYjJ1zSn.ttf",
+      "bytes": 22364,
+      "sha256": "3931dd81faed86ba021bb2bbdc36f5bed9a38d6b4f4077aca59b265aa1b02083",
+      "source": "resources/web/assets/KaTeX_SansSerif-Italic-YYjJ1zSn.ttf"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_SansSerif-Regular-BNo7hRIc.ttf",
+      "bytes": 19436,
+      "sha256": "f36ea897e19f4a2e571d1e900e4e3710e438deb05a842486045ba0a3e616a4ad",
+      "source": "resources/web/assets/KaTeX_SansSerif-Regular-BNo7hRIc.ttf"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_SansSerif-Regular-CS6fqUqJ.woff",
+      "bytes": 12316,
+      "sha256": "11e4dc8a6471ff6d6ee561d53d10fde8f7489e798257ff449c5d37c197435605",
+      "source": "resources/web/assets/KaTeX_SansSerif-Regular-CS6fqUqJ.woff"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_SansSerif-Regular-DDBCnlJ7.woff2",
+      "bytes": 10344,
+      "sha256": "68e8c73ef42afd3ccec58bf0fba302cce448938e7fc020a5e31f8a952eee1342",
+      "source": "resources/web/assets/KaTeX_SansSerif-Regular-DDBCnlJ7.woff2"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Script-Regular-C5JkGWo-.ttf",
+      "bytes": 16648,
+      "sha256": "1c67f068fea8bb09bf099c088b1cf64bd27516a6e07f4684344873564bb66a67",
+      "source": "resources/web/assets/KaTeX_Script-Regular-C5JkGWo-.ttf"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Script-Regular-D3wIWfF6.woff2",
+      "bytes": 9644,
+      "sha256": "036d4e95149b69ff9bcc0cd55771efeb25ffa3947293e69acd78d5ac328c684b",
+      "source": "resources/web/assets/KaTeX_Script-Regular-D3wIWfF6.woff2"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Script-Regular-D5yQViql.woff",
+      "bytes": 10588,
+      "sha256": "d96cdf2b3bdd4d64a8fd5f74a4c467f123a8a73931cd435889f08ffaf9bf947a",
+      "source": "resources/web/assets/KaTeX_Script-Regular-D5yQViql.woff"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Size1-Regular-C195tn64.woff",
+      "bytes": 6496,
+      "sha256": "c943cc986384f59e86bea5fd7dc50a9c4dfe567a7c05eb40d6790720dead97c9",
+      "source": "resources/web/assets/KaTeX_Size1-Regular-C195tn64.woff"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Size1-Regular-Dbsnue_I.ttf",
+      "bytes": 12228,
+      "sha256": "95b6d2f1a50173bfedb8c63e1d1c99b10427d0a4df4201cb44513b226951a22b",
+      "source": "resources/web/assets/KaTeX_Size1-Regular-Dbsnue_I.ttf"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Size1-Regular-mCD8mA8B.woff2",
+      "bytes": 5468,
+      "sha256": "6b47c40166b6dbe21a5dfca7718413f2147fd2399be1ba605d8ad39cedf25dfe",
+      "source": "resources/web/assets/KaTeX_Size1-Regular-mCD8mA8B.woff2"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Size2-Regular-B7gKUWhC.ttf",
+      "bytes": 11508,
+      "sha256": "a6b2099fb555c60e3a0db3a08842ebf1d732c6eb4e4bf44913613bed4fc4e39b",
+      "source": "resources/web/assets/KaTeX_Size2-Regular-B7gKUWhC.ttf"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Size2-Regular-Dy4dx90m.woff2",
+      "bytes": 5208,
+      "sha256": "d04c54219f9eaec6d4d4fd42dfb28785975a4794d6b2fc71e566b9cd6db842dd",
+      "source": "resources/web/assets/KaTeX_Size2-Regular-Dy4dx90m.woff2"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Size2-Regular-oD1tc_U0.woff",
+      "bytes": 6188,
+      "sha256": "2014c523c3210bcc166648c4d4cc57f05b747df07a24277bf71c51e67dc79e3d",
+      "source": "resources/web/assets/KaTeX_Size2-Regular-oD1tc_U0.woff"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Size3-Regular-CTq5MqoE.woff",
+      "bytes": 4420,
+      "sha256": "6ab6b62e9b62dae2c00dd90f791bd10950be0ecc3490d7d6045f51c2e8fe0949",
+      "source": "resources/web/assets/KaTeX_Size3-Regular-CTq5MqoE.woff"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Size3-Regular-DgpXs0kz.ttf",
+      "bytes": 7588,
+      "sha256": "500e04d54f0d51666332c9d2089aa803be22aa878eca539e59fa53c6e522b082",
+      "source": "resources/web/assets/KaTeX_Size3-Regular-DgpXs0kz.ttf"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Size4-Regular-BF-4gkZK.woff",
+      "bytes": 5980,
+      "sha256": "99f9c6750b489c9462bf04900bd3f939df9b829339daaaaa99ef5495cdddea58",
+      "source": "resources/web/assets/KaTeX_Size4-Regular-BF-4gkZK.woff"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Size4-Regular-DWFBv043.ttf",
+      "bytes": 10364,
+      "sha256": "c647367d1dd4e162468717d020e1fc0f1dc5c26ebfdffbe55261713bf88c5877",
+      "source": "resources/web/assets/KaTeX_Size4-Regular-DWFBv043.ttf"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Size4-Regular-Dl5lxZxV.woff2",
+      "bytes": 4928,
+      "sha256": "a4af7d414440a1c1790825cfb700cf9cf43b0f2c4b04f0ebc523011ad9853ec0",
+      "source": "resources/web/assets/KaTeX_Size4-Regular-Dl5lxZxV.woff2"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Typewriter-Regular-C0xS9mPB.woff",
+      "bytes": 16028,
+      "sha256": "e14fed02b1aba7ce9f5afd5844b5d0321b22351febc720e0de8b8723527609f7",
+      "source": "resources/web/assets/KaTeX_Typewriter-Regular-C0xS9mPB.woff"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Typewriter-Regular-CO6r4hn1.woff2",
+      "bytes": 13568,
+      "sha256": "71d517d67827787cfabdf186914cc3358eda539e37931941f2b2fd4a21f68c0b",
+      "source": "resources/web/assets/KaTeX_Typewriter-Regular-CO6r4hn1.woff2"
+    },
+    {
+      "path": "resources/web/assets/KaTeX_Typewriter-Regular-D3Ib7_Hf.ttf",
+      "bytes": 27556,
+      "sha256": "f01f3e87d9c6a61c0c081ceb577abd864eb00a612f7ac1620dd6915fad2ef5aa",
+      "source": "resources/web/assets/KaTeX_Typewriter-Regular-D3Ib7_Hf.ttf"
+    },
+    {
+      "path": "resources/web/assets/Markdown-BlsbQPkW.css",
+      "bytes": 11260,
+      "sha256": "891b98996286a6a23103201634c17c966d0c358fe1fbdf1ea9d96ac9982e1137",
+      "source": "resources/web/assets/Markdown-BlsbQPkW.css"
+    },
+    {
+      "path": "resources/web/assets/Markdown-BwnzjWnh.js",
+      "bytes": 33234,
+      "sha256": "91350beeb3dd66e9277e571533becf4991ed6749fdac2dd7c427d6ec6a2b8a18",
+      "source": "resources/web/assets/Markdown-BwnzjWnh.js"
+    },
+    {
+      "path": "resources/web/assets/MediaViewer-DZdkgjC5.css",
+      "bytes": 5422,
+      "sha256": "5a70fbe08ee0af5c6e8b329f74616cffc2711bdbb9d10b1a1308eda8473a5fbf",
+      "source": "resources/web/assets/MediaViewer-DZdkgjC5.css"
+    },
+    {
+      "path": "resources/web/assets/MediaViewer-DwZrKo9a.js",
+      "bytes": 10277,
+      "sha256": "6f3011abca5a550a6457880730c2c1318b86249ca2c6edf335b23df4b57fdfa6",
+      "source": "resources/web/assets/MediaViewer-DwZrKo9a.js"
+    },
+    {
+      "path": "resources/web/assets/ModelSelector-2Xo52wE_.css",
+      "bytes": 1550,
+      "sha256": "bd9813d83ae5943ae76ab6e67fc50e94c0dddb2bd4866d371d01610aad171a6e",
+      "source": "resources/web/assets/ModelSelector-2Xo52wE_.css"
+    },
+    {
+      "path": "resources/web/assets/ModelSelector-Dj3jemk4.js",
+      "bytes": 2275,
+      "sha256": "e87608bc0d646f999ab85fd5aa5e28e1f5c9636cbb55e7819f2790849e5d3356",
+      "source": "resources/web/assets/ModelSelector-Dj3jemk4.js"
+    },
+    {
+      "path": "resources/web/assets/ModelSelectorPanel-Dcue3fd9.js",
+      "bytes": 9339,
+      "sha256": "e728dd2e1dffbb89b23d8fb4c12e87ec5e5420956a3bce73cad64190236c4fbb",
+      "source": "resources/web/assets/ModelSelectorPanel-Dcue3fd9.js"
+    },
+    {
+      "path": "resources/web/assets/ModelSelectorPanel-YV_e31ro.css",
+      "bytes": 9680,
+      "sha256": "31795a162ece10e7146f1b13b53e8a9e01caffbe31d63d9c754022e7ca0c5b91",
+      "source": "resources/web/assets/ModelSelectorPanel-YV_e31ro.css"
+    },
+    {
+      "path": "resources/web/assets/Onboarding-Bx0aaqrc.js",
+      "bytes": 27317,
+      "sha256": "3b0903699a1fe7ba48362d912ffd8bd3d20a9a453fe9d426de21061b25278a4b",
+      "source": "resources/web/assets/Onboarding-Bx0aaqrc.js"
+    },
+    {
+      "path": "resources/web/assets/Onboarding-CIkvdDof.css",
+      "bytes": 30237,
+      "sha256": "df57b60d2802b8e96f48efaf2a4f7f7a7ade3400fa08eefc69cb064caacfd8f8",
+      "source": "resources/web/assets/Onboarding-CIkvdDof.css"
+    },
+    {
+      "path": "resources/web/assets/PhoneSettings-C1B2iQ6s.js",
+      "bytes": 27364,
+      "sha256": "94957847ab3acd58d585b1813485a2381cd2860071dd435b7db462214e3564d2",
+      "source": "resources/web/assets/PhoneSettings-C1B2iQ6s.js"
+    },
+    {
+      "path": "resources/web/assets/PhoneSettings-CsbKKpNZ.css",
+      "bytes": 1471,
+      "sha256": "5904381973b09e079f61d4de2a26210c040caf9f80c64b7fb89249ebcee244db",
+      "source": "resources/web/assets/PhoneSettings-CsbKKpNZ.css"
+    },
+    {
+      "path": "resources/web/assets/PullRequestDiffRenderer-C-DaEaP-.js",
+      "bytes": 6654,
+      "sha256": "5d41ffc2ccdc0864a02bb7116a5846228e85cdc13b34354c04d9de963147b609",
+      "source": "resources/web/assets/PullRequestDiffRenderer-C-DaEaP-.js"
+    },
+    {
+      "path": "resources/web/assets/PullRequestsView-Cnb0xbKF.js",
+      "bytes": 82033,
+      "sha256": "0db0444d284effff04e3a9fc7deac6b514cb09f493767c82b50258919d6c94cc",
+      "source": "resources/web/assets/PullRequestsView-Cnb0xbKF.js"
+    },
+    {
+      "path": "resources/web/assets/PullRequestsView-D7AZt4BA.css",
+      "bytes": 42545,
+      "sha256": "85461a80db71b94d9d55f5838d60f94fd66c4f09789f70c5a7c067f7bbe4d19e",
+      "source": "resources/web/assets/PullRequestsView-D7AZt4BA.css"
+    },
+    {
+      "path": "resources/web/assets/RollbackDialog-1-HSSxjF.js",
+      "bytes": 3806,
+      "sha256": "b0de59f117400dc7241c8122f2d1d50901ac3cca1448cdaa32b3ad764237e430",
+      "source": "resources/web/assets/RollbackDialog-1-HSSxjF.js"
+    },
+    {
+      "path": "resources/web/assets/RollbackDialog-B4guiNAH.css",
+      "bytes": 5034,
+      "sha256": "b9aa0c1d08410c8d3db99508e2ccfbf7eac11c927c4a2c60f9306573d4fae000",
+      "source": "resources/web/assets/RollbackDialog-B4guiNAH.css"
+    },
+    {
+      "path": "resources/web/assets/RowIssue-DWEGgOUz.js",
+      "bytes": 2313,
+      "sha256": "ee02e1ba788e50a64ae42e16dc85af8be714fd9425a9c884e17972b5a471deb3",
+      "source": "resources/web/assets/RowIssue-DWEGgOUz.js"
+    },
+    {
+      "path": "resources/web/assets/SessionSearch-BLueGP4E.js",
+      "bytes": 13113,
+      "sha256": "e50c214ff11b5c1d95a467fc30311e38cb5288bfd0301a5475395a6b64562095",
+      "source": "resources/web/assets/SessionSearch-BLueGP4E.js"
+    },
+    {
+      "path": "resources/web/assets/SessionSearch-P2ax2mf0.css",
+      "bytes": 4152,
+      "sha256": "3c88f026f13f1be054aceafc44473a3b810dc16a7f1d453dba4d341e1fea01a0",
+      "source": "resources/web/assets/SessionSearch-P2ax2mf0.css"
+    },
+    {
+      "path": "resources/web/assets/Settings-CP0yqb_J.css",
+      "bytes": 84325,
+      "sha256": "e8d653c9103999de64497ab58d6020e749baed46dcee42b72e9f7f00654b9af4",
+      "source": "resources/web/assets/Settings-CP0yqb_J.css"
+    },
+    {
+      "path": "resources/web/assets/Settings-CdgxHJV3.js",
+      "bytes": 203530,
+      "sha256": "d7274f8c207227d03aebb05808284e1e512961c2dd02ab52ab8c4a88839ba82e",
+      "source": "resources/web/assets/Settings-CdgxHJV3.js"
+    },
+    {
+      "path": "resources/web/assets/SettingsLayout-B_7S4y2m.css",
+      "bytes": 14677,
+      "sha256": "220539728af0af818e83d0d2ec21674664a57778d685c6160f0c8dcb59c29731",
+      "source": "resources/web/assets/SettingsLayout-B_7S4y2m.css"
+    },
+    {
+      "path": "resources/web/assets/SettingsLayout-GQWLgCaa.js",
+      "bytes": 4056,
+      "sha256": "fba138daad823ad8dbbf0e75039869e5ee160d0097bc5de0ca47822a817f2a09",
+      "source": "resources/web/assets/SettingsLayout-GQWLgCaa.js"
+    },
+    {
+      "path": "resources/web/assets/SidebarConfirmDialog-BxbYos6K.js",
+      "bytes": 1692,
+      "sha256": "75347c4fe44a83cbad922aa33e4eed83ef624ca80730964c7f2836c75c87fabd",
+      "source": "resources/web/assets/SidebarConfirmDialog-BxbYos6K.js"
+    },
+    {
+      "path": "resources/web/assets/SidebarConfirmDialog-DTWGPrPm.css",
+      "bytes": 1997,
+      "sha256": "cc19aafc1460a443c2a59a149e4ea569348747779b4eb207e13afd94096ee3da",
+      "source": "resources/web/assets/SidebarConfirmDialog-DTWGPrPm.css"
+    },
+    {
+      "path": "resources/web/assets/SourceIdentity-APE1o-d1.css",
+      "bytes": 569,
+      "sha256": "64405a00492dc97ce78f0fa5859be9edd8b2c5675a3e115edbf822146f31564f",
+      "source": "resources/web/assets/SourceIdentity-APE1o-d1.css"
+    },
+    {
+      "path": "resources/web/assets/SourceIdentity-DT2BDxTP.js",
+      "bytes": 706,
+      "sha256": "3a3d0511b1e35117502b0038cdb5fe37e07477b48a6ad66482c5a0a05edb7d62",
+      "source": "resources/web/assets/SourceIdentity-DT2BDxTP.js"
+    },
+    {
+      "path": "resources/web/assets/TerminalPane-B4nLUoHc.css",
+      "bytes": 10193,
+      "sha256": "fc961046576c55ce6726dc0f7b3c3572064b4a65a7d080a0a15dbd97514232b0",
+      "source": "resources/web/assets/TerminalPane-B4nLUoHc.css"
+    },
+    {
+      "path": "resources/web/assets/TerminalPane-wQLQ6_PM.js",
+      "bytes": 381242,
+      "sha256": "75fb2cb1b0608d84a267235f6462c968cf0fd533ec1a3facc3060f5f461235ad",
+      "source": "resources/web/assets/TerminalPane-wQLQ6_PM.js"
+    },
+    {
+      "path": "resources/web/assets/Thread-DfWOIudl.js",
+      "bytes": 108616,
+      "sha256": "55bd3108ebdbddb06e874e250a8fb3058a401e09e559a0ce34c92b6ffffb90ae",
+      "source": "resources/web/assets/Thread-DfWOIudl.js"
+    },
+    {
+      "path": "resources/web/assets/Thread-fnhYBgWC.css",
+      "bytes": 36633,
+      "sha256": "9e2b3fbdc23d8d3d49a6d3cb4a83c3f17b699544433a08a0ee002e2485a56f03",
+      "source": "resources/web/assets/Thread-fnhYBgWC.css"
+    },
+    {
+      "path": "resources/web/assets/ThreadSearch-jMTCZtA-.js",
+      "bytes": 4379,
+      "sha256": "cddc7e6e2b0b02dd242350de3548c4c1421344956c5a53522a95bacf4747c03f",
+      "source": "resources/web/assets/ThreadSearch-jMTCZtA-.js"
+    },
+    {
+      "path": "resources/web/assets/WorkerPoolContext-Mdd0GPQm.js",
+      "bytes": 431173,
+      "sha256": "e66fe2b28b778dc6571239129a478a2e363c9bbc7e94eb0d9563fd178b934cc0",
+      "source": "resources/web/assets/WorkerPoolContext-Mdd0GPQm.js"
+    },
+    {
+      "path": "resources/web/assets/WorkspaceAgents-Cib07h0E.css",
+      "bytes": 4815,
+      "sha256": "7c6d707409f4f1e9a439b7100e44e712260cf63b35c6ab9d3bd946740384bd6c",
+      "source": "resources/web/assets/WorkspaceAgents-Cib07h0E.css"
+    },
+    {
+      "path": "resources/web/assets/WorkspaceAgents-Dbrza3TD.js",
+      "bytes": 13759,
+      "sha256": "e5187225ffaf349806fb8c76a32b17e0204cfba8abb5dd26549fdb6ffc88cff3",
+      "source": "resources/web/assets/WorkspaceAgents-Dbrza3TD.js"
+    },
+    {
+      "path": "resources/web/assets/WorkspaceBrowser-haRUUeXo.js",
+      "bytes": 15420,
+      "sha256": "ed184aa4da746feb4fb790f1e19babd8e312c120c01a127455d26b03d169a52c",
+      "source": "resources/web/assets/WorkspaceBrowser-haRUUeXo.js"
+    },
+    {
+      "path": "resources/web/assets/WorkspaceEmptyState-B_SEwHUL.js",
+      "bytes": 1045,
+      "sha256": "2927241b926eec4afd7ceceebd7e658250c89ec9f24961231bc5b65e03e6d580",
+      "source": "resources/web/assets/WorkspaceEmptyState-B_SEwHUL.js"
+    },
+    {
+      "path": "resources/web/assets/WorkspaceFiles-CF83jEqh.js",
+      "bytes": 13635,
+      "sha256": "64c7a4a6d1be0cf048b99d584a471387d73a9899b724eac802601980ab106aa1",
+      "source": "resources/web/assets/WorkspaceFiles-CF83jEqh.js"
+    },
+    {
+      "path": "resources/web/assets/WorkspacePanel-CSm-1TkG.js",
+      "bytes": 24082,
+      "sha256": "ef3c221817a37f7e5ceb03c7462c2cabb869a91ff244010cfc30e9c3b17ee734",
+      "source": "resources/web/assets/WorkspacePanel-CSm-1TkG.js"
+    },
+    {
+      "path": "resources/web/assets/WorkspacePanel-DFFKGd-u.css",
+      "bytes": 30183,
+      "sha256": "2a0f7f9bb9fece8c0697592095ecf5063fa516844b12a5b4102ca585e44bd6de",
+      "source": "resources/web/assets/WorkspacePanel-DFFKGd-u.css"
+    },
+    {
+      "path": "resources/web/assets/WorkspaceReview-_a5faOB7.js",
+      "bytes": 127941,
+      "sha256": "a500aa4737cc76ba0d741ae3c1fe93fb0b460ad0e585b054283fbd42aba2e3f6",
+      "source": "resources/web/assets/WorkspaceReview-_a5faOB7.js"
+    },
+    {
+      "path": "resources/web/assets/WorkspaceSideChat-CdmXs7GG.js",
+      "bytes": 9967,
+      "sha256": "7e747e969ed0e70a083b517f117e8d02962c503fb4e61a5e367ef6e39e86fb06",
+      "source": "resources/web/assets/WorkspaceSideChat-CdmXs7GG.js"
+    },
+    {
+      "path": "resources/web/assets/WorkspaceTerminal-D4laKo8_.js",
+      "bytes": 810,
+      "sha256": "a6b149d1e5c5471c2a99d52808d7d02ecc5158fead71c8cc913662d39c33a50f",
+      "source": "resources/web/assets/WorkspaceTerminal-D4laKo8_.js"
+    },
+    {
+      "path": "resources/web/assets/addon-web-links-xF2oeMXv.js",
+      "bytes": 2384,
+      "sha256": "8f5a52fb798c600364dc06e663e21f4474ef714ea80d045f2db8ab26e82c4fa0",
+      "source": "resources/web/assets/addon-web-links-xF2oeMXv.js"
+    },
+    {
+      "path": "resources/web/assets/addon-webgl-Dl1uOhWx.js",
+      "bytes": 120371,
+      "sha256": "8d32982a231a2c85b46d89d2b8600ce5e0ecd404c5c36af4d92b5311634dc3df",
+      "source": "resources/web/assets/addon-webgl-Dl1uOhWx.js"
+    },
+    {
+      "path": "resources/web/assets/app-update-D9MEEzNk.css",
+      "bytes": 935,
+      "sha256": "4125d8ac7fe52ed2351cb2cb966ed8cc03db52c9de2f532bf5aff5669dbb3100",
+      "source": "resources/web/assets/app-update-D9MEEzNk.css"
+    },
+    {
+      "path": "resources/web/assets/app-update-toast-D3GyIzKn.css",
+      "bytes": 1404,
+      "sha256": "89fd24946826f7c847b9f4f599ca4ef2e9863cfdd0411081c531713c0be7a107",
+      "source": "resources/web/assets/app-update-toast-D3GyIzKn.css"
     },
     {
       "path": "resources/web/assets/avatars/01.webp",
@@ -83036,18 +83876,6 @@
       "source": "resources/web/assets/carb-welcome-letter.js"
     },
     {
-      "path": "resources/web/assets/CheckoutDiscardDialog-C0coE2LG.css",
-      "bytes": 368,
-      "sha256": "ae87961cf8c3e51aac82bb5a6f4b99f1e7a594c996df85a859db38ce49eb16ad",
-      "source": "resources/web/assets/CheckoutDiscardDialog-C0coE2LG.css"
-    },
-    {
-      "path": "resources/web/assets/CheckoutDiscardDialog-CCDg2lW9.js",
-      "bytes": 1740,
-      "sha256": "e282a88f59fc936395b97a92abf845057341db2fda2104889c1beed5a803b4d8",
-      "source": "resources/web/assets/CheckoutDiscardDialog-CCDg2lW9.js"
-    },
-    {
       "path": "resources/web/assets/chip-icons-DUVwYwWF.js",
       "bytes": 7394,
       "sha256": "ca363d468f7cf0ca5929ba18507abdbecf077fdc872670857d886fc4b1dfb612",
@@ -83072,76 +83900,10 @@
       "source": "resources/web/assets/command-palette-Bmv7z3VP.css"
     },
     {
-      "path": "resources/web/assets/CommandPalette-DFnbNV3m.js",
-      "bytes": 3940,
-      "sha256": "b9b09ee4a132edf44285a0cd3c05a8fbe68d7657c602967e1107edde99c9687a",
-      "source": "resources/web/assets/CommandPalette-DFnbNV3m.js"
-    },
-    {
-      "path": "resources/web/assets/CompletedMarkdown-BRgznyWz.js",
-      "bytes": 289648,
-      "sha256": "9c1354d01dcc7f6eadfca9eb5bd6f4785e81a73696af4a87d3646828b0054b43",
-      "source": "resources/web/assets/CompletedMarkdown-BRgznyWz.js"
-    },
-    {
-      "path": "resources/web/assets/CompletedMarkdown-gQfVAiM7.css",
-      "bytes": 28836,
-      "sha256": "27c0c413a4b9249c12bcb7f62a704f9aaad9ec87a588179d4393ce11705c07e3",
-      "source": "resources/web/assets/CompletedMarkdown-gQfVAiM7.css"
-    },
-    {
       "path": "resources/web/assets/composer-inventory-RY4Evo2B.js",
       "bytes": 1187,
       "sha256": "d81522385dec999276a9a503ef3053d7b44cf43f789a9f40875f26e6356288b1",
       "source": "resources/web/assets/composer-inventory-RY4Evo2B.js"
-    },
-    {
-      "path": "resources/web/assets/ComposerChipOverlay-Bp-G2Kuk.js",
-      "bytes": 1286,
-      "sha256": "25c3f201d21e8c1a3663aaa4962dbdbfbbc2c004f0c5712bf6fa584e35ae1c42",
-      "source": "resources/web/assets/ComposerChipOverlay-Bp-G2Kuk.js"
-    },
-    {
-      "path": "resources/web/assets/ComposerResourcePicker-Dcl1ut-P.js",
-      "bytes": 8933,
-      "sha256": "853858651e253f5bad4486449dcf0c43c8c90496d0928cff6d79554533ede92f",
-      "source": "resources/web/assets/ComposerResourcePicker-Dcl1ut-P.js"
-    },
-    {
-      "path": "resources/web/assets/ComposerResourcePicker-DOqQEBFT.css",
-      "bytes": 2026,
-      "sha256": "fa067e8a3e2cebde7aa97ab490b10f1e3d0ebcabc3afe103c7f366807179cfc2",
-      "source": "resources/web/assets/ComposerResourcePicker-DOqQEBFT.css"
-    },
-    {
-      "path": "resources/web/assets/ComposerVoiceControl-BPCEHBQg.css",
-      "bytes": 2091,
-      "sha256": "e9484d70a336e6fae01f746ce964b728ed1462926e641327988b70502634dd20",
-      "source": "resources/web/assets/ComposerVoiceControl-BPCEHBQg.css"
-    },
-    {
-      "path": "resources/web/assets/ComposerVoiceControl-Cv2YvIUL.js",
-      "bytes": 12406,
-      "sha256": "162fa5e450bfc3ade86f6878ef6fd955ea91d8104d7b9732b5ab7b6333b46a3a",
-      "source": "resources/web/assets/ComposerVoiceControl-Cv2YvIUL.js"
-    },
-    {
-      "path": "resources/web/assets/ContextUsage-B4fYjiTs.css",
-      "bytes": 1473,
-      "sha256": "486e82a0f2b6a5f980b227b424f63ef334ac84a2ea879f33b5a836564f138554",
-      "source": "resources/web/assets/ContextUsage-B4fYjiTs.css"
-    },
-    {
-      "path": "resources/web/assets/ContextUsage-Cgu6aE8i.js",
-      "bytes": 1179,
-      "sha256": "43e28dbaed36baa3c6aaa519df3c238c8a7454b02f56dbe579163598709babfe",
-      "source": "resources/web/assets/ContextUsage-Cgu6aE8i.js"
-    },
-    {
-      "path": "resources/web/assets/CopyButton-rZ8y9lrR.js",
-      "bytes": 1095,
-      "sha256": "9621a95a2ca050fe08d3dd655dc6864be4e2a2003d19894307943feb754eec09",
-      "source": "resources/web/assets/CopyButton-rZ8y9lrR.js"
     },
     {
       "path": "resources/web/assets/design-beam-Bi8_GZXW.css",
@@ -83162,28 +83924,10 @@
       "source": "resources/web/assets/esm-CsjHwY2N.js"
     },
     {
-      "path": "resources/web/assets/FeedbackDialog-BbsGOSbq.js",
-      "bytes": 7065,
-      "sha256": "96357622864a63f96038633bc0e763945bd6b273800d955b66538d4eddfbe788",
-      "source": "resources/web/assets/FeedbackDialog-BbsGOSbq.js"
-    },
-    {
-      "path": "resources/web/assets/FeedbackDialog-D-kJaZbn.css",
-      "bytes": 5508,
-      "sha256": "8eb6de44c3f843a359c4b3da561b0217bbac08106830e7737e6e7fe60394160c",
-      "source": "resources/web/assets/FeedbackDialog-D-kJaZbn.css"
-    },
-    {
       "path": "resources/web/assets/file-reference-Do6RcPXZ.js",
       "bytes": 1576,
       "sha256": "72c8a300b0a14233062416d5569855311aaf4b57fbc30062a9ba9778238b5d93",
       "source": "resources/web/assets/file-reference-Do6RcPXZ.js"
-    },
-    {
-      "path": "resources/web/assets/FileTypeIcon-wZ1FByQI.js",
-      "bytes": 9552,
-      "sha256": "b459317747f883d6a480a6a481951023dd4ea091de9933b8ba13c7887aceb74b",
-      "source": "resources/web/assets/FileTypeIcon-wZ1FByQI.js"
     },
     {
       "path": "resources/web/assets/geist-cyrillic-ext-wght-normal-DjL33-gN.woff2",
@@ -83264,16 +84008,16 @@
       "source": "resources/web/assets/github-dark-default-DXG-b-1a.js"
     },
     {
-      "path": "resources/web/assets/github-light-default-BXViO-2h.js",
-      "bytes": 14153,
-      "sha256": "e2e7f2e789c0b6965667b5dd754a8de8edf3228c72cf0414e2fbb1f260674127",
-      "source": "resources/web/assets/github-light-default-BXViO-2h.js"
-    },
-    {
       "path": "resources/web/assets/github-light-EUqPIrTm.js",
       "bytes": 11181,
       "sha256": "b41057cac4d9e62754f5d64f241ec9153a0c3d53f5eaa2464d3acf9a644e8852",
       "source": "resources/web/assets/github-light-EUqPIrTm.js"
+    },
+    {
+      "path": "resources/web/assets/github-light-default-BXViO-2h.js",
+      "bytes": 14153,
+      "sha256": "e2e7f2e789c0b6965667b5dd754a8de8edf3228c72cf0414e2fbb1f260674127",
+      "source": "resources/web/assets/github-light-default-BXViO-2h.js"
     },
     {
       "path": "resources/web/assets/grammar-astro-Z3SC2XSP.js",
@@ -83906,120 +84650,6 @@
       "source": "resources/web/assets/highlighter.worker-CqLXZxHd.js"
     },
     {
-      "path": "resources/web/assets/IconArrowLeft-CWN9HGHh.js",
-      "bytes": 210,
-      "sha256": "5a189e877943126bd69af381af05744e77d1893a078338ae9584b7abda3b38ea",
-      "source": "resources/web/assets/IconArrowLeft-CWN9HGHh.js"
-    },
-    {
-      "path": "resources/web/assets/IconBolt-DvlO9o0s.js",
-      "bytes": 149,
-      "sha256": "3243a52551cfd1c9b46bd80a5716700f74e20ed5efddce5cd83a80eb69eda01d",
-      "source": "resources/web/assets/IconBolt-DvlO9o0s.js"
-    },
-    {
-      "path": "resources/web/assets/IconBug-CZ2RGinL.js",
-      "bytes": 501,
-      "sha256": "fc94142db9f6758dc58538eb05948a95d1bd29cd91b9c2b2f23f0142432bed8a",
-      "source": "resources/web/assets/IconBug-CZ2RGinL.js"
-    },
-    {
-      "path": "resources/web/assets/IconChevronUp-BnuysKHH.js",
-      "bytes": 139,
-      "sha256": "fb66b7e555de880fb149b1cd84f7e2180665b8a3fe184a053b842cb913ac5c9d",
-      "source": "resources/web/assets/IconChevronUp-BnuysKHH.js"
-    },
-    {
-      "path": "resources/web/assets/IconClock-CQTSVbEd.js",
-      "bytes": 191,
-      "sha256": "1f163b0b4ebe45a7e7524ecdd6ea668af7b7f1e9fd5486151f93ce5b4f980211",
-      "source": "resources/web/assets/IconClock-CQTSVbEd.js"
-    },
-    {
-      "path": "resources/web/assets/IconCode-C1CZKZb-.js",
-      "bytes": 208,
-      "sha256": "9c737e762f851f6437c4b28fc0e81084da7a37cd34862ebeb30f54e28597d3e6",
-      "source": "resources/web/assets/IconCode-C1CZKZb-.js"
-    },
-    {
-      "path": "resources/web/assets/IconDatabase-CBWhX_ab.js",
-      "bytes": 262,
-      "sha256": "0cd3a9b774bc7985cc6c66a66c925aaf7f6b556387e73f8d995ebacf9cb32a43",
-      "source": "resources/web/assets/IconDatabase-CBWhX_ab.js"
-    },
-    {
-      "path": "resources/web/assets/IconDeviceMobile-BjJ8foy6.js",
-      "bytes": 280,
-      "sha256": "990e59832de6e450030a4420443e6e837c9deff4c92c56dc73142629b277fbcd",
-      "source": "resources/web/assets/IconDeviceMobile-BjJ8foy6.js"
-    },
-    {
-      "path": "resources/web/assets/IconExternalLink-D3wAzFMs.js",
-      "bytes": 268,
-      "sha256": "e08ccedb4924e54cfaf3334bcb60b03610db8fddfdfca6ce8aae0a10e1cba337",
-      "source": "resources/web/assets/IconExternalLink-D3wAzFMs.js"
-    },
-    {
-      "path": "resources/web/assets/IconEye-BDyHIqZ_.js",
-      "bytes": 256,
-      "sha256": "6b8481ca9a9c5fdd2fdfb3836f647ee7d2543ba3885c6aa77abebb3c50e0741a",
-      "source": "resources/web/assets/IconEye-BDyHIqZ_.js"
-    },
-    {
-      "path": "resources/web/assets/IconFileDiff-Bf9RfnEN.js",
-      "bytes": 357,
-      "sha256": "f2cdcbb353933a83a1dfbf2af4d8994539704f92c478bd24477fe28d06cd7ffb",
-      "source": "resources/web/assets/IconFileDiff-Bf9RfnEN.js"
-    },
-    {
-      "path": "resources/web/assets/IconLock-AhmtkEKC.js",
-      "bytes": 306,
-      "sha256": "1c67e90c9c87bc0a807822ca482af64fb585c3d4c29396b92b262357be87411a",
-      "source": "resources/web/assets/IconLock-AhmtkEKC.js"
-    },
-    {
-      "path": "resources/web/assets/IconMaximize-Dr5OpuhK.js",
-      "bytes": 302,
-      "sha256": "f4a64e9acd501845fc5928078d2b1a36d29db79a74deaaf97d1f9506c470dc90",
-      "source": "resources/web/assets/IconMaximize-Dr5OpuhK.js"
-    },
-    {
-      "path": "resources/web/assets/IconPlayerStop-CxitLncc.js",
-      "bytes": 207,
-      "sha256": "8bb708531775c0120372142b5976943af94734753db9e3e71df65a23054f6556",
-      "source": "resources/web/assets/IconPlayerStop-CxitLncc.js"
-    },
-    {
-      "path": "resources/web/assets/IconRobot-BjdpZoJy.js",
-      "bytes": 483,
-      "sha256": "9afcd1a06d67def23468bfc6b8757c8fe410f4d484f845456a5711bffa25da21",
-      "source": "resources/web/assets/IconRobot-BjdpZoJy.js"
-    },
-    {
-      "path": "resources/web/assets/IconSubtask-jwp3f4yw.js",
-      "bytes": 426,
-      "sha256": "b56297ef3626c2fee1b292a6c0727c58d724bf00c91ddbb5b2b67428695586c8",
-      "source": "resources/web/assets/IconSubtask-jwp3f4yw.js"
-    },
-    {
-      "path": "resources/web/assets/IconWorld-zzMUT-DX.js",
-      "bytes": 335,
-      "sha256": "43a6b86990533152fc956d9bbc0f5b8ddc69c93fc8c656e683f3492276b3ac45",
-      "source": "resources/web/assets/IconWorld-zzMUT-DX.js"
-    },
-    {
-      "path": "resources/web/assets/InboxSidebar-D2a_B-0r.js",
-      "bytes": 26954,
-      "sha256": "a50039778bc489e386a38417b880436da1e7dc05caa9ee243ee01d124e8a0353",
-      "source": "resources/web/assets/InboxSidebar-D2a_B-0r.js"
-    },
-    {
-      "path": "resources/web/assets/InboxSidebar-qLFx_Nz1.css",
-      "bytes": 10253,
-      "sha256": "a5c95839b1828e87bdf62481416801d7fc740435a4b14321162b624d082f203b",
-      "source": "resources/web/assets/InboxSidebar-qLFx_Nz1.css"
-    },
-    {
       "path": "resources/web/assets/index-CFiielSi.css",
       "bytes": 105536,
       "sha256": "62c638e37d3105905c65e445616f8f293fc90ddfb72e67d93f18c0843cd4ddf1",
@@ -84030,12 +84660,6 @@
       "bytes": 791093,
       "sha256": "5791c9260880ea489d73da9980a5d7623805a0fa93c2567baeaf277976cfe78c",
       "source": "resources/web/assets/index-dY3kjCLH.js"
-    },
-    {
-      "path": "resources/web/assets/InstallTerminal-BfINFuQf.js",
-      "bytes": 1862,
-      "sha256": "8b92b4ebe912acc8aebdd4e750e9e318f076902056807615f032e6b77491c25c",
-      "source": "resources/web/assets/InstallTerminal-BfINFuQf.js"
     },
     {
       "path": "resources/web/assets/inter-cyrillic-ext-wght-normal-BOeWTOD4.woff2",
@@ -84110,394 +84734,16 @@
       "source": "resources/web/assets/jetbrains-mono-vietnamese-wght-normal-Bt-aOZkq.woff2"
     },
     {
-      "path": "resources/web/assets/KaTeX_AMS-Regular-BQhdFMY1.woff2",
-      "bytes": 28076,
-      "sha256": "0cdd387c9590a1a9f9794560022dbb59654a7d86f187aa0c81495ad42d3a7308",
-      "source": "resources/web/assets/KaTeX_AMS-Regular-BQhdFMY1.woff2"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_AMS-Regular-DMm9YOAa.woff",
-      "bytes": 33516,
-      "sha256": "30da91e84c893f875e252689faebdc590b2871145e8adc7f9a9d4dbd8ce0b251",
-      "source": "resources/web/assets/KaTeX_AMS-Regular-DMm9YOAa.woff"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_AMS-Regular-DRggAlZN.ttf",
-      "bytes": 63632,
-      "sha256": "68534840bcfdd2bffb6f0e8deb48684dd01e7f04ea2813267577afb906de1d13",
-      "source": "resources/web/assets/KaTeX_AMS-Regular-DRggAlZN.ttf"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Caligraphic-Bold-ATXxdsX0.ttf",
-      "bytes": 12368,
-      "sha256": "07d8e303ce4fc12b4bb54f1004170dd190a1f3db45d400fe68060df3e0897268",
-      "source": "resources/web/assets/KaTeX_Caligraphic-Bold-ATXxdsX0.ttf"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Caligraphic-Bold-BEiXGLvX.woff",
-      "bytes": 7716,
-      "sha256": "1ae6bd7475590e97e7f145a89e09ccde322f7a6bc0b91607b1c8b8ee28290fed",
-      "source": "resources/web/assets/KaTeX_Caligraphic-Bold-BEiXGLvX.woff"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Caligraphic-Bold-Dq_IR9rO.woff2",
-      "bytes": 6912,
-      "sha256": "de7701e42cf1f4cf0b766c03fb27977207eee2f4fd5d76fa82188406da43ea4c",
-      "source": "resources/web/assets/KaTeX_Caligraphic-Bold-Dq_IR9rO.woff2"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Caligraphic-Regular-CTRA-rTL.woff",
-      "bytes": 7656,
-      "sha256": "3398dd02302557a793f2863f88e02d96ce10df2abffa07c8e9fa90775116e65c",
-      "source": "resources/web/assets/KaTeX_Caligraphic-Regular-CTRA-rTL.woff"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Caligraphic-Regular-Di6jR-x-.woff2",
-      "bytes": 6908,
-      "sha256": "5d53e70ad607c2352162dec9e0923fb54ecdafaccbf604cd8dcf7d00facb989b",
-      "source": "resources/web/assets/KaTeX_Caligraphic-Regular-Di6jR-x-.woff2"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Caligraphic-Regular-wX97UBjC.ttf",
-      "bytes": 12344,
-      "sha256": "ed0b74372feefcbb9c0666b2e210da37b7e49fa7fbbf3eeb11db5f693dacfbb7",
-      "source": "resources/web/assets/KaTeX_Caligraphic-Regular-wX97UBjC.ttf"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Fraktur-Bold-BdnERNNW.ttf",
-      "bytes": 19584,
-      "sha256": "9163df9c7122432e6495b4229fa9071cf9ae86a758ae5efc4924ec2e1a6dbce1",
-      "source": "resources/web/assets/KaTeX_Fraktur-Bold-BdnERNNW.ttf"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Fraktur-Bold-BsDP51OF.woff",
-      "bytes": 13296,
-      "sha256": "9be7ceb88004ab8ad124082246fbfcca4091e36385d4ec6ed1df67375dad50fb",
-      "source": "resources/web/assets/KaTeX_Fraktur-Bold-BsDP51OF.woff"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Fraktur-Bold-CL6g_b3V.woff2",
-      "bytes": 11348,
-      "sha256": "74444efd593c005e3f4573b44524704c0af0a937fe911cca9e94068d0d140d3f",
-      "source": "resources/web/assets/KaTeX_Fraktur-Bold-CL6g_b3V.woff2"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Fraktur-Regular-CB_wures.ttf",
-      "bytes": 19572,
-      "sha256": "1e6f9579e90e2cac37f8f60a597c436e075c114385652b7cbeb0dec0421291b3",
-      "source": "resources/web/assets/KaTeX_Fraktur-Regular-CB_wures.ttf"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Fraktur-Regular-CTYiF6lA.woff2",
-      "bytes": 11316,
-      "sha256": "51814d270d06ff0255dba0799994fa4d8c84d11f09951d47595f4abb1f3602dc",
-      "source": "resources/web/assets/KaTeX_Fraktur-Regular-CTYiF6lA.woff2"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Fraktur-Regular-Dxdc4cR9.woff",
-      "bytes": 13208,
-      "sha256": "5e28753be717dac97f559f49bc10be9cf3c124ddcabda6659d11cb68febc6463",
-      "source": "resources/web/assets/KaTeX_Fraktur-Regular-Dxdc4cR9.woff"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Main-Bold-Cx986IdX.woff2",
-      "bytes": 25324,
-      "sha256": "0f60d1b897938ec918c8ce073092411baf9438f6739465693ff18b0f9d20b021",
-      "source": "resources/web/assets/KaTeX_Main-Bold-Cx986IdX.woff2"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Main-Bold-Jm3AIy58.woff",
-      "bytes": 29912,
-      "sha256": "c76c5d696297d51b9cb1639c7da4334f0e7dec81b42b11213b5e25ef671bb822",
-      "source": "resources/web/assets/KaTeX_Main-Bold-Jm3AIy58.woff"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Main-Bold-waoOVXN0.ttf",
-      "bytes": 51336,
-      "sha256": "138ac28d1663b3037e9c5f52371fa5c63d8324f4a38d22cd573e6ea3a3fd0cf8",
-      "source": "resources/web/assets/KaTeX_Main-Bold-waoOVXN0.ttf"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Main-BoldItalic-DxDJ3AOS.woff2",
-      "bytes": 16780,
-      "sha256": "99cd42a3c072d918f2f44984a807cf7aa16e13545fd0875fc07c6c65f99e715b",
-      "source": "resources/web/assets/KaTeX_Main-BoldItalic-DxDJ3AOS.woff2"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Main-BoldItalic-DzxPMmG6.ttf",
-      "bytes": 32968,
-      "sha256": "70ee1f64a20f2048c21940ef46d0144fd215baa953ca69afd1e31e98544f708f",
-      "source": "resources/web/assets/KaTeX_Main-BoldItalic-DzxPMmG6.ttf"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Main-BoldItalic-SpSLRI95.woff",
-      "bytes": 19412,
-      "sha256": "a6f7ec0d846ac7ad975adb8959c37ed49b94acbc4ae436db9ce9e20287e4a64c",
-      "source": "resources/web/assets/KaTeX_Main-BoldItalic-SpSLRI95.woff"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Main-Italic-3WenGoN9.ttf",
-      "bytes": 33580,
-      "sha256": "0d85ae7cc30f23790a7f1a58c4a112fdca8aae769b6ba11429af1d98b1b6cb3a",
-      "source": "resources/web/assets/KaTeX_Main-Italic-3WenGoN9.ttf"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Main-Italic-BMLOBm91.woff",
-      "bytes": 19676,
-      "sha256": "f1d6ef86f3b11a528bd5185199bd2443ecb2b0dead96d88674b5a2c12be24bdf",
-      "source": "resources/web/assets/KaTeX_Main-Italic-BMLOBm91.woff"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Main-Italic-NWA7e6Wa.woff2",
-      "bytes": 16988,
-      "sha256": "97479ca6cce906abc961ecac96faa5f9ca2e61b8e7670d475826bcdee9a7c267",
-      "source": "resources/web/assets/KaTeX_Main-Italic-NWA7e6Wa.woff2"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Main-Regular-B22Nviop.woff2",
-      "bytes": 26272,
-      "sha256": "c2342cd8b869e01752a9321dc17213fc40d4d04c79688c1d43f2cf316abd7866",
-      "source": "resources/web/assets/KaTeX_Main-Regular-B22Nviop.woff2"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Main-Regular-Dr94JaBh.woff",
-      "bytes": 30772,
-      "sha256": "c6368d87e8a1a3a5d337623d83d8dc4b868f242a9ad476237d6f8d1e0f168cdc",
-      "source": "resources/web/assets/KaTeX_Main-Regular-Dr94JaBh.woff"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Main-Regular-ypZvNtVU.ttf",
-      "bytes": 53580,
-      "sha256": "d0332f52868370fd83ae7fa46470f90c8f2eab2fcf12bc4f88080b340c95a830",
-      "source": "resources/web/assets/KaTeX_Main-Regular-ypZvNtVU.ttf"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Math-BoldItalic-B3XSjfu4.ttf",
-      "bytes": 31196,
-      "sha256": "f9377ab0271cda59af24bcffbd46a4d0c8a3572ffafdbb38de2ad5ea7b0d5ee5",
-      "source": "resources/web/assets/KaTeX_Math-BoldItalic-B3XSjfu4.ttf"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Math-BoldItalic-CZnvNsCZ.woff2",
-      "bytes": 16400,
-      "sha256": "dc47344dbb6cb5b655c8460d561f4df5f501b90c804ad3c6cec65fe322351ab1",
-      "source": "resources/web/assets/KaTeX_Math-BoldItalic-CZnvNsCZ.woff2"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Math-BoldItalic-iY-2wyZ7.woff",
-      "bytes": 18668,
-      "sha256": "850c0af5c2238497febaf5e461d880bf458c341f42f4f330f1b1ab5698b1998e",
-      "source": "resources/web/assets/KaTeX_Math-BoldItalic-iY-2wyZ7.woff"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Math-Italic-DA0__PXp.woff",
-      "bytes": 18748,
-      "sha256": "8a8d244581371912b8f3f5a23e2437cb2a59cd9bcaebb0346e722c05737a2571",
-      "source": "resources/web/assets/KaTeX_Math-Italic-DA0__PXp.woff"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Math-Italic-flOr_0UB.ttf",
-      "bytes": 31308,
-      "sha256": "08ce98e51b04d58945a301e639e02b6998af29fdfd61a7b8afdd07bbfc479d4a",
-      "source": "resources/web/assets/KaTeX_Math-Italic-flOr_0UB.ttf"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Math-Italic-t53AETM-.woff2",
-      "bytes": 16440,
-      "sha256": "7af58c5ec8f132a2ddde9027c6d7814decce4d3b822a11192a42a20e2e973264",
-      "source": "resources/web/assets/KaTeX_Math-Italic-t53AETM-.woff2"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_SansSerif-Bold-CFMepnvq.ttf",
-      "bytes": 24504,
-      "sha256": "1ece03f79f95277d57dc7f6b435a74e1379b0d46104a8530286b60ff49369ea0",
-      "source": "resources/web/assets/KaTeX_SansSerif-Bold-CFMepnvq.ttf"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_SansSerif-Bold-D1sUS0GD.woff2",
-      "bytes": 12216,
-      "sha256": "e99ae51144bf1232efcc1bfe5add36262c6866b0faab24fa75740e1b98577a62",
-      "source": "resources/web/assets/KaTeX_SansSerif-Bold-D1sUS0GD.woff2"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_SansSerif-Bold-DbIhKOiC.woff",
-      "bytes": 14408,
-      "sha256": "ece03cfd83e22c212cdef66feb8442d25a083beb988db3f1883f3f9738d750ba",
-      "source": "resources/web/assets/KaTeX_SansSerif-Bold-DbIhKOiC.woff"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_SansSerif-Italic-C3H0VqGB.woff2",
-      "bytes": 12028,
-      "sha256": "00b26ac825e2095056396e0553b8ac26d3f8ad158c3826e28b4c45b385c4714a",
-      "source": "resources/web/assets/KaTeX_SansSerif-Italic-C3H0VqGB.woff2"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_SansSerif-Italic-DN2j7dab.woff",
-      "bytes": 14112,
-      "sha256": "91ee67500cc0129aa0ace3ac5c61ff1692102f0f31d02b69347fba35dcb75bf2",
-      "source": "resources/web/assets/KaTeX_SansSerif-Italic-DN2j7dab.woff"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_SansSerif-Italic-YYjJ1zSn.ttf",
-      "bytes": 22364,
-      "sha256": "3931dd81faed86ba021bb2bbdc36f5bed9a38d6b4f4077aca59b265aa1b02083",
-      "source": "resources/web/assets/KaTeX_SansSerif-Italic-YYjJ1zSn.ttf"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_SansSerif-Regular-BNo7hRIc.ttf",
-      "bytes": 19436,
-      "sha256": "f36ea897e19f4a2e571d1e900e4e3710e438deb05a842486045ba0a3e616a4ad",
-      "source": "resources/web/assets/KaTeX_SansSerif-Regular-BNo7hRIc.ttf"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_SansSerif-Regular-CS6fqUqJ.woff",
-      "bytes": 12316,
-      "sha256": "11e4dc8a6471ff6d6ee561d53d10fde8f7489e798257ff449c5d37c197435605",
-      "source": "resources/web/assets/KaTeX_SansSerif-Regular-CS6fqUqJ.woff"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_SansSerif-Regular-DDBCnlJ7.woff2",
-      "bytes": 10344,
-      "sha256": "68e8c73ef42afd3ccec58bf0fba302cce448938e7fc020a5e31f8a952eee1342",
-      "source": "resources/web/assets/KaTeX_SansSerif-Regular-DDBCnlJ7.woff2"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Script-Regular-C5JkGWo-.ttf",
-      "bytes": 16648,
-      "sha256": "1c67f068fea8bb09bf099c088b1cf64bd27516a6e07f4684344873564bb66a67",
-      "source": "resources/web/assets/KaTeX_Script-Regular-C5JkGWo-.ttf"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Script-Regular-D3wIWfF6.woff2",
-      "bytes": 9644,
-      "sha256": "036d4e95149b69ff9bcc0cd55771efeb25ffa3947293e69acd78d5ac328c684b",
-      "source": "resources/web/assets/KaTeX_Script-Regular-D3wIWfF6.woff2"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Script-Regular-D5yQViql.woff",
-      "bytes": 10588,
-      "sha256": "d96cdf2b3bdd4d64a8fd5f74a4c467f123a8a73931cd435889f08ffaf9bf947a",
-      "source": "resources/web/assets/KaTeX_Script-Regular-D5yQViql.woff"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Size1-Regular-C195tn64.woff",
-      "bytes": 6496,
-      "sha256": "c943cc986384f59e86bea5fd7dc50a9c4dfe567a7c05eb40d6790720dead97c9",
-      "source": "resources/web/assets/KaTeX_Size1-Regular-C195tn64.woff"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Size1-Regular-Dbsnue_I.ttf",
-      "bytes": 12228,
-      "sha256": "95b6d2f1a50173bfedb8c63e1d1c99b10427d0a4df4201cb44513b226951a22b",
-      "source": "resources/web/assets/KaTeX_Size1-Regular-Dbsnue_I.ttf"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Size1-Regular-mCD8mA8B.woff2",
-      "bytes": 5468,
-      "sha256": "6b47c40166b6dbe21a5dfca7718413f2147fd2399be1ba605d8ad39cedf25dfe",
-      "source": "resources/web/assets/KaTeX_Size1-Regular-mCD8mA8B.woff2"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Size2-Regular-B7gKUWhC.ttf",
-      "bytes": 11508,
-      "sha256": "a6b2099fb555c60e3a0db3a08842ebf1d732c6eb4e4bf44913613bed4fc4e39b",
-      "source": "resources/web/assets/KaTeX_Size2-Regular-B7gKUWhC.ttf"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Size2-Regular-Dy4dx90m.woff2",
-      "bytes": 5208,
-      "sha256": "d04c54219f9eaec6d4d4fd42dfb28785975a4794d6b2fc71e566b9cd6db842dd",
-      "source": "resources/web/assets/KaTeX_Size2-Regular-Dy4dx90m.woff2"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Size2-Regular-oD1tc_U0.woff",
-      "bytes": 6188,
-      "sha256": "2014c523c3210bcc166648c4d4cc57f05b747df07a24277bf71c51e67dc79e3d",
-      "source": "resources/web/assets/KaTeX_Size2-Regular-oD1tc_U0.woff"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Size3-Regular-CTq5MqoE.woff",
-      "bytes": 4420,
-      "sha256": "6ab6b62e9b62dae2c00dd90f791bd10950be0ecc3490d7d6045f51c2e8fe0949",
-      "source": "resources/web/assets/KaTeX_Size3-Regular-CTq5MqoE.woff"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Size3-Regular-DgpXs0kz.ttf",
-      "bytes": 7588,
-      "sha256": "500e04d54f0d51666332c9d2089aa803be22aa878eca539e59fa53c6e522b082",
-      "source": "resources/web/assets/KaTeX_Size3-Regular-DgpXs0kz.ttf"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Size4-Regular-BF-4gkZK.woff",
-      "bytes": 5980,
-      "sha256": "99f9c6750b489c9462bf04900bd3f939df9b829339daaaaa99ef5495cdddea58",
-      "source": "resources/web/assets/KaTeX_Size4-Regular-BF-4gkZK.woff"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Size4-Regular-Dl5lxZxV.woff2",
-      "bytes": 4928,
-      "sha256": "a4af7d414440a1c1790825cfb700cf9cf43b0f2c4b04f0ebc523011ad9853ec0",
-      "source": "resources/web/assets/KaTeX_Size4-Regular-Dl5lxZxV.woff2"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Size4-Regular-DWFBv043.ttf",
-      "bytes": 10364,
-      "sha256": "c647367d1dd4e162468717d020e1fc0f1dc5c26ebfdffbe55261713bf88c5877",
-      "source": "resources/web/assets/KaTeX_Size4-Regular-DWFBv043.ttf"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Typewriter-Regular-C0xS9mPB.woff",
-      "bytes": 16028,
-      "sha256": "e14fed02b1aba7ce9f5afd5844b5d0321b22351febc720e0de8b8723527609f7",
-      "source": "resources/web/assets/KaTeX_Typewriter-Regular-C0xS9mPB.woff"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Typewriter-Regular-CO6r4hn1.woff2",
-      "bytes": 13568,
-      "sha256": "71d517d67827787cfabdf186914cc3358eda539e37931941f2b2fd4a21f68c0b",
-      "source": "resources/web/assets/KaTeX_Typewriter-Regular-CO6r4hn1.woff2"
-    },
-    {
-      "path": "resources/web/assets/KaTeX_Typewriter-Regular-D3Ib7_Hf.ttf",
-      "bytes": 27556,
-      "sha256": "f01f3e87d9c6a61c0c081ceb577abd864eb00a612f7ac1620dd6915fad2ef5aa",
-      "source": "resources/web/assets/KaTeX_Typewriter-Regular-D3Ib7_Hf.ttf"
-    },
-    {
       "path": "resources/web/assets/lib-BO_nRVIz.js",
       "bytes": 19057,
       "sha256": "58c88421cc81bde9968057ec5d62c3716e5f4175647aaf62e026e6d5fa44770a",
       "source": "resources/web/assets/lib-BO_nRVIz.js"
     },
     {
-      "path": "resources/web/assets/Markdown-BlsbQPkW.css",
-      "bytes": 11260,
-      "sha256": "891b98996286a6a23103201634c17c966d0c358fe1fbdf1ea9d96ac9982e1137",
-      "source": "resources/web/assets/Markdown-BlsbQPkW.css"
-    },
-    {
-      "path": "resources/web/assets/Markdown-BwnzjWnh.js",
-      "bytes": 33234,
-      "sha256": "91350beeb3dd66e9277e571533becf4991ed6749fdac2dd7c427d6ec6a2b8a18",
-      "source": "resources/web/assets/Markdown-BwnzjWnh.js"
-    },
-    {
       "path": "resources/web/assets/math-delimiters-YcH1-8Vx.js",
       "bytes": 3490,
       "sha256": "25f9076256ac7d953fa7635992132d779e0659316e32a8297518dfbe3e81de88",
       "source": "resources/web/assets/math-delimiters-YcH1-8Vx.js"
-    },
-    {
-      "path": "resources/web/assets/MediaViewer-DwZrKo9a.js",
-      "bytes": 10277,
-      "sha256": "6f3011abca5a550a6457880730c2c1318b86249ca2c6edf335b23df4b57fdfa6",
-      "source": "resources/web/assets/MediaViewer-DwZrKo9a.js"
-    },
-    {
-      "path": "resources/web/assets/MediaViewer-DZdkgjC5.css",
-      "bytes": 5422,
-      "sha256": "5a70fbe08ee0af5c6e8b329f74616cffc2711bdbb9d10b1a1308eda8473a5fbf",
-      "source": "resources/web/assets/MediaViewer-DZdkgjC5.css"
     },
     {
       "path": "resources/web/assets/mermaid-GHXKKRXX-C6i2aleV.js",
@@ -84512,58 +84758,10 @@
       "source": "resources/web/assets/model-picker-layout-DrwT9iUT.js"
     },
     {
-      "path": "resources/web/assets/ModelSelector-2Xo52wE_.css",
-      "bytes": 1550,
-      "sha256": "bd9813d83ae5943ae76ab6e67fc50e94c0dddb2bd4866d371d01610aad171a6e",
-      "source": "resources/web/assets/ModelSelector-2Xo52wE_.css"
-    },
-    {
-      "path": "resources/web/assets/ModelSelector-Dj3jemk4.js",
-      "bytes": 2275,
-      "sha256": "e87608bc0d646f999ab85fd5aa5e28e1f5c9636cbb55e7819f2790849e5d3356",
-      "source": "resources/web/assets/ModelSelector-Dj3jemk4.js"
-    },
-    {
-      "path": "resources/web/assets/ModelSelectorPanel-Dcue3fd9.js",
-      "bytes": 9339,
-      "sha256": "e728dd2e1dffbb89b23d8fb4c12e87ec5e5420956a3bce73cad64190236c4fbb",
-      "source": "resources/web/assets/ModelSelectorPanel-Dcue3fd9.js"
-    },
-    {
-      "path": "resources/web/assets/ModelSelectorPanel-YV_e31ro.css",
-      "bytes": 9680,
-      "sha256": "31795a162ece10e7146f1b13b53e8a9e01caffbe31d63d9c754022e7ca0c5b91",
-      "source": "resources/web/assets/ModelSelectorPanel-YV_e31ro.css"
-    },
-    {
-      "path": "resources/web/assets/Onboarding-Bx0aaqrc.js",
-      "bytes": 27317,
-      "sha256": "3b0903699a1fe7ba48362d912ffd8bd3d20a9a453fe9d426de21061b25278a4b",
-      "source": "resources/web/assets/Onboarding-Bx0aaqrc.js"
-    },
-    {
-      "path": "resources/web/assets/Onboarding-CIkvdDof.css",
-      "bytes": 30237,
-      "sha256": "df57b60d2802b8e96f48efaf2a4f7f7a7ade3400fa08eefc69cb064caacfd8f8",
-      "source": "resources/web/assets/Onboarding-CIkvdDof.css"
-    },
-    {
       "path": "resources/web/assets/panel-resize-BBZeOAI1.js",
       "bytes": 1533,
       "sha256": "81d0611479039caed7d0a0bbe341612c45a99da9f839d033a46524ad68068ec4",
       "source": "resources/web/assets/panel-resize-BBZeOAI1.js"
-    },
-    {
-      "path": "resources/web/assets/PhoneSettings-C1B2iQ6s.js",
-      "bytes": 27364,
-      "sha256": "94957847ab3acd58d585b1813485a2381cd2860071dd435b7db462214e3564d2",
-      "source": "resources/web/assets/PhoneSettings-C1B2iQ6s.js"
-    },
-    {
-      "path": "resources/web/assets/PhoneSettings-CsbKKpNZ.css",
-      "bytes": 1471,
-      "sha256": "5904381973b09e079f61d4de2a26210c040caf9f80c64b7fb89249ebcee244db",
-      "source": "resources/web/assets/PhoneSettings-CsbKKpNZ.css"
     },
     {
       "path": "resources/web/assets/pierre-dark-CpLgRqie.js",
@@ -84632,78 +84830,6 @@
       "source": "resources/web/assets/provider-update-notice-CnNtTSZu.css"
     },
     {
-      "path": "resources/web/assets/PullRequestDiffRenderer-C-DaEaP-.js",
-      "bytes": 6654,
-      "sha256": "5d41ffc2ccdc0864a02bb7116a5846228e85cdc13b34354c04d9de963147b609",
-      "source": "resources/web/assets/PullRequestDiffRenderer-C-DaEaP-.js"
-    },
-    {
-      "path": "resources/web/assets/PullRequestsView-Cnb0xbKF.js",
-      "bytes": 82033,
-      "sha256": "0db0444d284effff04e3a9fc7deac6b514cb09f493767c82b50258919d6c94cc",
-      "source": "resources/web/assets/PullRequestsView-Cnb0xbKF.js"
-    },
-    {
-      "path": "resources/web/assets/PullRequestsView-D7AZt4BA.css",
-      "bytes": 42545,
-      "sha256": "85461a80db71b94d9d55f5838d60f94fd66c4f09789f70c5a7c067f7bbe4d19e",
-      "source": "resources/web/assets/PullRequestsView-D7AZt4BA.css"
-    },
-    {
-      "path": "resources/web/assets/RollbackDialog-1-HSSxjF.js",
-      "bytes": 3806,
-      "sha256": "b0de59f117400dc7241c8122f2d1d50901ac3cca1448cdaa32b3ad764237e430",
-      "source": "resources/web/assets/RollbackDialog-1-HSSxjF.js"
-    },
-    {
-      "path": "resources/web/assets/RollbackDialog-B4guiNAH.css",
-      "bytes": 5034,
-      "sha256": "b9aa0c1d08410c8d3db99508e2ccfbf7eac11c927c4a2c60f9306573d4fae000",
-      "source": "resources/web/assets/RollbackDialog-B4guiNAH.css"
-    },
-    {
-      "path": "resources/web/assets/RowIssue-DWEGgOUz.js",
-      "bytes": 2313,
-      "sha256": "ee02e1ba788e50a64ae42e16dc85af8be714fd9425a9c884e17972b5a471deb3",
-      "source": "resources/web/assets/RowIssue-DWEGgOUz.js"
-    },
-    {
-      "path": "resources/web/assets/SessionSearch-BLueGP4E.js",
-      "bytes": 13113,
-      "sha256": "e50c214ff11b5c1d95a467fc30311e38cb5288bfd0301a5475395a6b64562095",
-      "source": "resources/web/assets/SessionSearch-BLueGP4E.js"
-    },
-    {
-      "path": "resources/web/assets/SessionSearch-P2ax2mf0.css",
-      "bytes": 4152,
-      "sha256": "3c88f026f13f1be054aceafc44473a3b810dc16a7f1d453dba4d341e1fea01a0",
-      "source": "resources/web/assets/SessionSearch-P2ax2mf0.css"
-    },
-    {
-      "path": "resources/web/assets/Settings-CdgxHJV3.js",
-      "bytes": 203530,
-      "sha256": "d7274f8c207227d03aebb05808284e1e512961c2dd02ab52ab8c4a88839ba82e",
-      "source": "resources/web/assets/Settings-CdgxHJV3.js"
-    },
-    {
-      "path": "resources/web/assets/Settings-CP0yqb_J.css",
-      "bytes": 84325,
-      "sha256": "e8d653c9103999de64497ab58d6020e749baed46dcee42b72e9f7f00654b9af4",
-      "source": "resources/web/assets/Settings-CP0yqb_J.css"
-    },
-    {
-      "path": "resources/web/assets/SettingsLayout-B_7S4y2m.css",
-      "bytes": 14677,
-      "sha256": "220539728af0af818e83d0d2ec21674664a57778d685c6160f0c8dcb59c29731",
-      "source": "resources/web/assets/SettingsLayout-B_7S4y2m.css"
-    },
-    {
-      "path": "resources/web/assets/SettingsLayout-GQWLgCaa.js",
-      "bytes": 4056,
-      "sha256": "fba138daad823ad8dbbf0e75039869e5ee160d0097bc5de0ca47822a817f2a09",
-      "source": "resources/web/assets/SettingsLayout-GQWLgCaa.js"
-    },
-    {
       "path": "resources/web/assets/sheet-CreouMvh.css",
       "bytes": 691,
       "sha256": "0da554eeb710b53814d62593c6993ccac61c59fb766effad3b03b42f077145b5",
@@ -84716,30 +84842,6 @@
       "source": "resources/web/assets/shiki-wasm-CtGLCKgJ.js"
     },
     {
-      "path": "resources/web/assets/SidebarConfirmDialog-BxbYos6K.js",
-      "bytes": 1692,
-      "sha256": "75347c4fe44a83cbad922aa33e4eed83ef624ca80730964c7f2836c75c87fabd",
-      "source": "resources/web/assets/SidebarConfirmDialog-BxbYos6K.js"
-    },
-    {
-      "path": "resources/web/assets/SidebarConfirmDialog-DTWGPrPm.css",
-      "bytes": 1997,
-      "sha256": "cc19aafc1460a443c2a59a149e4ea569348747779b4eb207e13afd94096ee3da",
-      "source": "resources/web/assets/SidebarConfirmDialog-DTWGPrPm.css"
-    },
-    {
-      "path": "resources/web/assets/SourceIdentity-APE1o-d1.css",
-      "bytes": 569,
-      "sha256": "64405a00492dc97ce78f0fa5859be9edd8b2c5675a3e115edbf822146f31564f",
-      "source": "resources/web/assets/SourceIdentity-APE1o-d1.css"
-    },
-    {
-      "path": "resources/web/assets/SourceIdentity-DT2BDxTP.js",
-      "bytes": 706,
-      "sha256": "3a3d0511b1e35117502b0038cdb5fe37e07477b48a6ad66482c5a0a05edb7d62",
-      "source": "resources/web/assets/SourceIdentity-DT2BDxTP.js"
-    },
-    {
       "path": "resources/web/assets/split-view-styles-CbMUVAis.css",
       "bytes": 1033,
       "sha256": "d0e5ac0b08c5548144ea330d4f55c9a695634d701478312980a4952b19cc71e7",
@@ -84750,18 +84852,6 @@
       "bytes": 837,
       "sha256": "80eb5688f374954de8994eb529df4b893b8b005e69121e8567eb1ee0a7b680ea",
       "source": "resources/web/assets/switch-CxH4xmEc.css"
-    },
-    {
-      "path": "resources/web/assets/TerminalPane-B4nLUoHc.css",
-      "bytes": 10193,
-      "sha256": "fc961046576c55ce6726dc0f7b3c3572064b4a65a7d080a0a15dbd97514232b0",
-      "source": "resources/web/assets/TerminalPane-B4nLUoHc.css"
-    },
-    {
-      "path": "resources/web/assets/TerminalPane-wQLQ6_PM.js",
-      "bytes": 381242,
-      "sha256": "75fb2cb1b0608d84a267235f6462c968cf0fd533ec1a3facc3060f5f461235ad",
-      "source": "resources/web/assets/TerminalPane-wQLQ6_PM.js"
     },
     {
       "path": "resources/web/assets/test-api-connections.css",
@@ -84854,24 +84944,6 @@
       "source": "resources/web/assets/test-ux-enhancements.js"
     },
     {
-      "path": "resources/web/assets/Thread-DfWOIudl.js",
-      "bytes": 108616,
-      "sha256": "55bd3108ebdbddb06e874e250a8fb3058a401e09e559a0ce34c92b6ffffb90ae",
-      "source": "resources/web/assets/Thread-DfWOIudl.js"
-    },
-    {
-      "path": "resources/web/assets/Thread-fnhYBgWC.css",
-      "bytes": 36633,
-      "sha256": "9e2b3fbdc23d8d3d49a6d3cb4a83c3f17b699544433a08a0ee002e2485a56f03",
-      "source": "resources/web/assets/Thread-fnhYBgWC.css"
-    },
-    {
-      "path": "resources/web/assets/ThreadSearch-jMTCZtA-.js",
-      "bytes": 4379,
-      "sha256": "cddc7e6e2b0b02dd242350de3548c4c1421344956c5a53522a95bacf4747c03f",
-      "source": "resources/web/assets/ThreadSearch-jMTCZtA-.js"
-    },
-    {
       "path": "resources/web/assets/transport-validation-BYBkDRU2.js",
       "bytes": 3084,
       "sha256": "6b626d9d0c0b179fa3c6231351f8513344a5b5bb039454f26c7c9a4777ea7a3c",
@@ -84882,72 +84954,6 @@
       "bytes": 903,
       "sha256": "3211d8fe36e9459c46cb69909f84c323922e50645e1f448609b12212bbbe4a91",
       "source": "resources/web/assets/useWorkspaceRefresh-BrSo2cIA.js"
-    },
-    {
-      "path": "resources/web/assets/WorkerPoolContext-Mdd0GPQm.js",
-      "bytes": 431173,
-      "sha256": "e66fe2b28b778dc6571239129a478a2e363c9bbc7e94eb0d9563fd178b934cc0",
-      "source": "resources/web/assets/WorkerPoolContext-Mdd0GPQm.js"
-    },
-    {
-      "path": "resources/web/assets/WorkspaceAgents-Cib07h0E.css",
-      "bytes": 4815,
-      "sha256": "7c6d707409f4f1e9a439b7100e44e712260cf63b35c6ab9d3bd946740384bd6c",
-      "source": "resources/web/assets/WorkspaceAgents-Cib07h0E.css"
-    },
-    {
-      "path": "resources/web/assets/WorkspaceAgents-Dbrza3TD.js",
-      "bytes": 13759,
-      "sha256": "e5187225ffaf349806fb8c76a32b17e0204cfba8abb5dd26549fdb6ffc88cff3",
-      "source": "resources/web/assets/WorkspaceAgents-Dbrza3TD.js"
-    },
-    {
-      "path": "resources/web/assets/WorkspaceBrowser-haRUUeXo.js",
-      "bytes": 15420,
-      "sha256": "ed184aa4da746feb4fb790f1e19babd8e312c120c01a127455d26b03d169a52c",
-      "source": "resources/web/assets/WorkspaceBrowser-haRUUeXo.js"
-    },
-    {
-      "path": "resources/web/assets/WorkspaceEmptyState-B_SEwHUL.js",
-      "bytes": 1045,
-      "sha256": "2927241b926eec4afd7ceceebd7e658250c89ec9f24961231bc5b65e03e6d580",
-      "source": "resources/web/assets/WorkspaceEmptyState-B_SEwHUL.js"
-    },
-    {
-      "path": "resources/web/assets/WorkspaceFiles-CF83jEqh.js",
-      "bytes": 13635,
-      "sha256": "64c7a4a6d1be0cf048b99d584a471387d73a9899b724eac802601980ab106aa1",
-      "source": "resources/web/assets/WorkspaceFiles-CF83jEqh.js"
-    },
-    {
-      "path": "resources/web/assets/WorkspacePanel-CSm-1TkG.js",
-      "bytes": 24082,
-      "sha256": "ef3c221817a37f7e5ceb03c7462c2cabb869a91ff244010cfc30e9c3b17ee734",
-      "source": "resources/web/assets/WorkspacePanel-CSm-1TkG.js"
-    },
-    {
-      "path": "resources/web/assets/WorkspacePanel-DFFKGd-u.css",
-      "bytes": 30183,
-      "sha256": "2a0f7f9bb9fece8c0697592095ecf5063fa516844b12a5b4102ca585e44bd6de",
-      "source": "resources/web/assets/WorkspacePanel-DFFKGd-u.css"
-    },
-    {
-      "path": "resources/web/assets/WorkspaceReview-_a5faOB7.js",
-      "bytes": 127941,
-      "sha256": "a500aa4737cc76ba0d741ae3c1fe93fb0b460ad0e585b054283fbd42aba2e3f6",
-      "source": "resources/web/assets/WorkspaceReview-_a5faOB7.js"
-    },
-    {
-      "path": "resources/web/assets/WorkspaceSideChat-CdmXs7GG.js",
-      "bytes": 9967,
-      "sha256": "7e747e969ed0e70a083b517f117e8d02962c503fb4e61a5e367ef6e39e86fb06",
-      "source": "resources/web/assets/WorkspaceSideChat-CdmXs7GG.js"
-    },
-    {
-      "path": "resources/web/assets/WorkspaceTerminal-D4laKo8_.js",
-      "bytes": 810,
-      "sha256": "a6b149d1e5c5471c2a99d52808d7d02ecc5158fead71c8cc913662d39c33a50f",
-      "source": "resources/web/assets/WorkspaceTerminal-D4laKo8_.js"
     },
     {
       "path": "resources/web/index.html",

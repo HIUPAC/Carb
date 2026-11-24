@@ -1,11 +1,19 @@
 {
   "name": "carb-maintenance",
-  "version": "5.6.13",
+  "version": "5.6.14",
   "private": true,
   "type": "module",
   "description": "Carb desktop maintenance code, release snapshots and distribution metadata",
   "license": "Apache-2.0",
-  "engines": { "node": ">=22" },
-  "scripts": { "check": "node scripts/verify-repository.mjs" },
-  "repository": { "type": "git", "url": "https://github.com/HIUPAC/Carb.git" }
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "check": "node scripts/verify-repository.mjs",
+    "check:stability": "node --test carb-work/tools/verify-renderer.mjs && node carb-work/tools/verify-supervisor.mjs app/asar/dist/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HIUPAC/Carb.git"
+  }
 }

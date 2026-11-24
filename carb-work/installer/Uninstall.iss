@@ -1,4 +1,4 @@
-[Code]
+﻿[Code]
 const
   WaitPidPrefix = '/CARBWAITPID=';
   ProcessSynchronize = $00100000;
@@ -240,4 +240,11 @@ begin
   CloseInstalledCarb(Executable);
   RemoveCarbProfile(Executable, ExpandConstant('{#CarbDataDir}'));
   RemoveCarbRegistry(Executable);
+end;
+
+function PrepareToInstall(var NeedsRestart: Boolean): String;
+begin
+  Result := '';
+  if InstalledCarbRunning(ExpandConstant('{app}\Carb.exe')) then
+    Result := CustomMessage('CloseCarbBeforeUpgrade');
 end;

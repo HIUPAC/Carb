@@ -2,7 +2,7 @@
 
 **把 AI 带进你的桌面工作。**
 联系方式：QQ：3537963521  WX：IUPAC2816
-Carb 是一款面向 AI 新手的 Windows 桌面工作台。连接你选择的模型或 CLI，在本地项目中阅读资料、处理文件、运行工具，并检查 Agent 做出的改动。
+Carb 是面向 AI 新手的 Windows 桌面工作台。通过 API 或独立 CLI 连接模型，在本地项目中处理文件、执行任务并审查改动。
 
 <p align="left">
   <a href="https://github.com/HIUPAC/Carb/releases"><strong>查看所有版本与安装包 →</strong></a>
@@ -10,7 +10,7 @@ Carb 是一款面向 AI 新手的 Windows 桌面工作台。连接你选择的�
   <a href="https://houpac.top/">产品与联系</a>
 </p>
 
-进入 [GitHub Releases](https://github.com/HIUPAC/Carb/releases) 后，可按版本查看发行说明和全部附件，再选择安装版或便携版。仓库中的下载入口统一打开 Releases 页面；文件名、推送时间和本次修改内容均列在下方及对应版本说明中。
+在发行页按版本查看安装包、便携版和校验文件。版本说明列出变更及附件摘要。
 
 ## Carb 能做什么
 
@@ -24,29 +24,31 @@ Carb 不附带通用大模型或模型额度。可用能力取决于所选服务
 
 ## 版本与推送记录
 
-以下时间以 GitHub Release 发布记录和附件记录为准，统一显示为北京时间（UTC+8）。Release 推送时间对应公开发布时间；每个附件的上传时间与更新时间，以及该版本所含修改，均在相应说明中逐项列出。
+历史推送时间取自 GitHub 的公开发行记录，统一显示为北京时间（UTC+8）。
 
 | 版本 | 推送时间（北京时间） | 本次修改 | 文件与下载 |
 | --- | --- | --- | --- |
-| 5.6.13 | 2026-11-17 16:01:53 | 设置新增「联系我们」和「检查更新」网页入口，支持中文、日文和英文；同步 5.6.13 应用快照与发布资料 | 安装版、便携包及校验文件：进入 [Releases](https://github.com/HIUPAC/Carb/releases) 选择 5.6.13 |
-| 5.6.12 | 2026-11-17 16:00:55 | 首次整理发布 Carb Windows x64 安装版与便携包，附 SHA-256 校验值、发行清单和许可资料 | 安装版、便携包及校验文件：进入 [Releases](https://github.com/HIUPAC/Carb/releases) 选择 5.6.12 |
+| 5.6.14 | 本版 | 修复窗口启动失败与渲染进程崩溃后的恢复，完善本地核心服务启动重试 | [查看 5.6.14 附件](https://github.com/HIUPAC/Carb/releases/tag/v5.6.14) |
+| 5.6.13 | 2026-11-17 16:01:53 | 设置新增「联系我们」和「检查更新」网页入口，支持中文、日文和英文；同步 5.6.13 应用快照与发布资料 | [查看 5.6.13 附件](https://github.com/HIUPAC/Carb/releases/tag/v5.6.13) |
+| 5.6.12 | 2026-11-17 16:00:55 | 首次整理发布 Carb Windows x64 安装版与便携包，附 SHA-256 校验值、发行清单和许可资料 | [查看 5.6.12 附件](https://github.com/HIUPAC/Carb/releases/tag/v5.6.12) |
 
 详细附件、大小、SHA-256、逐文件推送时间和版本说明：
 
+- [5.6.14 发行说明](docs/RELEASE-v5.6.14.md)
 - [5.6.13 发行说明](docs/RELEASE-v5.6.13.md)
 - [5.6.12 发行说明](docs/RELEASE-v5.6.12.md)
 - [完整修改记录](CHANGELOG.md)
 
 ## 安装
 
-1. 打开 [全部 Releases](https://github.com/HIUPAC/Carb/releases)，选择要安装的版本。
+1. 从文首发行入口选择所需版本。
 2. 在该版本附件中选择 `Carb-Setup-<版本>-win-x64.exe`；需要免安装运行时，可选 `Carb-<版本>-win-x64-portable.zip`。
 3. 下载对应 `.sha256` 文件，在 PowerShell 中运行 `Get-FileHash <文件名> -Algorithm SHA256` 并核对摘要。
 4. 安装版按向导操作；便携版先解压，再运行版本目录中的 `Carb.exe`。
 
 目前提供 Windows x64 桌面版本。安装包未进行数字签名；请从本仓库 Releases 获取文件，并用随包摘要检查文件是否完整。便携版不代表用户资料只保存在解压目录。
 
-卸载安装版会删除 Carb 默认资料目录中的设置、会话、凭据和缓存。卸载前请备份需要保留的资料。具体路径和使用步骤见 [5.6.13 发行说明](docs/RELEASE-v5.6.13.md)及软件内提示。
+卸载安装版会删除 Carb 默认资料目录中的设置、会话、凭据和缓存。卸载前请备份需要保留的资料。具体路径和使用步骤见对应版本的发行说明及软件内提示。
 
 ## 仓库内容
 
@@ -79,6 +81,4 @@ npm run check
 
 ## 问题与联系
 
-产品信息与联系入口：[houpac.top](https://houpac.top/)。
-
-使用问题或缺陷请在 GitHub 仓库提交 Issue，并提供 Carb 版本、Windows 版本、复现步骤和相关日志；提交前请移除密钥、凭据及个人资料。
+使用问题或缺陷请提交[问题反馈](https://github.com/HIUPAC/Carb/issues)，并提供 Carb 版本、Windows 版本、复现步骤和相关日志；提交前请移除密钥、凭据及个人资料。

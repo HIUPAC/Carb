@@ -1,4 +1,6 @@
-# Carb 5.6.13 Windows build
+# Carb Windows maintenance
+
+Carb 5.6.14 desktop stability sources are in the application snapshot. Run npm run check:stability to verify the renderer and local core supervisor. The original build workflow below targets the older baseline.
 
 For installation, first use, modules, data handling, and licensing, see the [Chinese product README](../README.md). This file describes the original local maintenance workspace. The GitHub repository includes its tools and overlays; the external baseline and verification runtimes still require separate preparation, as described in [BUILD.md](../docs/BUILD.md).
 

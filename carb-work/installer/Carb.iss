@@ -1,5 +1,5 @@
 ﻿#ifndef AppVersion
-  #define AppVersion "5.6.13"
+  #define AppVersion "5.6.14"
 #endif
 #ifndef PayloadDir
   #error PayloadDir must identify the complete Carb application directory.
@@ -45,7 +45,7 @@ WizardStyle=modern
 Compression=lzma2/normal
 SolidCompression=yes
 LZMAUseSeparateProcess=yes
-CloseApplications=yes
+CloseApplications=no
 RestartApplications=no
 SetupMutex=Icewheel.Carb.Setup
 VersionInfoCompany=冰轮
@@ -69,6 +69,9 @@ japanese.CreateDesktopShortcut=デスクトップにショートカットを作�
 english.AdditionalShortcuts=Additional shortcuts:
 chinesesimplified.AdditionalShortcuts=其他快捷方式：
 japanese.AdditionalShortcuts=追加のショートカット:
+english.CloseCarbBeforeUpgrade=Quit Carb from its system tray menu before installing this update.
+chinesesimplified.CloseCarbBeforeUpgrade=请从系统托盘菜单退出 Carb，再继续安装更新。
+japanese.CloseCarbBeforeUpgrade=更新をインストールする前に、通知領域のメニューから Carb を終了してください。
 english.CloseCarbFailed=Carb is still running. Quit the app from its tray menu and try uninstalling again.
 chinesesimplified.CloseCarbFailed=Carb 仍在运行。请从系统托盘菜单退出应用，再重试卸载。
 japanese.CloseCarbFailed=Carb がまだ実行されています。通知領域のメニューから終了し、アンインストールをやり直してください。
